@@ -1,0 +1,233 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Secular+One&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" type="image/x-icon" href="logo small square.png" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    .body {
+      margin: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('earth.jpg'), black;
+      background-attachment: fixed;
+
+      background-repeat: repeat-y;
+      background-position: center;
+      font-family: 'Barlow', sans-serif;
+      font-size: 20px;
+    }
+
+    .title {
+      font-size: 50px;
+      color: white;
+      width: 1000px;
+      margin: 50px auto 50px auto;
+      text-align: center;
+      line-height: 50px;
+      font-family: 'Secular One', sans-serif;
+    }
+
+    .title img {
+      max-height: 100px;
+      vertical-align: middle
+    }
+
+    .grid {
+      display: grid;
+      width: 1000px;
+      margin: 0 auto;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 1fr;
+      grid-gap: 20px;
+    }
+
+    .grid-mono {
+      display: grid;
+      width: 1000px;
+      margin: 0 auto;
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr;
+      grid-gap: 20px;
+    }
+
+    .blur-outline-for-form {
+
+      padding: 50px;
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      color: white;
+      text-align: center;
+      width: 600;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      overflow-x: hidden;
+      font-size: 50px;
+
+
+
+    }
+
+    .grid-of-form-items {
+      display: grid;
+      width: 100%;
+      margin: 50px auto;
+      grid-template-columns: min-content auto;
+
+      grid-template-rows: 1fr;
+      grid-gap: 20px;
+      font-size: 20px;
+      text-align: left;
+
+
+    }
+
+    .grid-item-form label {
+      width: 100%;
+      margin: 20px;
+    }
+
+    .grid-of-form-items input, textarea {
+
+    padding:5px; 
+    border-radius: 5px;
+    background-color: rgb(128, 128, 128);
+    border:0px solid white
+}
+
+
+  
+
+    .blur-outline-for-form button {
+      padding:5px 15px; background:rgb(128, 128, 128); border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    font-family: Barlow;
+    background-color: rgb(128, 128, 128);
+
+    color:white;
+    
+    }
+    .blur-outline-for-form button:hover {
+      background-color: rgba(3, 53, 84, 1)
+    
+    }
+    .grid-of-form-items input[type='email']:hover{
+  background-color: white;
+}
+.grid-of-form-items input[type='text']:hover{
+  background-color: white;
+}
+    .grid-of-form-items textarea:hover {
+
+    background-color: white;
+}
+
+    .grid-item-title {
+      font-size: 50px;
+      padding: 20px;
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      color: white;
+      text-align: center;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      backdrop-filter: blur(20px);
+      color: white;
+      padding: 50px;
+      padding-top: 20px;
+      padding-bottom: 50px;
+
+      overflow-y: hidden;
+      border-radius: 0 0 50px 0;
+    }
+
+    .sidebar>a {
+      color: white;
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+
+
+    }
+
+    .sidebar a:hover {
+      color: rgba(3, 53, 84, 1);
+    }
+
+    .grid>img {
+      margin: 20px auto;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .grid {
+        width: 100%;
+        grid-template-columns: 100%;
+        border-radius: 0 0 0px 0;
+      }
+      .recruit-paragraph {
+      text-align: left;
+      font-size: 20pt;
+      padding:20pt;
+    }
+      .title {
+        width: 100%;
+      }
+
+
+    }
+
+    @media screen and (max-width: 700px) {
+      .sidebar {
+        width: 100%;
+        position: relative;
+        border-radius: 0 0 0px 0;
+        padding: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .sidebar>a {
+        text-align: center;
+      }
+
+      .blur-outline-for-form {
+        width: auto;
+        padding: 50px;
+        margin: 0px;
+        margin-bottom: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body class="body">
+  <div class="sidebar">
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="contact.html">contact</a>
+    <a href="careers.html">careers</a>
+
+  </div>
+  <div class="title"><a href="index.html"><img src="logo blue.png" /></a></div>
+  <div class="title">Vitez Engineering</div>
+  <div class="grid_mono">
+
+    <div class="blur-outline-for-form">
+      Thanks for your interest in Vitez Engineering. We will get back to you as soon as we can.
+ 
+    </div>
+
+
+  </div>
+</body>
+
+</html>

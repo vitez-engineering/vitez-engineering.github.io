@@ -1,0 +1,195 @@
+    .body {
+      margin: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('earth.jpg'), black;
+      background-attachment: fixed;
+      background-repeat: repeat-y;
+      background-position: center;
+      font-family: 'Barlow', sans-serif;
+      font-size: 20px;
+    }
+
+    .title {
+      font-size: 75px;
+      color: white;
+      width: 1000px;
+      margin: 50px auto 0px auto;
+      text-align: center;
+      font-family: 'Secular One', sans-serif;
+    }
+
+    .title img {
+      max-height: 100px;
+      vertical-align: middle
+    }
+
+
+
+    .grid-mono {
+      display: grid;
+      width: 1000px;
+      margin: 0 auto;
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr;
+      grid-gap: 50px 0px;
+      padding: 50px;
+      border-radius: 50px;
+
+
+
+    }
+
+    .grid-item {
+
+      padding: 50px;
+      padding-bottom: 0px;
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      color: white;
+      font-size: 20px;
+      text-align: left;
+      font-family: 'Barlow', sans-serif;
+      line-height: normal;
+
+
+    }
+
+    .grid-item-tagline {
+
+        padding: 20px;
+        border-radius: 24px;
+        backdrop-filter: blur(20px);
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Barlow', sans-serif;
+        line-height: normal;
+        font-style: italic;
+  
+  
+      }
+
+
+    .grid-item-title {
+      font-size: 50px;
+      padding: 50px;
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      color: white;
+      text-align: center;
+      font-family: 'Secular One', sans-serif;
+      line-height: 50px;
+
+
+
+    }
+    .grid-item-title img{
+        margin: auto 0px;
+        margin-right: 20px;
+        height: 50px;
+
+        vertical-align: center;
+
+
+    }
+    .centered-img{
+        text-align: center;
+        display: block;
+        padding-bottom: 20px;
+
+
+    }
+
+    .centered-img img {
+        position: relative;
+        margin: 50px, auto;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        max-width: 400px;
+        max-height: 300px;
+        height: auto;
+        border-radius: 24px;
+        
+        
+    }
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      backdrop-filter: blur(20px);
+      color: white;
+      padding: 50px;
+      padding-top: 20px;
+      padding-bottom: 50px;
+
+      overflow-y: hidden;
+      border-radius: 0 0 50px 0;
+    }
+
+    .sidebar>a {
+      color: white;
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+
+    }
+
+    .sidebar a:hover {
+      color: rgba(3, 53, 84, 1);
+    }
+
+
+
+    @media screen and (max-width: 1400px) {
+      .grid-mono {
+        width: 700px;
+        grid-template-columns: 100%;
+ 
+      }
+
+      .title {
+        width: 100%;
+        line-height: 50px;
+        font-size: 50px;
+      }
+      .grid-item-title{
+        margin-left: 20px;
+        margin-right: 20px;
+
+
+    }
+}
+
+    @media screen and (max-width: 1020px) {
+      .sidebar {
+        width: 100%;
+        position: relative;
+        border-radius: 0 0 0px 0;
+        padding: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .grid-mono {
+        width: 100%;
+        padding-right: 0;
+        margin-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+      }
+      .grid-item-title {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .grid-mono img{
+        max-width: 90%;
+
+      }
+
+      .sidebar>a {
+        text-align: center;
+      }
+      .title {
+        line-height: 50px;
+        font-size: 50px;
+      }
+    }
