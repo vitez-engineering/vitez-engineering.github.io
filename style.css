@@ -52,6 +52,16 @@
 
     }
 
+    .grid-item>a {
+      text-decoration:none; 
+      color: inherit;
+
+    }
+
+    .grid-item a:hover {
+      color: rgba(3, 53, 84, 1);
+    }
+
     .grid-item-tagline {
 
         padding: 20px;
@@ -71,15 +81,25 @@
       font-size: 50px;
       padding: 50px;
       border-radius: 24px;
-      backdrop-filter: blur(20px);
-      color: white;
+      backdrop-filter: grayscale(100%) brightness(50%);
+
+      color: white; 
+
       text-align: center;
       font-family: 'Secular One', sans-serif;
       line-height: 50px;
 
-
+    }
+    .grid-item-title>a {
+      text-decoration:none; 
+      color: inherit;
 
     }
+
+    .grid-item-title a:hover {
+      color: rgba(3, 53, 84, 1);
+    }
+
     .grid-item-title img{
         margin: auto 0px;
         margin-right: 20px;
@@ -109,11 +129,32 @@
         
         
     }
+
+    .centered-img-no-border{
+      text-align: center;
+      display: block;
+      padding-bottom: 20px;
+
+
+  }
+    .centered-img-no-border img {
+
+
+      position: relative;
+      margin: 50px, auto;
+      margin-top: 50px;
+      margin-bottom: 0px;
+      max-width: 400px;
+      max-height: 300px;
+      height: auto;
+     
+      
+  }
     .sidebar {
       position: fixed;
       left: 0;
       top: 0;
-      backdrop-filter: blur(20px);
+      backdrop-filter: grayscale(100%) brightness(50%);
       color: white;
       padding: 50px;
       padding-top: 20px;
@@ -135,6 +176,88 @@
       color: rgba(3, 53, 84, 1);
     }
 
+    .blur-outline-for-form {
+
+      padding: 50px;
+      border-radius: 24px;
+      backdrop-filter: grayscale(100%) brightness(50%);
+      color: white;
+      text-align: center;
+      width: 600;
+      margin: auto auto;
+      margin-bottom: 50px;
+      overflow-x: hidden;
+      font-size: 50px;
+      font-family: 'Secular One', sans-serif;
+
+      line-height: 50px;
+
+
+
+    }
+
+
+
+
+    .grid-of-form-items {
+      display: grid;
+      width: 100%;
+      margin: 50px auto;
+      grid-template-columns: min-content auto;
+
+      grid-template-rows: 1fr;
+      grid-gap: 20px;
+      font-size: 20px;
+      text-align: left;
+      font-family: 'Barlow', sans-serif;
+
+
+
+    }
+
+    .grid-item-form label {
+      width: 100%;
+      margin: 20px;
+    }
+
+    .grid-of-form-items input, textarea {
+
+    padding:5px; 
+    border-radius: 5px;
+    background-color: rgb(128, 128, 128);
+    border:0px solid white
+}
+
+
+  
+
+    .blur-outline-for-form button {
+      padding:5px 15px; background:rgb(128, 128, 128); border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    font-family: Barlow;
+    background-color: rgb(128, 128, 128);
+
+    color:white;
+    
+    }
+    .blur-outline-for-form button:hover {
+      background-color: rgba(3, 53, 84, 1)
+    
+    }
+    .grid-of-form-items input[type='email']:hover{
+  background-color: white;
+}
+.grid-of-form-items input[type='text']:hover{
+  background-color: white;
+}
+    .grid-of-form-items textarea:hover {
+
+    background-color: white;
+}
+
+
 
 
     @media screen and (max-width: 1400px) {
@@ -155,6 +278,12 @@
 
 
     }
+
+          .grid {
+             width: 100%;
+              grid-template-columns: 100%;
+           border-radius: 0 0 0px 0;
+            }
 }
 
     @media screen and (max-width: 1020px) {
@@ -190,4 +319,14 @@
         line-height: 50px;
         font-size: 50px;
       }
+
+      .blur-outline-for-form {
+        width: auto;
+        padding: 50px;
+        margin: 0px;
+        margin-bottom: 50px;
+      }
     }
+
+
+   
