@@ -119,9 +119,9 @@
 
     .centered-img img {
         position: relative;
-        margin: 50px, auto;
         margin-top: 50px;
         margin-bottom: 0px;
+        margin-right: 0px;
         max-width: 400px;
         max-height: 300px;
         height: auto;
@@ -141,9 +141,9 @@
 
 
       position: relative;
-      margin: 50px, auto;
       margin-top: 50px;
       margin-bottom: 0px;
+      margin-right: 0px;
       max-width: 400px;
       max-height: 300px;
       height: auto;
@@ -305,6 +305,27 @@
       .grid-item-title {
         margin-right: 0;
         margin-left: 0;
+        padding-right: 30;
+        padding-left: 30;
+
+      }
+
+      .grid-item {
+        padding-right: 30;
+        padding-left: 30;
+
+      }
+
+      .grid-item-tagline {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .centered-img img {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0;
+        margin-left: 0;
       }
 
       .grid-mono img{
@@ -319,6 +340,7 @@
         line-height: 50px;
         font-size: 50px;
       }
+
 
       .blur-outline-for-form {
         width: auto;
