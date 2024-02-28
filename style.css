@@ -22,6 +22,15 @@
       vertical-align: middle
     }
 
+    .title a {
+      text-decoration:none;
+      color: inherit;
+
+    }
+
+    .title a:hover {
+      color: rgba(3, 53, 84, 1);
+    }
 
 
     .grid-mono {
