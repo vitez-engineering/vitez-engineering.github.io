@@ -1,500 +1,3530 @@
 {
-  "471.webp": 1.329,
-  "339.webp": 1.329,
-  "441.webp": 1.329,
-  "107.webp": 0.750,
-  "457.webp": 1.329,
-  "289.webp": 1.329,
-  "474.webp": 1.329,
-  "448.webp": 1.329,
-  "125.webp": 1.333,
-  "310.webp": 1.329,
-  "498.webp": 1.329,
-  "185.webp": 1.333,
-  "1.webp": 0.752,
-  "187.webp": 1.333,
-  "311.webp": 1.329,
-  "254.webp": 1.329,
-  "157.webp": 1.333,
-  "151.webp": 1.333,
-  "374.webp": 1.329,
-  "25.webp": 1.778,
-  "445.webp": 1.329,
-  "69.webp": 1.333,
-  "175.webp": 1.333,
-  "103.webp": 1.333,
-  "203.webp": 1.329,
-  "399.webp": 1.329,
-  "210.webp": 1.329,
-  "53.webp": 1.333,
-  "244.webp": 1.329,
-  "183.webp": 1.333,
-  "395.webp": 1.329,
-  "370.webp": 1.329,
-  "278.webp": 1.329,
-  "42.webp": 1.333,
-  "488.webp": 1.329,
-  "138.webp": 1.333,
-  "34.webp": 1.333,
-  "405.webp": 1.329,
-  "165.webp": 1.333,
-  "435.webp": 1.329,
-  "500.webp": 0.753,
-  "243.webp": 1.329,
-  "388.webp": 1.329,
-  "65.webp": 1.333,
-  "96.webp": 1.333,
-  "115.webp": 1.333,
-  "15.webp": 1.778,
-  "190.webp": 0.566,
-  "413.webp": 1.329,
-  "228.webp": 1.329,
-  "29.webp": 0.562,
-  "57.webp": 1.333,
-  "268.webp": 1.329,
-  "281.webp": 1.329,
-  "51.webp": 1.333,
-  "373.webp": 1.329,
-  "286.webp": 1.329,
-  "24.webp": 0.562,
-  "241.webp": 1.329,
-  "383.webp": 0.753,
-  "238.webp": 1.329,
-  "472.webp": 1.329,
-  "44.webp": 1.333,
-  "519.webp": 0.753,
-  "309.webp": 1.329,
-  "239.webp": 1.329,
-  "263.webp": 1.329,
-  "520.webp": 1.329,
-  "466.webp": 1.329,
-  "52.webp": 0.750,
-  "398.webp": 1.329,
-  "73.webp": 1.333,
-  "436.webp": 1.329,
-  "272.webp": 1.329,
-  "475.webp": 1.329,
-  "437.webp": 1.329,
-  "193.webp": 1.767,
-  "295.webp": 0.753,
-  "464.webp": 1.329,
-  "21.webp": 1.778,
-  "144.webp": 1.333,
-  "161.webp": 1.333,
-  "218.webp": 1.329,
-  "13.webp": 1.778,
-  "446.webp": 1.329,
-  "316.webp": 1.329,
-  "491.webp": 1.329,
-  "269.webp": 0.753,
-  "86.webp": 1.333,
-  "345.webp": 1.329,
-  "251.webp": 1.329,
-  "485.webp": 1.329,
-  "89.webp": 1.333,
-  "427.webp": 1.329,
-  "518.webp": 1.329,
-  "112.webp": 1.333,
-  "406.webp": 1.329,
-  "461.webp": 1.329,
-  "443.webp": 1.329,
-  "257.webp": 1.329,
-  "282.webp": 0.753,
-  "313.webp": 1.329,
-  "482.webp": 1.329,
-  "88.webp": 1.333,
-  "164.webp": 1.333,
-  "366.webp": 1.329,
-  "494.webp": 0.753,
-  "236.webp": 1.329,
-  "206.webp": 0.753,
-  "304.webp": 1.329,
-  "147.webp": 1.333,
-  "259.webp": 1.329,
-  "6.webp": 1.778,
-  "420.webp": 1.329,
-  "416.webp": 1.329,
-  "331.webp": 1.329,
-  "134.webp": 1.333,
-  "80.webp": 1.333,
-  "504.webp": 1.329,
-  "266.webp": 0.753,
-  "84.webp": 1.333,
-  "314.webp": 1.329,
-  "149.webp": 1.333,
-  "140.webp": 1.333,
-  "207.webp": 1.329,
-  "258.webp": 1.329,
-  "513.webp": 1.329,
-  "12.webp": 1.778,
-  "133.webp": 1.333,
-  "118.webp": 1.333,
-  "501.webp": 1.329,
-  "283.webp": 1.333,
-  "76.webp": 1.333,
-  "452.webp": 1.329,
-  "200.webp": 1.329,
-  "127.webp": 1.333,
-  "264.webp": 1.329,
-  "512.webp": 1.329,
-  "87.webp": 1.333,
-  "191.webp": 0.566,
-  "197.webp": 1.329,
-  "431.webp": 1.329,
-  "502.webp": 1.329,
-  "247.webp": 1.329,
-  "299.webp": 1.329,
-  "308.webp": 1.329,
-  "432.webp": 1.329,
-  "93.webp": 1.333,
-  "377.webp": 1.329,
-  "372.webp": 0.753,
-  "317.webp": 1.329,
-  "387.webp": 0.753,
-  "54.webp": 1.333,
-  "346.webp": 1.329,
-  "329.webp": 1.329,
-  "204.webp": 1.329,
-  "270.webp": 1.329,
-  "337.webp": 1.329,
-  "225.webp": 1.329,
-  "121.webp": 1.333,
-  "182.webp": 1.333,
-  "349.webp": 1.329,
-  "517.webp": 1.329,
-  "458.webp": 1.329,
-  "357.webp": 1.329,
-  "469.webp": 1.329,
-  "438.webp": 1.329,
-  "71.webp": 1.333,
-  "375.webp": 1.329,
-  "188.webp": 1.333,
-  "74.webp": 1.333,
-  "72.webp": 1.333,
-  "453.webp": 1.329,
-  "291.webp": 1.329,
-  "148.webp": 1.333,
-  "32.webp": 1.333,
-  "227.webp": 1.329,
-  "196.webp": 1.329,
-  "37.webp": 0.749,
-  "396.webp": 1.329,
-  "178.webp": 1.333,
-  "246.webp": 1.329,
-  "14.webp": 0.562,
-  "199.webp": 1.329,
-  "307.webp": 1.329,
-  "351.webp": 1.329,
-  "156.webp": 1.333,
-  "202.webp": 1.329,
-  "505.webp": 1.329,
-  "371.webp": 0.753,
-  "499.webp": 1.329,
-  "451.webp": 1.329,
-  "361.webp": 1.329,
-  "154.webp": 0.750,
-  "521.webp": 0.753,
-  "279.webp": 1.329,
-  "152.webp": 1.333,
-  "267.webp": 1.329,
-  "455.webp": 1.329,
-  "358.webp": 1.329,
-  "328.webp": 0.753,
-  "117.webp": 1.333,
-  "177.webp": 1.333,
-  "423.webp": 1.329,
-  "290.webp": 0.753,
-  "79.webp": 1.333,
-  "3.webp": 0.562,
-  "129.webp": 1.333,
-  "507.webp": 1.329,
-  "141.webp": 1.333,
-  "509.webp": 1.329,
-  "447.webp": 1.329,
-  "492.webp": 1.329,
-  "359.webp": 0.753,
-  "2.webp": 0.562,
-  "336.webp": 1.329,
-  "397.webp": 0.753,
-  "126.webp": 1.333,
-  "350.webp": 1.329,
-  "10.webp": 1.778,
-  "131.webp": 1.333,
-  "27.webp": 1.277,
-  "293.webp": 0.753,
-  "400.webp": 1.329,
-  "470.webp": 1.329,
-  "382.webp": 0.753,
-  "412.webp": 1.329,
-  "68.webp": 1.333,
-  "66.webp": 0.750,
-  "223.webp": 0.753,
-  "181.webp": 1.333,
-  "355.webp": 1.329,
-  "180.webp": 0.750,
-  "39.webp": 1.333,
-  "312.webp": 1.329,
-  "233.webp": 0.753,
-  "301.webp": 1.329,
-  "360.webp": 0.753,
-  "106.webp": 1.333,
-  "365.webp": 1.329,
-  "341.webp": 0.753,
-  "394.webp": 1.329,
-  "70.webp": 1.333,
-  "216.webp": 0.753,
-  "75.webp": 1.333,
-  "422.webp": 1.329,
-  "132.webp": 1.333,
-  "444.webp": 1.329,
-  "120.webp": 1.333,
-  "277.webp": 1.329,
-  "385.webp": 1.329,
-  "421.webp": 1.329,
-  "522.webp": 1.329,
-  "33.webp": 1.333,
-  "514.webp": 1.329,
-  "303.webp": 1.329,
-  "486.webp": 1.329,
-  "315.webp": 1.329,
-  "318.webp": 1.329,
-  "340.webp": 0.753,
-  "292.webp": 1.329,
-  "473.webp": 1.329,
-  "364.webp": 0.753,
-  "343.webp": 1.329,
-  "430.webp": 1.329,
-  "160.webp": 1.333,
-  "99.webp": 1.333,
-  "256.webp": 1.329,
-  "262.webp": 1.329,
-  "213.webp": 1.329,
-  "306.webp": 1.329,
-  "424.webp": 1.329,
-  "172.webp": 1.333,
-  "493.webp": 1.329,
-  "143.webp": 1.333,
-  "516.webp": 0.753,
-  "344.webp": 1.329,
-  "49.webp": 1.333,
-  "326.webp": 1.329,
-  "234.webp": 1.329,
-  "248.webp": 1.329,
-  "220.webp": 1.329,
-  "31.webp": 1.778,
-  "59.webp": 1.333,
-  "78.webp": 1.333,
-  "124.webp": 1.333,
-  "508.webp": 1.329,
-  "163.webp": 1.333,
-  "45.webp": 1.333,
-  "300.webp": 0.753,
-  "77.webp": 0.750,
-  "525.webp": 0.563,
-  "296.webp": 0.753,
-  "47.webp": 1.333,
-  "189.webp": 1.333,
-  "198.webp": 1.329,
-  "526.webp": 0.563,
-  "60.webp": 1.333,
-  "145.webp": 1.333,
-  "338.webp": 1.329,
-  "170.webp": 1.333,
-  "158.webp": 1.333,
-  "449.webp": 1.329,
-  "298.webp": 1.329,
-  "428.webp": 1.329,
-  "323.webp": 1.329,
-  "392.webp": 1.329,
-  "97.webp": 1.333,
-  "250.webp": 1.329,
-  "217.webp": 0.753,
-  "378.webp": 1.329,
-  "252.webp": 1.329,
-  "433.webp": 1.329,
-  "305.webp": 1.329,
-  "483.webp": 1.329,
-  "334.webp": 1.329,
-  "237.webp": 1.329,
-  "91.webp": 0.750,
-  "476.webp": 1.329,
-  "230.webp": 1.329,
-  "119.webp": 1.333,
-  "85.webp": 1.333,
-  "242.webp": 0.753,
-  "214.webp": 1.329,
-  "523.webp": 1.329,
-  "153.webp": 1.333,
-  "41.webp": 1.333,
-  "330.webp": 1.329,
-  "113.webp": 1.333,
-  "368.webp": 0.753,
-  "212.webp": 1.329,
-  "401.webp": 1.329,
-  "98.webp": 1.333,
-  "265.webp": 1.329,
-  "404.webp": 1.329,
-  "434.webp": 1.329,
-  "411.webp": 1.329,
-  "425.webp": 1.329,
-  "95.webp": 1.333,
-  "409.webp": 1.329,
-  "38.webp": 1.333,
-  "468.webp": 1.329,
-  "419.webp": 1.329,
-  "490.webp": 1.329,
-  "58.webp": 1.333,
-  "155.webp": 1.333,
-  "417.webp": 1.329,
-  "208.webp": 1.329,
-  "426.webp": 1.329,
-  "325.webp": 1.329,
-  "192.webp": 1.767,
-  "150.webp": 1.333,
-  "456.webp": 1.329,
-  "389.webp": 1.329,
-  "255.webp": 1.329,
-  "324.webp": 1.329,
-  "327.webp": 1.329,
-  "4.webp": 0.562,
-  "496.webp": 1.329,
-  "168.webp": 0.750,
-  "376.webp": 0.753,
-  "354.webp": 0.753,
-  "130.webp": 1.333,
-  "381.webp": 1.329,
-  "276.webp": 1.329,
-  "450.webp": 1.329,
-  "353.webp": 1.329,
-  "460.webp": 1.329,
-  "477.webp": 1.329,
-  "205.webp": 0.753,
-  "403.webp": 1.329,
-  "275.webp": 1.329,
-  "36.webp": 1.335,
-  "510.webp": 1.329,
-  "195.webp": 1.329,
-  "386.webp": 1.329,
-  "524.webp": 0.562,
-  "232.webp": 1.329,
-  "114.webp": 1.333,
-  "35.webp": 0.750,
-  "418.webp": 1.329,
-  "487.webp": 1.329,
-  "46.webp": 1.333,
-  "347.webp": 1.329,
-  "297.webp": 1.329,
-  "503.webp": 1.329,
-  "462.webp": 1.329,
-  "123.webp": 1.333,
-  "410.webp": 1.329,
-  "408.webp": 1.329,
-  "454.webp": 1.329,
-  "50.webp": 0.750,
-  "40.webp": 1.333,
-  "320.webp": 1.329,
-  "414.webp": 1.329,
-  "294.webp": 1.329,
-  "222.webp": 1.329,
-  "348.webp": 1.329,
-  "100.webp": 1.333,
-  "186.webp": 1.333,
-  "362.webp": 1.329,
-  "184.webp": 1.333,
-  "384.webp": 0.753,
-  "342.webp": 1.329,
-  "363.webp": 0.753,
-  "162.webp": 1.333,
-  "442.webp": 1.329,
-  "249.webp": 0.753,
-  "92.webp": 1.333,
-  "174.webp": 0.750,
-  "139.webp": 1.333,
-  "176.webp": 0.750,
-  "240.webp": 0.753,
-  "287.webp": 1.329,
-  "285.webp": 1.329,
-  "67.webp": 1.333,
-  "515.webp": 1.329,
-  "28.webp": 1.778,
-  "480.webp": 1.329,
-  "116.webp": 1.333,
-  "179.webp": 1.333,
-  "83.webp": 1.333,
-  "380.webp": 1.329,
-  "271.webp": 1.329,
-  "20.webp": 1.778,
-  "128.webp": 0.750,
-  "367.webp": 1.329,
-  "379.webp": 1.329,
-  "391.webp": 1.329,
-  "159.webp": 1.333,
-  "26.webp": 1.778,
-  "280.webp": 1.329,
-  "171.webp": 1.333,
-  "224.webp": 1.329,
-  "407.webp": 1.329,
-  "260.webp": 1.329,
-  "322.webp": 1.329,
-  "332.webp": 1.329,
-  "352.webp": 1.329,
-  "122.webp": 1.333,
-  "137.webp": 1.333,
-  "333.webp": 1.329,
-  "274.webp": 1.329,
-  "142.webp": 1.333,
-  "55.webp": 0.750,
-  "497.webp": 1.329,
-  "90.webp": 1.333,
-  "209.webp": 1.329,
-  "302.webp": 1.329,
-  "101.webp": 1.333,
-  "261.webp": 1.329,
-  "56.webp": 1.333,
-  "136.webp": 0.750,
-  "465.webp": 1.329,
-  "506.webp": 1.329,
-  "393.webp": 1.329,
-  "226.webp": 1.329,
-  "146.webp": 1.333,
-  "245.webp": 1.329,
-  "439.webp": 1.329,
-  "7.webp": 1.778,
-  "273.webp": 1.329,
-  "511.webp": 0.753,
-  "102.webp": 0.750,
-  "429.webp": 0.753,
-  "484.webp": 0.753,
-  "219.webp": 1.329,
-  "356.webp": 1.329,
-  "495.webp": 0.753,
-  "82.webp": 1.333,
-  "94.webp": 1.333,
-  "105.webp": 1.333,
-  "481.webp": 1.329,
-  "479.webp": 1.329,
-  "22.webp": 1.778,
-  "166.webp": 0.750,
-  "194.webp": 1.333,
-  "369.webp": 1.329,
-  "467.webp": 1.329,
-  "288.webp": 1.329,
-  "229.webp": 1.329,
-  "19.webp": 1.778,
-  "135.webp": 1.333,
-  "489.webp": 1.329,
-  "18.webp": 1.778,
-  "319.webp": 1.329,
-  "335.webp": 1.329,
-  "402.webp": 1.329,
-  "321.webp": 1.329,
-  "390.webp": 1.329,
-  "463.webp": 1.329,
-  "48.webp": 1.333,
-  "415.webp": 1.329,
-  "440.webp": 1.329,
-  "173.webp": 1.333,
-  "459.webp": 1.329,
-  "478.webp": 1.329,
-  "284.webp": 1.329
+    "001.webp": {
+        "date": "DEC 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "001",
+        "ratio": 0.5624
+    },
+    "002.webp": {
+        "date": "AUG 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "002",
+        "ratio": 1.7781
+    },
+    "003.webp": {
+        "date": "NOV 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "003",
+        "ratio": 0.5624
+    },
+    "004.webp": {
+        "date": "SEP 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "004",
+        "ratio": 1.7781
+    },
+    "005.webp": {
+        "date": "DEC 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "005",
+        "ratio": 0.5624
+    },
+    "006.webp": {
+        "date": "AUG 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "006",
+        "ratio": 1.7781
+    },
+    "007.webp": {
+        "date": "DEC 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "007",
+        "ratio": 1.7781
+    },
+    "008.webp": {
+        "date": "---",
+        "location": "UNKNOWN LOCATION",
+        "number": "008",
+        "ratio": 0.5624
+    },
+    "009.webp": {
+        "date": "APR 2018",
+        "location": "UNKNOWN LOCATION",
+        "number": "009",
+        "ratio": 0.5656
+    },
+    "010.webp": {
+        "date": "MAY 2019",
+        "location": "Pictured Rocks National Lakeshore, Michigan, USA",
+        "number": "010",
+        "ratio": 0.75
+    },
+    "011.webp": {
+        "date": "MAY 2019",
+        "location": "Pictured Rocks National Lakeshore, Michigan, USA",
+        "number": "011",
+        "ratio": 0.75
+    },
+    "012.webp": {
+        "date": "MAY 2019",
+        "location": "Saint Mary\u2019s Falls Canal, Michigan, USA",
+        "number": "012",
+        "ratio": 0.75
+    },
+    "013.webp": {
+        "date": "DEC 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "013",
+        "ratio": 0.5624
+    },
+    "014.webp": {
+        "date": "FEB 2019",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "014",
+        "ratio": 0.7491
+    },
+    "015.webp": {
+        "date": "OCT 2018",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "015",
+        "ratio": 0.75
+    },
+    "016.webp": {
+        "date": "DEC 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "016",
+        "ratio": 0.5624
+    },
+    "017.webp": {
+        "date": "FEB 2019",
+        "location": "UNKNOWN LOCATION",
+        "number": "017",
+        "ratio": 0.75
+    },
+    "018.webp": {
+        "date": "JAN 2019",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "018",
+        "ratio": 0.75
+    },
+    "019.webp": {
+        "date": "APR 2018",
+        "location": "Brevard County, Florida, USA",
+        "number": "019",
+        "ratio": 0.75
+    },
+    "020.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "020",
+        "ratio": 0.75
+    },
+    "021.webp": {
+        "date": "OCT 2019",
+        "location": "Schenley Plaza, Pennsylvania, USA",
+        "number": "021",
+        "ratio": 1.3333
+    },
+    "022.webp": {
+        "date": "MAY 2019",
+        "location": "Pictured Rocks National Lakeshore, Michigan, USA",
+        "number": "022",
+        "ratio": 1.3333
+    },
+    "023.webp": {
+        "date": "APR 2017",
+        "location": "UNKNOWN LOCATION",
+        "number": "023",
+        "ratio": 0.5624
+    },
+    "024.webp": {
+        "date": "AUG 2019",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "024",
+        "ratio": 0.75
+    },
+    "025.webp": {
+        "date": "AUG 2018",
+        "location": "UNKNOWN LOCATION",
+        "number": "025",
+        "ratio": 0.5656
+    },
+    "026.webp": {
+        "date": "DEC 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "026",
+        "ratio": 0.5624
+    },
+    "027.webp": {
+        "date": "MAR 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "027",
+        "ratio": 0.5624
+    },
+    "028.webp": {
+        "date": "MAR 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "028",
+        "ratio": 0.5624
+    },
+    "029.webp": {
+        "date": "JUN 2019",
+        "location": "Lakewood, Ohio, USA",
+        "number": "029",
+        "ratio": 0.75
+    },
+    "030.webp": {
+        "date": "MAR 2018",
+        "location": "UNKNOWN LOCATION",
+        "number": "030",
+        "ratio": 1.768
+    },
+    "031.webp": {
+        "date": "MAY 2019",
+        "location": "Hartwick Pines State Park, Michigan, USA",
+        "number": "031",
+        "ratio": 0.75
+    },
+    "032.webp": {
+        "date": "FEB 2020",
+        "location": "Albert Park, Victoria, Australia",
+        "number": "032",
+        "ratio": 0.75
+    },
+    "033.webp": {
+        "date": "APR 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "033",
+        "ratio": 1.7781
+    },
+    "034.webp": {
+        "date": "MAR 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "034",
+        "ratio": 0.5624
+    },
+    "035.webp": {
+        "date": "MAY 2019",
+        "location": "Northville Charter Township, Michigan, USA",
+        "number": "035",
+        "ratio": 0.75
+    },
+    "036.webp": {
+        "date": "FEB 2019",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "036",
+        "ratio": 1.3349
+    },
+    "037.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "037",
+        "ratio": 0.75
+    },
+    "038.webp": {
+        "date": "JAN 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "038",
+        "ratio": 0.5624
+    },
+    "039.webp": {
+        "date": "MAY 2019",
+        "location": "Hartwick Pines State Park, Michigan, USA",
+        "number": "039",
+        "ratio": 0.75
+    },
+    "040.webp": {
+        "date": "MAR 2019",
+        "location": "Centennial Mall South, Indiana, USA",
+        "number": "040",
+        "ratio": 0.75
+    },
+    "041.webp": {
+        "date": "OCT 2019",
+        "location": "Pittsburgh, Pennsylvania, USA",
+        "number": "041",
+        "ratio": 0.75
+    },
+    "042.webp": {
+        "date": "OCT 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "042",
+        "ratio": 0.5624
+    },
+    "043.webp": {
+        "date": "MAY 2019",
+        "location": "UNKNOWN LOCATION",
+        "number": "043",
+        "ratio": 0.75
+    },
+    "044.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "044",
+        "ratio": 0.75
+    },
+    "045.webp": {
+        "date": "MAY 2019",
+        "location": "Pictured Rocks National Lakeshore, Michigan, USA",
+        "number": "045",
+        "ratio": 0.75
+    },
+    "046.webp": {
+        "date": "MAY 2019",
+        "location": "Tahquemenon Falls State Park, Michigan, USA",
+        "number": "046",
+        "ratio": 0.75
+    },
+    "047.webp": {
+        "date": "JAN 2017",
+        "location": "UNKNOWN LOCATION",
+        "number": "047",
+        "ratio": 1.7781
+    },
+    "048.webp": {
+        "date": "MAR 2018",
+        "location": "UNKNOWN LOCATION",
+        "number": "048",
+        "ratio": 1.768
+    },
+    "049.webp": {
+        "date": "MAY 2019",
+        "location": "Hartwick Pines State Park, Michigan, USA",
+        "number": "049",
+        "ratio": 0.75
+    },
+    "050.webp": {
+        "date": "APR 2019",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "050",
+        "ratio": 0.75
+    },
+    "051.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "051",
+        "ratio": 0.75
+    },
+    "052.webp": {
+        "date": "APR 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "052",
+        "ratio": 0.5624
+    },
+    "053.webp": {
+        "date": "MAR 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "053",
+        "ratio": 0.5624
+    },
+    "054.webp": {
+        "date": "DEC 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "054",
+        "ratio": 0.5624
+    },
+    "055.webp": {
+        "date": "MAY 2019",
+        "location": "Pictured Rocks National Lakeshore, Michigan, USA",
+        "number": "055",
+        "ratio": 1.3333
+    },
+    "056.webp": {
+        "date": "NOV 2018",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "056",
+        "ratio": 0.75
+    },
+    "057.webp": {
+        "date": "MAR 2019",
+        "location": "Auburn State Recreation Area, California, USA",
+        "number": "057",
+        "ratio": 0.75
+    },
+    "058.webp": {
+        "date": "MAY 2019",
+        "location": "Tahquemenon Falls State Park, Michigan, USA",
+        "number": "058",
+        "ratio": 0.75
+    },
+    "059.webp": {
+        "date": "MAY 2019",
+        "location": "Pictured Rocks National Lakeshore, Michigan, USA",
+        "number": "059",
+        "ratio": 0.75
+    },
+    "060.webp": {
+        "date": "---",
+        "location": "UNKNOWN LOCATION",
+        "number": "060",
+        "ratio": 1.7781
+    },
+    "061.webp": {
+        "date": "JAN 2020",
+        "location": "Kiama, New South Wales, Australia",
+        "number": "061",
+        "ratio": 0.75
+    },
+    "062.webp": {
+        "date": "FEB 2020",
+        "location": "Blue Mountains National Park, New South Wales, Australia",
+        "number": "062",
+        "ratio": 0.75
+    },
+    "063.webp": {
+        "date": "FEB 2020",
+        "location": "Melbourne, Victoria, Australia",
+        "number": "063",
+        "ratio": 0.75
+    },
+    "064.webp": {
+        "date": "FEB 2020",
+        "location": "Blue Mountains National Park, New South Wales, Australia",
+        "number": "064",
+        "ratio": 0.75
+    },
+    "065.webp": {
+        "date": "MAY 2019",
+        "location": "Pictured Rocks National Lakeshore, Michigan, USA",
+        "number": "065",
+        "ratio": 1.3333
+    },
+    "066.webp": {
+        "date": "FEB 2020",
+        "location": "UNKNOWN LOCATION",
+        "number": "066",
+        "ratio": 0.75
+    },
+    "067.webp": {
+        "date": "FEB 2020",
+        "location": "Melbourne, Victoria, Australia",
+        "number": "067",
+        "ratio": 0.75
+    },
+    "068.webp": {
+        "date": "OCT 2019",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "068",
+        "ratio": 0.75
+    },
+    "069.webp": {
+        "date": "JUL 2021",
+        "location": "White Sands National Park, New Mexico, USA",
+        "number": "069",
+        "ratio": 0.75
+    },
+    "070.webp": {
+        "date": "FEB 2020",
+        "location": "Melbourne, Victoria, Australia",
+        "number": "070",
+        "ratio": 0.75
+    },
+    "071.webp": {
+        "date": "FEB 2020",
+        "location": "UNKNOWN LOCATION",
+        "number": "071",
+        "ratio": 0.75
+    },
+    "072.webp": {
+        "date": "FEB 2020",
+        "location": "Blue Mountains National Park, New South Wales, Australia",
+        "number": "072",
+        "ratio": 0.75
+    },
+    "073.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "073",
+        "ratio": 0.75
+    },
+    "074.webp": {
+        "date": "FEB 2020",
+        "location": "UNKNOWN LOCATION",
+        "number": "074",
+        "ratio": 0.75
+    },
+    "075.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "075",
+        "ratio": 0.75
+    },
+    "076.webp": {
+        "date": "FEB 2020",
+        "location": "Kean Point Scenic Reserve, Canterbury, New Zealand / Aotearoa",
+        "number": "076",
+        "ratio": 0.75
+    },
+    "077.webp": {
+        "date": "FEB 2020",
+        "location": "UNKNOWN LOCATION",
+        "number": "077",
+        "ratio": 0.75
+    },
+    "078.webp": {
+        "date": "FEB 2020",
+        "location": "Ka Whata Tu O Rakihouia Conservation Park, Unknown, New Zealand / Aotearoa",
+        "number": "078",
+        "ratio": 0.75
+    },
+    "079.webp": {
+        "date": "JAN 2020",
+        "location": "Queens Park, New South Wales, Australia",
+        "number": "079",
+        "ratio": 1.3333
+    },
+    "080.webp": {
+        "date": "FEB 2020",
+        "location": "Melbourne, Victoria, Australia",
+        "number": "080",
+        "ratio": 0.75
+    },
+    "081.webp": {
+        "date": "FEB 2020",
+        "location": "UNKNOWN LOCATION",
+        "number": "081",
+        "ratio": 0.75
+    },
+    "082.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "082",
+        "ratio": 0.75
+    },
+    "083.webp": {
+        "date": "FEB 2020",
+        "location": "Melbourne, Victoria, Australia",
+        "number": "083",
+        "ratio": 0.75
+    },
+    "084.webp": {
+        "date": "FEB 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "084",
+        "ratio": 1.3333
+    },
+    "085.webp": {
+        "date": "FEB 2020",
+        "location": "Ka Whata Tu O Rakihouia Conservation Park, Unknown, New Zealand / Aotearoa",
+        "number": "085",
+        "ratio": 1.3333
+    },
+    "086.webp": {
+        "date": "JAN 2020",
+        "location": "Barangaroo Reserve, New South Wales, Australia",
+        "number": "086",
+        "ratio": 0.75
+    },
+    "087.webp": {
+        "date": "FEB 2020",
+        "location": "Albert Park, Victoria, Australia",
+        "number": "087",
+        "ratio": 0.75
+    },
+    "088.webp": {
+        "date": "FEB 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "088",
+        "ratio": 0.75
+    },
+    "089.webp": {
+        "date": "JUN 2021",
+        "location": "Austin, Texas, USA",
+        "number": "089",
+        "ratio": 0.75
+    },
+    "090.webp": {
+        "date": "OCT 2021",
+        "location": "North Carolina, North Carolina, USA",
+        "number": "090",
+        "ratio": 0.75
+    },
+    "091.webp": {
+        "date": "JUL 2021",
+        "location": "San Antonio River Walk, Texas, USA",
+        "number": "091",
+        "ratio": 0.75
+    },
+    "092.webp": {
+        "date": "JUL 2021",
+        "location": "Lincoln National Forest, New Mexico, USA",
+        "number": "092",
+        "ratio": 0.75
+    },
+    "093.webp": {
+        "date": "JAN 2022",
+        "location": "Hawaii, Hawaii, USA",
+        "number": "093",
+        "ratio": 0.75
+    },
+    "094.webp": {
+        "date": "JUL 2021",
+        "location": "Organ Mountains-Desert Peaks National Monument, New Mexico, USA",
+        "number": "094",
+        "ratio": 0.75
+    },
+    "095.webp": {
+        "date": "JUL 2021",
+        "location": "Guadalupe Mountains National Park, Texas, USA",
+        "number": "095",
+        "ratio": 0.75
+    },
+    "096.webp": {
+        "date": "FEB 2020",
+        "location": "Ka Whata Tu O Rakihouia Conservation Park, Unknown, New Zealand / Aotearoa",
+        "number": "096",
+        "ratio": 0.75
+    },
+    "097.webp": {
+        "date": "JAN 2022",
+        "location": "Honolulu, Hawaii, USA",
+        "number": "097",
+        "ratio": 0.75
+    },
+    "098.webp": {
+        "date": "FEB 2020",
+        "location": "Blue Mountains National Park, New South Wales, Australia",
+        "number": "098",
+        "ratio": 0.75
+    },
+    "099.webp": {
+        "date": "JUL 2021",
+        "location": "Organ Mountains-Desert Peaks National Monument, New Mexico, USA",
+        "number": "099",
+        "ratio": 0.75
+    },
+    "100.webp": {
+        "date": "APR 2021",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "100",
+        "ratio": 0.75
+    },
+    "101.webp": {
+        "date": "JAN 2022",
+        "location": "Wailuku River State Park, Hawaii, USA",
+        "number": "101",
+        "ratio": 1.3333
+    },
+    "102.webp": {
+        "date": "JAN 2022",
+        "location": "Kapaa, Hawaii, USA",
+        "number": "102",
+        "ratio": 0.75
+    },
+    "103.webp": {
+        "date": "JUL 2021",
+        "location": "Guadalupe Mountains National Park, Texas, USA",
+        "number": "103",
+        "ratio": 0.75
+    },
+    "104.webp": {
+        "date": "JAN 2022",
+        "location": "Honolulu County, Hawaii, USA",
+        "number": "104",
+        "ratio": 0.75
+    },
+    "105.webp": {
+        "date": "JAN 2022",
+        "location": "Kukuihaele CDP, Hawaii, USA",
+        "number": "105",
+        "ratio": 0.75
+    },
+    "106.webp": {
+        "date": "JAN 2022",
+        "location": "Hawai\u02bbi Volcanoes National Park, Hawaii, USA",
+        "number": "106",
+        "ratio": 0.75
+    },
+    "107.webp": {
+        "date": "JAN 2022",
+        "location": "Hawai\u02bbi Volcanoes National Park, Hawaii, USA",
+        "number": "107",
+        "ratio": 0.75
+    },
+    "108.webp": {
+        "date": "OCT 2021",
+        "location": "Great Smoky Mountains National Park, Tennessee, USA",
+        "number": "108",
+        "ratio": 0.75
+    },
+    "109.webp": {
+        "date": "AUG 2021",
+        "location": "Stout, Colorado, USA",
+        "number": "109",
+        "ratio": 0.75
+    },
+    "110.webp": {
+        "date": "JAN 2022",
+        "location": "Kealakekua Bay State Historical Park, Hawaii, USA",
+        "number": "110",
+        "ratio": 0.75
+    },
+    "111.webp": {
+        "date": "JUL 2021",
+        "location": "Guadalupe Mountains National Park, Texas, USA",
+        "number": "111",
+        "ratio": 0.75
+    },
+    "112.webp": {
+        "date": "JAN 2022",
+        "location": "Mamalahoa Highway, Hawaii, USA",
+        "number": "112",
+        "ratio": 0.75
+    },
+    "113.webp": {
+        "date": "OCT 2021",
+        "location": "Great Smoky Mountains National Park, Tennessee, USA",
+        "number": "113",
+        "ratio": 0.75
+    },
+    "114.webp": {
+        "date": "JAN 2022",
+        "location": "Hawaii, Hawaii, USA",
+        "number": "114",
+        "ratio": 0.75
+    },
+    "115.webp": {
+        "date": "OCT 2021",
+        "location": "Great Smoky Mountains National Park, Tennessee, USA",
+        "number": "115",
+        "ratio": 0.75
+    },
+    "116.webp": {
+        "date": "FEB 2020",
+        "location": "Linwood-Central-Heathcote Community, Canterbury, New Zealand / Aotearoa",
+        "number": "116",
+        "ratio": 0.75
+    },
+    "117.webp": {
+        "date": "JUL 2021",
+        "location": "Guadalupe Mountains National Park, Texas, USA",
+        "number": "117",
+        "ratio": 0.75
+    },
+    "118.webp": {
+        "date": "JUL 2021",
+        "location": "Guadalupe Mountains National Park, Texas, USA",
+        "number": "118",
+        "ratio": 0.75
+    },
+    "119.webp": {
+        "date": "MAR 2020",
+        "location": "Halswell-Hornby-Riccarton Community, Canterbury, New Zealand / Aotearoa",
+        "number": "119",
+        "ratio": 0.75
+    },
+    "120.webp": {
+        "date": "JAN 2022",
+        "location": "Hawai\u02bbi Volcanoes National Park, Hawaii, USA",
+        "number": "120",
+        "ratio": 0.75
+    },
+    "121.webp": {
+        "date": "APR 2021",
+        "location": "Indiana Dunes National Park, Indiana, USA",
+        "number": "121",
+        "ratio": 0.75
+    },
+    "122.webp": {
+        "date": "MAR 2020",
+        "location": "Linwood-Central-Heathcote Community, Canterbury, New Zealand / Aotearoa",
+        "number": "122",
+        "ratio": 0.75
+    },
+    "123.webp": {
+        "date": "AUG 2021",
+        "location": "Austin, Texas, USA",
+        "number": "123",
+        "ratio": 0.75
+    },
+    "124.webp": {
+        "date": "JAN 2022",
+        "location": "Ka\u02bbena Point State Park, Hawaii, USA",
+        "number": "124",
+        "ratio": 0.75
+    },
+    "125.webp": {
+        "date": "JUL 2021",
+        "location": "San Antonio, Texas, USA",
+        "number": "125",
+        "ratio": 0.75
+    },
+    "126.webp": {
+        "date": "JUN 2022",
+        "location": "Red Cliffs National Conservation Area, Utah, USA",
+        "number": "126",
+        "ratio": 0.75
+    },
+    "127.webp": {
+        "date": "JUN 2022",
+        "location": "Zion National Park, Utah, USA",
+        "number": "127",
+        "ratio": 0.75
+    },
+    "128.webp": {
+        "date": "JUN 2022",
+        "location": "Los Angeles, California, USA",
+        "number": "128",
+        "ratio": 0.75
+    },
+    "129.webp": {
+        "date": "JUN 2022",
+        "location": "Mohave County, Arizona, USA",
+        "number": "129",
+        "ratio": 0.75
+    },
+    "130.webp": {
+        "date": "FEB 2022",
+        "location": "Sierra National Forest, California, USA",
+        "number": "130",
+        "ratio": 0.75
+    },
+    "131.webp": {
+        "date": "JAN 2022",
+        "location": "Waimea Canyon State Park, Hawaii, USA",
+        "number": "131",
+        "ratio": 0.75
+    },
+    "132.webp": {
+        "date": "JUN 2022",
+        "location": "Zion National Park, Utah, USA",
+        "number": "132",
+        "ratio": 0.75
+    },
+    "133.webp": {
+        "date": "AUG 2022",
+        "location": "Lower Tonsina, Alaska, USA",
+        "number": "133",
+        "ratio": 0.75
+    },
+    "134.webp": {
+        "date": "AUG 2022",
+        "location": "Chugach National Forest, Alaska, USA",
+        "number": "134",
+        "ratio": 0.75
+    },
+    "135.webp": {
+        "date": "FEB 2022",
+        "location": "Yosemite National Park, California, USA",
+        "number": "135",
+        "ratio": 1.3333
+    },
+    "136.webp": {
+        "date": "AUG 2022",
+        "location": "Seward, Alaska, USA",
+        "number": "136",
+        "ratio": 0.75
+    },
+    "137.webp": {
+        "date": "APR 2022",
+        "location": "Roosevelt National Forest, Colorado, USA",
+        "number": "137",
+        "ratio": 0.75
+    },
+    "138.webp": {
+        "date": "MAR 2022",
+        "location": "UNKNOWN LOCATION",
+        "number": "138",
+        "ratio": 0.75
+    },
+    "139.webp": {
+        "date": "AUG 2022",
+        "location": "Denali National Park, Alaska, USA",
+        "number": "139",
+        "ratio": 0.75
+    },
+    "140.webp": {
+        "date": "AUG 2022",
+        "location": "Kenai Fjords National Park, Alaska, USA",
+        "number": "140",
+        "ratio": 0.75
+    },
+    "141.webp": {
+        "date": "AUG 2022",
+        "location": "UNKNOWN LOCATION",
+        "number": "141",
+        "ratio": 1.3333
+    },
+    "142.webp": {
+        "date": "AUG 2022",
+        "location": "Matanuska-Susitna Borough, Alaska, USA",
+        "number": "142",
+        "ratio": 0.75
+    },
+    "143.webp": {
+        "date": "JAN 2022",
+        "location": "UNKNOWN LOCATION",
+        "number": "143",
+        "ratio": 0.75
+    },
+    "144.webp": {
+        "date": "AUG 2022",
+        "location": "Kenai Peninsula Borough, Alaska, USA",
+        "number": "144",
+        "ratio": 0.75
+    },
+    "145.webp": {
+        "date": "APR 2022",
+        "location": "Rocky Mountain National Park, Colorado, USA",
+        "number": "145",
+        "ratio": 0.75
+    },
+    "146.webp": {
+        "date": "AUG 2022",
+        "location": "Fox, Alaska, USA",
+        "number": "146",
+        "ratio": 0.75
+    },
+    "147.webp": {
+        "date": "AUG 2022",
+        "location": "Glenn Highway, Alaska, USA",
+        "number": "147",
+        "ratio": 0.75
+    },
+    "148.webp": {
+        "date": "MAR 2022",
+        "location": "Roosevelt National Forest, Colorado, USA",
+        "number": "148",
+        "ratio": 0.75
+    },
+    "149.webp": {
+        "date": "AUG 2022",
+        "location": "UNKNOWN LOCATION",
+        "number": "149",
+        "ratio": 0.75
+    },
+    "150.webp": {
+        "date": "JAN 2022",
+        "location": "Wailua River State Park, Hawaii, USA",
+        "number": "150",
+        "ratio": 0.75
+    },
+    "151.webp": {
+        "date": "MAY 2022",
+        "location": "Mesquite, Nevada, USA",
+        "number": "151",
+        "ratio": 0.75
+    },
+    "152.webp": {
+        "date": "JAN 2022",
+        "location": "Kahaluu-Keauhou, Hawaii, USA",
+        "number": "152",
+        "ratio": 0.75
+    },
+    "153.webp": {
+        "date": "OCT 2022",
+        "location": "I 70;US 50, Utah, USA",
+        "number": "153",
+        "ratio": 0.7528
+    },
+    "154.webp": {
+        "date": "FEB 2022",
+        "location": "Yosemite National Park, California, USA",
+        "number": "154",
+        "ratio": 0.75
+    },
+    "155.webp": {
+        "date": "FEB 2022",
+        "location": "Yosemite National Park, California, USA",
+        "number": "155",
+        "ratio": 0.75
+    },
+    "156.webp": {
+        "date": "AUG 2022",
+        "location": "Anchorage, Alaska, USA",
+        "number": "156",
+        "ratio": 0.75
+    },
+    "157.webp": {
+        "date": "JUN 2022",
+        "location": "UNKNOWN LOCATION",
+        "number": "157",
+        "ratio": 1.3333
+    },
+    "158.webp": {
+        "date": "JAN 2022",
+        "location": "K\u014dke\u02bbe State Park, Hawaii, USA",
+        "number": "158",
+        "ratio": 0.75
+    },
+    "159.webp": {
+        "date": "AUG 2022",
+        "location": "Liberty Falls State Recreation Site, Alaska, USA",
+        "number": "159",
+        "ratio": 1.3333
+    },
+    "160.webp": {
+        "date": "MAR 2022",
+        "location": "Rocky Mountain National Park, Colorado, USA",
+        "number": "160",
+        "ratio": 0.75
+    },
+    "161.webp": {
+        "date": "AUG 2022",
+        "location": "Denali National Park, Alaska, USA",
+        "number": "161",
+        "ratio": 0.75
+    },
+    "162.webp": {
+        "date": "AUG 2022",
+        "location": "Chugach National Forest, Alaska, USA",
+        "number": "162",
+        "ratio": 0.75
+    },
+    "163.webp": {
+        "date": "JAN 2023",
+        "location": "Manhattan Beach, California, USA",
+        "number": "163",
+        "ratio": 1.3284
+    },
+    "164.webp": {
+        "date": "DEC 2022",
+        "location": "Pinckney State Recreation Area, Michigan, USA",
+        "number": "164",
+        "ratio": 0.7528
+    },
+    "165.webp": {
+        "date": "MAY 2023",
+        "location": "Manhattan Beach, California, USA",
+        "number": "165",
+        "ratio": 1.3284
+    },
+    "166.webp": {
+        "date": "MAY 2023",
+        "location": "Mount San Jacinto State Wilderness, California, USA",
+        "number": "166",
+        "ratio": 0.7528
+    },
+    "167.webp": {
+        "date": "JAN 2023",
+        "location": "Inglewood, California, USA",
+        "number": "167",
+        "ratio": 0.7528
+    },
+    "168.webp": {
+        "date": "MAR 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "168",
+        "ratio": 0.7528
+    },
+    "169.webp": {
+        "date": "DEC 2022",
+        "location": "Pinckney State Recreation Area, Michigan, USA",
+        "number": "169",
+        "ratio": 0.7528
+    },
+    "170.webp": {
+        "date": "MAR 2023",
+        "location": "Joshua Tree National Park, California, USA",
+        "number": "170",
+        "ratio": 0.7528
+    },
+    "171.webp": {
+        "date": "JAN 2023",
+        "location": "Los Angeles, California, USA",
+        "number": "171",
+        "ratio": 0.7528
+    },
+    "172.webp": {
+        "date": "MAY 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "172",
+        "ratio": 0.7528
+    },
+    "173.webp": {
+        "date": "JUN 2023",
+        "location": "San Bernardino National Forest, California, USA",
+        "number": "173",
+        "ratio": 0.7528
+    },
+    "174.webp": {
+        "date": "NOV 2022",
+        "location": "Topanga State Park, California, USA",
+        "number": "174",
+        "ratio": 0.7528
+    },
+    "175.webp": {
+        "date": "DEC 2022",
+        "location": "Topanga State Park, California, USA",
+        "number": "175",
+        "ratio": 0.7528
+    },
+    "176.webp": {
+        "date": "FEB 2023",
+        "location": "Topanga State Park, California, USA",
+        "number": "176",
+        "ratio": 0.7528
+    },
+    "177.webp": {
+        "date": "MAR 2023",
+        "location": "Los Angeles, California, USA",
+        "number": "177",
+        "ratio": 0.7528
+    },
+    "178.webp": {
+        "date": "JAN 2023",
+        "location": "San Bernardino National Forest, California, USA",
+        "number": "178",
+        "ratio": 1.3284
+    },
+    "179.webp": {
+        "date": "MAY 2023",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "179",
+        "ratio": 1.3284
+    },
+    "180.webp": {
+        "date": "JUN 2023",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "180",
+        "ratio": 0.7528
+    },
+    "181.webp": {
+        "date": "MAY 2023",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "181",
+        "ratio": 1.3284
+    },
+    "182.webp": {
+        "date": "DEC 2022",
+        "location": "Pinckney State Recreation Area, Michigan, USA",
+        "number": "182",
+        "ratio": 0.7528
+    },
+    "183.webp": {
+        "date": "NOV 2022",
+        "location": "Topanga State Park, California, USA",
+        "number": "183",
+        "ratio": 0.7528
+    },
+    "184.webp": {
+        "date": "FEB 2023",
+        "location": "Topanga State Park, California, USA",
+        "number": "184",
+        "ratio": 0.7528
+    },
+    "185.webp": {
+        "date": "MAR 2023",
+        "location": "Los Angeles, California, USA",
+        "number": "185",
+        "ratio": 0.7528
+    },
+    "186.webp": {
+        "date": "MAR 2023",
+        "location": "Salton Sea State Recreation Area, California, USA",
+        "number": "186",
+        "ratio": 0.7528
+    },
+    "187.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "187",
+        "ratio": 0.7528
+    },
+    "188.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "188",
+        "ratio": 1.3284
+    },
+    "189.webp": {
+        "date": "JUN 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "189",
+        "ratio": 0.7528
+    },
+    "190.webp": {
+        "date": "NOV 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "190",
+        "ratio": 0.7528
+    },
+    "191.webp": {
+        "date": "JUL 2023",
+        "location": "Crater Lake National Park, Oregon, USA",
+        "number": "191",
+        "ratio": 1.3284
+    },
+    "192.webp": {
+        "date": "JUL 2023",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "192",
+        "ratio": 0.7528
+    },
+    "193.webp": {
+        "date": "JUN 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "193",
+        "ratio": 1.3284
+    },
+    "194.webp": {
+        "date": "JUL 2023",
+        "location": "North Cascades National Park Complex, Washington, USA",
+        "number": "194",
+        "ratio": 0.7528
+    },
+    "195.webp": {
+        "date": "NOV 2023",
+        "location": "El Segundo, California, USA",
+        "number": "195",
+        "ratio": 1.3284
+    },
+    "196.webp": {
+        "date": "SEP 2023",
+        "location": "Sand to Snow National Monument, California, USA",
+        "number": "196",
+        "ratio": 0.7528
+    },
+    "197.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "197",
+        "ratio": 0.7528
+    },
+    "198.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "198",
+        "ratio": 0.7528
+    },
+    "199.webp": {
+        "date": "SEP 2023",
+        "location": "Valencia, California, USA",
+        "number": "199",
+        "ratio": 0.7528
+    },
+    "200.webp": {
+        "date": "JUL 2023",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "200",
+        "ratio": 0.7528
+    },
+    "201.webp": {
+        "date": "AUG 2023",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "201",
+        "ratio": 0.7528
+    },
+    "202.webp": {
+        "date": "JUN 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "202",
+        "ratio": 0.7528
+    },
+    "203.webp": {
+        "date": "MAR 2024",
+        "location": "Julia Pfeiffer Burns State Park, California, USA",
+        "number": "203",
+        "ratio": 0.7528
+    },
+    "204.webp": {
+        "date": "FEB 2024",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "204",
+        "ratio": 0.7528
+    },
+    "205.webp": {
+        "date": "JUL 2023",
+        "location": "North Cascades National Park Complex, Washington, USA",
+        "number": "205",
+        "ratio": 0.7528
+    },
+    "206.webp": {
+        "date": "AUG 2023",
+        "location": "Angeles National Forest, California, USA",
+        "number": "206",
+        "ratio": 0.7528
+    },
+    "207.webp": {
+        "date": "JUL 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "207",
+        "ratio": 1.3284
+    },
+    "208.webp": {
+        "date": "MAY 2024",
+        "location": "Sequoia National Park, California, USA",
+        "number": "208",
+        "ratio": 0.7528
+    },
+    "209.webp": {
+        "date": "JUN 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "209",
+        "ratio": 0.7528
+    },
+    "210.webp": {
+        "date": "JUN 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "210",
+        "ratio": 0.7528
+    },
+    "211.webp": {
+        "date": "JUL 2023",
+        "location": "Mount Rainier National Park, Washington, USA",
+        "number": "211",
+        "ratio": 0.7528
+    },
+    "212.webp": {
+        "date": "JUL 2023",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "212",
+        "ratio": 0.7528
+    },
+    "213.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "213",
+        "ratio": 0.7528
+    },
+    "214.webp": {
+        "date": "JUL 2023",
+        "location": "Sand to Snow National Monument, California, USA",
+        "number": "214",
+        "ratio": 0.7528
+    },
+    "215.webp": {
+        "date": "JUL 2023",
+        "location": "Crater Lake National Park, Oregon, USA",
+        "number": "215",
+        "ratio": 0.7528
+    },
+    "216.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "216",
+        "ratio": 0.7528
+    },
+    "217.webp": {
+        "date": "AUG 2023",
+        "location": "Manhattan Beach, California, USA",
+        "number": "217",
+        "ratio": 0.7528
+    },
+    "218.webp": {
+        "date": "JUL 2023",
+        "location": "Mount Rainier National Park, Washington, USA",
+        "number": "218",
+        "ratio": 0.7528
+    },
+    "219.webp": {
+        "date": "JUN 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "219",
+        "ratio": 0.7528
+    },
+    "220.webp": {
+        "date": "NOV 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "220",
+        "ratio": 0.7528
+    },
+    "221.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "221",
+        "ratio": 0.7528
+    },
+    "222.webp": {
+        "date": "JUL 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "222",
+        "ratio": 0.7528
+    },
+    "223.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "223",
+        "ratio": 1.3284
+    },
+    "224.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "224",
+        "ratio": 0.7528
+    },
+    "225.webp": {
+        "date": "JUL 2023",
+        "location": "Crater Lake National Park, Oregon, USA",
+        "number": "225",
+        "ratio": 0.7528
+    },
+    "226.webp": {
+        "date": "JUN 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "226",
+        "ratio": 0.7528
+    },
+    "227.webp": {
+        "date": "JUL 2023",
+        "location": "North Cascades National Park Complex, Washington, USA",
+        "number": "227",
+        "ratio": 1.3284
+    },
+    "228.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "228",
+        "ratio": 0.7528
+    },
+    "229.webp": {
+        "date": "MAY 2024",
+        "location": "Sequoia National Park, California, USA",
+        "number": "229",
+        "ratio": 1.3284
+    },
+    "230.webp": {
+        "date": "MAY 2024",
+        "location": "Sequoia National Park, California, USA",
+        "number": "230",
+        "ratio": 0.7528
+    },
+    "231.webp": {
+        "date": "MAY 2024",
+        "location": "Kings Canyon National Park, California, USA",
+        "number": "231",
+        "ratio": 1.3284
+    },
+    "232.webp": {
+        "date": "MAY 2024",
+        "location": "Sequoia National Park, California, USA",
+        "number": "232",
+        "ratio": 0.7528
+    },
+    "233.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "233",
+        "ratio": 0.7528
+    },
+    "234.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "234",
+        "ratio": 0.7528
+    },
+    "235.webp": {
+        "date": "MAR 2024",
+        "location": "Pinnacles National Park, California, USA",
+        "number": "235",
+        "ratio": 1.3284
+    },
+    "236.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "236",
+        "ratio": 0.7528
+    },
+    "237.webp": {
+        "date": "MAY 2024",
+        "location": "Sequoia National Park, California, USA",
+        "number": "237",
+        "ratio": 1.3284
+    },
+    "238.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "238",
+        "ratio": 0.7528
+    },
+    "239.webp": {
+        "date": "JUN 2024",
+        "location": "Grand Canyon National Park, Arizona, USA",
+        "number": "239",
+        "ratio": 0.7528
+    },
+    "240.webp": {
+        "date": "SEP 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "240",
+        "ratio": 0.7528
+    },
+    "241.webp": {
+        "date": "FEB 2024",
+        "location": "Topanga State Park, California, USA",
+        "number": "241",
+        "ratio": 0.7528
+    },
+    "242.webp": {
+        "date": "SEP 2023",
+        "location": "Mount San Jacinto State Wilderness, California, USA",
+        "number": "242",
+        "ratio": 0.7528
+    },
+    "243.webp": {
+        "date": "SEP 2023",
+        "location": "Los Angeles, California, USA",
+        "number": "243",
+        "ratio": 0.7528
+    },
+    "244.webp": {
+        "date": "MAR 2024",
+        "location": "Pinnacles National Park, California, USA",
+        "number": "244",
+        "ratio": 0.7528
+    },
+    "245.webp": {
+        "date": "MAY 2024",
+        "location": "UNKNOWN LOCATION",
+        "number": "245",
+        "ratio": 0.7528
+    },
+    "246.webp": {
+        "date": "OCT 2023",
+        "location": "San Jacinto Wilderness, California, USA",
+        "number": "246",
+        "ratio": 0.7528
+    },
+    "247.webp": {
+        "date": "SEP 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "247",
+        "ratio": 0.7528
+    },
+    "248.webp": {
+        "date": "MAY 2024",
+        "location": "Sequoia National Park, California, USA",
+        "number": "248",
+        "ratio": 0.7528
+    },
+    "249.webp": {
+        "date": "MAR 2024",
+        "location": "UNKNOWN LOCATION",
+        "number": "249",
+        "ratio": 0.75
+    },
+    "250.webp": {
+        "date": "JUL 2024",
+        "location": "Channel Islands National Park, California, USA",
+        "number": "250",
+        "ratio": 0.7528
+    },
+    "251.webp": {
+        "date": "NOV 2023",
+        "location": "Los Angeles, California, USA",
+        "number": "251",
+        "ratio": 1.3284
+    },
+    "252.webp": {
+        "date": "MAR 2024",
+        "location": "Ventana Wilderness, California, USA",
+        "number": "252",
+        "ratio": 0.7528
+    },
+    "253.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "253",
+        "ratio": 0.7528
+    },
+    "254.webp": {
+        "date": "MAY 2024",
+        "location": "Sequoia National Park, California, USA",
+        "number": "254",
+        "ratio": 1.3284
+    },
+    "255.webp": {
+        "date": "MAR 2024",
+        "location": "Pfeiffer Big Sur State Park, California, USA",
+        "number": "255",
+        "ratio": 0.7528
+    },
+    "256.webp": {
+        "date": "MAR 2024",
+        "location": "Julia Pfeiffer Burns State Park, California, USA",
+        "number": "256",
+        "ratio": 0.7528
+    },
+    "257.webp": {
+        "date": "MAY 2024",
+        "location": "Sequoia National Park, California, USA",
+        "number": "257",
+        "ratio": 0.7528
+    },
+    "258.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "258",
+        "ratio": 0.7528
+    },
+    "259.webp": {
+        "date": "MAY 2024",
+        "location": "Kings Canyon National Park, California, USA",
+        "number": "259",
+        "ratio": 0.7528
+    },
+    "260.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "260",
+        "ratio": 0.7528
+    },
+    "261.webp": {
+        "date": "MAR 2024",
+        "location": "Pinnacles National Park, California, USA",
+        "number": "261",
+        "ratio": 0.7528
+    },
+    "262.webp": {
+        "date": "SEP 2023",
+        "location": "San Jacinto Wilderness, California, USA",
+        "number": "262",
+        "ratio": 0.7528
+    },
+    "263.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "263",
+        "ratio": 0.7528
+    },
+    "264.webp": {
+        "date": "MAY 2024",
+        "location": "Joshua Tree National Park, California, USA",
+        "number": "264",
+        "ratio": 1.3284
+    },
+    "265.webp": {
+        "date": "JAN 2024",
+        "location": "UNKNOWN LOCATION",
+        "number": "265",
+        "ratio": 0.7528
+    },
+    "266.webp": {
+        "date": "JUL 2024",
+        "location": "Channel Islands National Park, California, USA",
+        "number": "266",
+        "ratio": 0.7528
+    },
+    "267.webp": {
+        "date": "DEC 2024",
+        "location": "Lake Mead National Recreation Area, Nevada, USA",
+        "number": "267",
+        "ratio": 0.7528
+    },
+    "268.webp": {
+        "date": "JUL 2024",
+        "location": "UNKNOWN LOCATION",
+        "number": "268",
+        "ratio": 0.7528
+    },
+    "269.webp": {
+        "date": "DEC 2024",
+        "location": "Lake Mead National Recreation Area, Nevada, USA",
+        "number": "269",
+        "ratio": 0.7528
+    },
+    "270.webp": {
+        "date": "NOV 2024",
+        "location": "Lake Mead National Recreation Area, Nevada, USA",
+        "number": "270",
+        "ratio": 1.3284
+    },
+    "271.webp": {
+        "date": "NOV 2024",
+        "location": "White Pine County, Nevada, USA",
+        "number": "271",
+        "ratio": 0.7528
+    },
+    "272.webp": {
+        "date": "JUL 2024",
+        "location": "Channel Islands National Park, California, USA",
+        "number": "272",
+        "ratio": 0.7528
+    },
+    "273.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "273",
+        "ratio": 0.7528
+    },
+    "274.webp": {
+        "date": "NOV 2024",
+        "location": "Santa Monica, California, USA",
+        "number": "274",
+        "ratio": 0.7528
+    },
+    "275.webp": {
+        "date": "NOV 2024",
+        "location": "Saguaro National Park, Arizona, USA",
+        "number": "275",
+        "ratio": 0.7528
+    },
+    "276.webp": {
+        "date": "NOV 2024",
+        "location": "White Pine County, Nevada, USA",
+        "number": "276",
+        "ratio": 0.7528
+    },
+    "277.webp": {
+        "date": "NOV 2024",
+        "location": "El Segundo, California, USA",
+        "number": "277",
+        "ratio": 0.7528
+    },
+    "278.webp": {
+        "date": "JUN 2024",
+        "location": "Zion National Park, Utah, USA",
+        "number": "278",
+        "ratio": 0.7528
+    },
+    "279.webp": {
+        "date": "DEC 2024",
+        "location": "Lake Mead National Recreation Area, Nevada, USA",
+        "number": "279",
+        "ratio": 0.7528
+    },
+    "280.webp": {
+        "date": "---",
+        "location": "UNKNOWN LOCATION",
+        "number": "280",
+        "ratio": 1.7781
+    },
+    "281.webp": {
+        "date": "NOV 2024",
+        "location": "Saguaro National Park, Arizona, USA",
+        "number": "281",
+        "ratio": 0.7528
+    },
+    "282.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "282",
+        "ratio": 1.3284
+    },
+    "283.webp": {
+        "date": "---",
+        "location": "UNKNOWN LOCATION",
+        "number": "283",
+        "ratio": 1.7778
+    },
+    "284.webp": {
+        "date": "NOV 2024",
+        "location": "Santa Monica, California, USA",
+        "number": "284",
+        "ratio": 0.7528
+    },
+    "285.webp": {
+        "date": "NOV 2024",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "285",
+        "ratio": 0.7528
+    },
+    "286.webp": {
+        "date": "NOV 2024",
+        "location": "California, California, USA",
+        "number": "286",
+        "ratio": 0.7528
+    },
+    "287.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "287",
+        "ratio": 0.7528
+    },
+    "288.webp": {
+        "date": "NOV 2024",
+        "location": "Saguaro National Park, Arizona, USA",
+        "number": "288",
+        "ratio": 0.7528
+    },
+    "289.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "289",
+        "ratio": 0.7528
+    },
+    "290.webp": {
+        "date": "JUN 2024",
+        "location": "Bryce Canyon National Park, Utah, USA",
+        "number": "290",
+        "ratio": 0.7528
+    },
+    "291.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "291",
+        "ratio": 0.7528
+    },
+    "292.webp": {
+        "date": "NOV 2024",
+        "location": "California, California, USA",
+        "number": "292",
+        "ratio": 0.7528
+    },
+    "293.webp": {
+        "date": "NOV 2024",
+        "location": "Ash Springs, Nevada, USA",
+        "number": "293",
+        "ratio": 0.7528
+    },
+    "294.webp": {
+        "date": "JUL 2024",
+        "location": "Channel Islands National Park, California, USA",
+        "number": "294",
+        "ratio": 0.7528
+    },
+    "295.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "295",
+        "ratio": 0.7528
+    },
+    "296.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "296",
+        "ratio": 0.7528
+    },
+    "297.webp": {
+        "date": "NOV 2024",
+        "location": "Saguaro National Park, Arizona, USA",
+        "number": "297",
+        "ratio": 0.7528
+    },
+    "298.webp": {
+        "date": "NOV 2024",
+        "location": "UNKNOWN LOCATION",
+        "number": "298",
+        "ratio": 0.7528
+    },
+    "299.webp": {
+        "date": "NOV 2024",
+        "location": "California, California, USA",
+        "number": "299",
+        "ratio": 0.7528
+    },
+    "300.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "300",
+        "ratio": 1.3284
+    },
+    "301.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "301",
+        "ratio": 0.7528
+    },
+    "302.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "302",
+        "ratio": 0.7528
+    },
+    "303.webp": {
+        "date": "NOV 2024",
+        "location": "Saguaro National Park, Arizona, USA",
+        "number": "303",
+        "ratio": 0.7528
+    },
+    "304.webp": {
+        "date": "OCT 2024",
+        "location": "Santa Monica, California, USA",
+        "number": "304",
+        "ratio": 0.7528
+    },
+    "305.webp": {
+        "date": "NOV 2024",
+        "location": "Los Angeles, California, USA",
+        "number": "305",
+        "ratio": 0.7528
+    },
+    "306.webp": {
+        "date": "JAN 2026",
+        "location": "Blithedale Summit Open Space Preserve, California, USA",
+        "number": "306",
+        "ratio": 0.7528
+    },
+    "307.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "307",
+        "ratio": 0.7528
+    },
+    "308.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "308",
+        "ratio": 0.7528
+    },
+    "309.webp": {
+        "date": "NOV 2024",
+        "location": "Saguaro National Park, Arizona, USA",
+        "number": "309",
+        "ratio": 0.7528
+    },
+    "310.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "310",
+        "ratio": 0.7528
+    },
+    "311.webp": {
+        "date": "JUN 2024",
+        "location": "Bryce Canyon National Park, Utah, USA",
+        "number": "311",
+        "ratio": 0.7528
+    },
+    "312.webp": {
+        "date": "NOV 2024",
+        "location": "Great Basin National Park, Nevada, USA",
+        "number": "312",
+        "ratio": 0.7528
+    },
+    "313.webp": {
+        "date": "JAN 2026",
+        "location": "Marin Headlands, California, USA",
+        "number": "313",
+        "ratio": 0.7528
+    },
+    "314.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "314",
+        "ratio": 0.7528
+    },
+    "315.webp": {
+        "date": "JAN 2025",
+        "location": "Reserva Geobot\u00e1nica Pululahua, Unknown, Ecuador",
+        "number": "315",
+        "ratio": 0.7528
+    },
+    "316.webp": {
+        "date": "JAN 2025",
+        "location": "Mindo, Unknown, Ecuador",
+        "number": "316",
+        "ratio": 1.3284
+    },
+    "317.webp": {
+        "date": "JAN 2025",
+        "location": "Ciudad de Quito, Unknown, Ecuador",
+        "number": "317",
+        "ratio": 0.7528
+    },
+    "318.webp": {
+        "date": "JAN 2025",
+        "location": "Mindo, Unknown, Ecuador",
+        "number": "318",
+        "ratio": 0.7528
+    },
+    "319.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "319",
+        "ratio": 0.7528
+    },
+    "320.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "320",
+        "ratio": 1.3284
+    },
+    "321.webp": {
+        "date": "JAN 2025",
+        "location": "Mindo, Unknown, Ecuador",
+        "number": "321",
+        "ratio": 1.3284
+    },
+    "322.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "322",
+        "ratio": 0.7528
+    },
+    "323.webp": {
+        "date": "JAN 2025",
+        "location": "Ciudad de Quito, Unknown, Ecuador",
+        "number": "323",
+        "ratio": 0.7528
+    },
+    "324.webp": {
+        "date": "JAN 2025",
+        "location": "Reserva Geobot\u00e1nica Pululahua, Unknown, Ecuador",
+        "number": "324",
+        "ratio": 0.7528
+    },
+    "325.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "325",
+        "ratio": 0.7528
+    },
+    "326.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "326",
+        "ratio": 1.3284
+    },
+    "327.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "327",
+        "ratio": 0.7528
+    },
+    "328.webp": {
+        "date": "DEC 2024",
+        "location": "Hermann Square, Texas, USA",
+        "number": "328",
+        "ratio": 1.3284
+    },
+    "329.webp": {
+        "date": "DEC 2024",
+        "location": "Lake Mead National Recreation Area, Nevada, USA",
+        "number": "329",
+        "ratio": 0.7528
+    },
+    "330.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "330",
+        "ratio": 0.7528
+    },
+    "331.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "331",
+        "ratio": 1.3284
+    },
+    "332.webp": {
+        "date": "DEC 2024",
+        "location": "Santa Monica, California, USA",
+        "number": "332",
+        "ratio": 0.7528
+    },
+    "333.webp": {
+        "date": "JAN 2025",
+        "location": "Reserva Geobot\u00e1nica Pululahua, Unknown, Ecuador",
+        "number": "333",
+        "ratio": 0.7528
+    },
+    "334.webp": {
+        "date": "JAN 2025",
+        "location": "Mindo, Unknown, Ecuador",
+        "number": "334",
+        "ratio": 0.7528
+    },
+    "335.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "335",
+        "ratio": 0.7528
+    },
+    "336.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "336",
+        "ratio": 0.7528
+    },
+    "337.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "337",
+        "ratio": 0.7528
+    },
+    "338.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "338",
+        "ratio": 0.7528
+    },
+    "339.webp": {
+        "date": "DEC 2024",
+        "location": "Houston, Texas, USA",
+        "number": "339",
+        "ratio": 1.3284
+    },
+    "340.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "340",
+        "ratio": 0.7528
+    },
+    "341.webp": {
+        "date": "JAN 2025",
+        "location": "Lloa, Unknown, Ecuador",
+        "number": "341",
+        "ratio": 1.3284
+    },
+    "342.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "342",
+        "ratio": 0.7528
+    },
+    "343.webp": {
+        "date": "JAN 2025",
+        "location": "Mindo, Unknown, Ecuador",
+        "number": "343",
+        "ratio": 1.3284
+    },
+    "344.webp": {
+        "date": "APR 2025",
+        "location": "Pacific Crest Trail, California, USA",
+        "number": "344",
+        "ratio": 0.7528
+    },
+    "345.webp": {
+        "date": "FEB 2025",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "345",
+        "ratio": 0.7528
+    },
+    "346.webp": {
+        "date": "JAN 2025",
+        "location": "R\u00edo Verde, Tungurahua, Ecuador",
+        "number": "346",
+        "ratio": 1.3284
+    },
+    "347.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "347",
+        "ratio": 0.7528
+    },
+    "348.webp": {
+        "date": "JAN 2025",
+        "location": "Parque Nacional Cotopaxi, Unknown, Ecuador",
+        "number": "348",
+        "ratio": 0.7528
+    },
+    "349.webp": {
+        "date": "JAN 2025",
+        "location": "Ba\u00f1os de Agua Santa, Tungurahua, Ecuador",
+        "number": "349",
+        "ratio": 0.7528
+    },
+    "350.webp": {
+        "date": "APR 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "350",
+        "ratio": 0.7528
+    },
+    "351.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "351",
+        "ratio": 0.7528
+    },
+    "352.webp": {
+        "date": "MAY 2025",
+        "location": "San Felipe Hills Wilderness Study Area, California, USA",
+        "number": "352",
+        "ratio": 0.7528
+    },
+    "353.webp": {
+        "date": "JAN 2025",
+        "location": "R\u00edo Verde, Tungurahua, Ecuador",
+        "number": "353",
+        "ratio": 0.7528
+    },
+    "354.webp": {
+        "date": "APR 2025",
+        "location": "Cleveland National Forest, California, USA",
+        "number": "354",
+        "ratio": 0.7528
+    },
+    "355.webp": {
+        "date": "JAN 2025",
+        "location": "R\u00edo Verde, Tungurahua, Ecuador",
+        "number": "355",
+        "ratio": 1.3284
+    },
+    "356.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "356",
+        "ratio": 0.7528
+    },
+    "357.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "357",
+        "ratio": 0.7528
+    },
+    "358.webp": {
+        "date": "JAN 2025",
+        "location": "Ba\u00f1os de Agua Santa, Tungurahua, Ecuador",
+        "number": "358",
+        "ratio": 0.7528
+    },
+    "359.webp": {
+        "date": "APR 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "359",
+        "ratio": 0.7528
+    },
+    "360.webp": {
+        "date": "JAN 2025",
+        "location": "R\u00edo Verde, Tungurahua, Ecuador",
+        "number": "360",
+        "ratio": 1.3284
+    },
+    "361.webp": {
+        "date": "JAN 2025",
+        "location": "R\u00edo Verde, Tungurahua, Ecuador",
+        "number": "361",
+        "ratio": 0.7528
+    },
+    "362.webp": {
+        "date": "JAN 2025",
+        "location": "Parque Nacional Cotopaxi, Unknown, Ecuador",
+        "number": "362",
+        "ratio": 0.7528
+    },
+    "363.webp": {
+        "date": "JAN 2025",
+        "location": "Ba\u00f1os de Agua Santa, Tungurahua, Ecuador",
+        "number": "363",
+        "ratio": 1.3284
+    },
+    "364.webp": {
+        "date": "MAR 2025",
+        "location": "Solvang, California, USA",
+        "number": "364",
+        "ratio": 0.7528
+    },
+    "365.webp": {
+        "date": "MAR 2025",
+        "location": "Santa Monica, California, USA",
+        "number": "365",
+        "ratio": 0.7528
+    },
+    "366.webp": {
+        "date": "MAY 2025",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "366",
+        "ratio": 0.7528
+    },
+    "367.webp": {
+        "date": "MAY 2025",
+        "location": "Sand to Snow National Monument, California, USA",
+        "number": "367",
+        "ratio": 0.7528
+    },
+    "368.webp": {
+        "date": "JUN 2025",
+        "location": "Kings Canyon National Park, California, USA",
+        "number": "368",
+        "ratio": 0.7528
+    },
+    "369.webp": {
+        "date": "JUN 2025",
+        "location": "Inyo National Forest, California, USA",
+        "number": "369",
+        "ratio": 0.7528
+    },
+    "370.webp": {
+        "date": "MAY 2025",
+        "location": "San Bernardino National Forest, California, USA",
+        "number": "370",
+        "ratio": 0.7528
+    },
+    "371.webp": {
+        "date": "MAY 2025",
+        "location": "San Bernardino National Forest, California, USA",
+        "number": "371",
+        "ratio": 0.7528
+    },
+    "372.webp": {
+        "date": "APR 2025",
+        "location": "Pacific Crest Trail, California, USA",
+        "number": "372",
+        "ratio": 1.3284
+    },
+    "373.webp": {
+        "date": "JUN 2025",
+        "location": "Inyo National Forest, California, USA",
+        "number": "373",
+        "ratio": 0.7528
+    },
+    "374.webp": {
+        "date": "JUN 2025",
+        "location": "Kings Canyon National Park, California, USA",
+        "number": "374",
+        "ratio": 0.7528
+    },
+    "375.webp": {
+        "date": "JUN 2025",
+        "location": "Inyo National Forest, California, USA",
+        "number": "375",
+        "ratio": 0.7528
+    },
+    "376.webp": {
+        "date": "MAY 2025",
+        "location": "Pacific Crest National Scenic Trail #2000, California, USA",
+        "number": "376",
+        "ratio": 0.7528
+    },
+    "377.webp": {
+        "date": "JUN 2025",
+        "location": "Sequoia National Park, California, USA",
+        "number": "377",
+        "ratio": 0.7528
+    },
+    "378.webp": {
+        "date": "MAY 2025",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "378",
+        "ratio": 0.7528
+    },
+    "379.webp": {
+        "date": "JUN 2025",
+        "location": "Kings Canyon National Park, California, USA",
+        "number": "379",
+        "ratio": 0.7528
+    },
+    "380.webp": {
+        "date": "JUN 2025",
+        "location": "Sequoia National Forest, California, USA",
+        "number": "380",
+        "ratio": 0.7528
+    },
+    "381.webp": {
+        "date": "MAY 2025",
+        "location": "San Jacinto Wilderness, California, USA",
+        "number": "381",
+        "ratio": 0.7528
+    },
+    "382.webp": {
+        "date": "MAY 2025",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "382",
+        "ratio": 0.7528
+    },
+    "383.webp": {
+        "date": "FEB 2025",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "383",
+        "ratio": 0.7528
+    },
+    "384.webp": {
+        "date": "MAY 2025",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "384",
+        "ratio": 0.7528
+    },
+    "385.webp": {
+        "date": "JUN 2025",
+        "location": "Sequoia National Park, California, USA",
+        "number": "385",
+        "ratio": 0.7528
+    },
+    "386.webp": {
+        "date": "JUN 2025",
+        "location": "Inyo National Forest, California, USA",
+        "number": "386",
+        "ratio": 0.7528
+    },
+    "387.webp": {
+        "date": "MAY 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "387",
+        "ratio": 0.7528
+    },
+    "388.webp": {
+        "date": "JUN 2025",
+        "location": "Inyo National Forest, California, USA",
+        "number": "388",
+        "ratio": 0.7528
+    },
+    "389.webp": {
+        "date": "MAY 2025",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "389",
+        "ratio": 0.7528
+    },
+    "390.webp": {
+        "date": "JAN 2025",
+        "location": "Reserva Ecol\u00f3gica Los Ilinizas, Cotopaxi, Ecuador",
+        "number": "390",
+        "ratio": 0.7528
+    },
+    "391.webp": {
+        "date": "MAY 2025",
+        "location": "San Bernardino National Forest, California, USA",
+        "number": "391",
+        "ratio": 0.7528
+    },
+    "392.webp": {
+        "date": "JUN 2025",
+        "location": "Kings Canyon National Park, California, USA",
+        "number": "392",
+        "ratio": 0.7528
+    },
+    "393.webp": {
+        "date": "MAY 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "393",
+        "ratio": 0.7528
+    },
+    "394.webp": {
+        "date": "MAY 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "394",
+        "ratio": 0.7528
+    },
+    "395.webp": {
+        "date": "MAY 2025",
+        "location": "San Bernardino National Forest, California, USA",
+        "number": "395",
+        "ratio": 0.7528
+    },
+    "396.webp": {
+        "date": "MAY 2025",
+        "location": "Pacific Crest National Scenic Trail #2000, California, USA",
+        "number": "396",
+        "ratio": 0.7528
+    },
+    "397.webp": {
+        "date": "MAY 2025",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "397",
+        "ratio": 0.7528
+    },
+    "398.webp": {
+        "date": "MAY 2025",
+        "location": "San Bernardino National Forest, California, USA",
+        "number": "398",
+        "ratio": 0.7528
+    },
+    "399.webp": {
+        "date": "JUN 2025",
+        "location": "Kings Canyon National Park, California, USA",
+        "number": "399",
+        "ratio": 0.7528
+    },
+    "400.webp": {
+        "date": "JUN 2025",
+        "location": "Inyo National Forest, California, USA",
+        "number": "400",
+        "ratio": 0.7528
+    },
+    "401.webp": {
+        "date": "JUN 2025",
+        "location": "Sequoia National Park, California, USA",
+        "number": "401",
+        "ratio": 0.7528
+    },
+    "402.webp": {
+        "date": "MAY 2025",
+        "location": "Sand to Snow National Monument, California, USA",
+        "number": "402",
+        "ratio": 0.7528
+    },
+    "403.webp": {
+        "date": "JUN 2025",
+        "location": "Sequoia National Park, California, USA",
+        "number": "403",
+        "ratio": 1.3284
+    },
+    "404.webp": {
+        "date": "MAY 2025",
+        "location": "San Bernardino National Forest, California, USA",
+        "number": "404",
+        "ratio": 0.7528
+    },
+    "405.webp": {
+        "date": "FEB 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "405",
+        "ratio": 1.3284
+    },
+    "406.webp": {
+        "date": "JUN 2025",
+        "location": "Logan Creek, Nevada, USA",
+        "number": "406",
+        "ratio": 0.7528
+    },
+    "407.webp": {
+        "date": "JUL 2025",
+        "location": "Cassel, California, USA",
+        "number": "407",
+        "ratio": 0.7528
+    },
+    "408.webp": {
+        "date": "JUL 2025",
+        "location": "Deschutes National Forest, Oregon, USA",
+        "number": "408",
+        "ratio": 0.7528
+    },
+    "409.webp": {
+        "date": "JUL 2025",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "409",
+        "ratio": 0.7528
+    },
+    "410.webp": {
+        "date": "JUN 2025",
+        "location": "Inyo National Forest, California, USA",
+        "number": "410",
+        "ratio": 0.7528
+    },
+    "411.webp": {
+        "date": "JUN 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "411",
+        "ratio": 0.7528
+    },
+    "412.webp": {
+        "date": "JUN 2025",
+        "location": "Yosemite National Park, California, USA",
+        "number": "412",
+        "ratio": 0.7528
+    },
+    "413.webp": {
+        "date": "JUN 2025",
+        "location": "Kings Canyon National Park, California, USA",
+        "number": "413",
+        "ratio": 0.7528
+    },
+    "414.webp": {
+        "date": "JUN 2025",
+        "location": "Lake Tahoe Basin Management Unit, California, USA",
+        "number": "414",
+        "ratio": 0.7528
+    },
+    "415.webp": {
+        "date": "JUL 2025",
+        "location": "Lassen National Forest, California, USA",
+        "number": "415",
+        "ratio": 0.7528
+    },
+    "416.webp": {
+        "date": "JUL 2025",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "416",
+        "ratio": 0.7528
+    },
+    "417.webp": {
+        "date": "JUL 2025",
+        "location": "Marble Mountain Wilderness, California, USA",
+        "number": "417",
+        "ratio": 0.7528
+    },
+    "418.webp": {
+        "date": "JUL 2025",
+        "location": "Marble Mountain Wilderness, California, USA",
+        "number": "418",
+        "ratio": 0.7528
+    },
+    "419.webp": {
+        "date": "JUL 2025",
+        "location": "Lassen National Forest, California, USA",
+        "number": "419",
+        "ratio": 0.7528
+    },
+    "420.webp": {
+        "date": "JUL 2025",
+        "location": "Shasta-Trinity National Forest, California, USA",
+        "number": "420",
+        "ratio": 0.7528
+    },
+    "421.webp": {
+        "date": "JUN 2025",
+        "location": "Yosemite National Park, California, USA",
+        "number": "421",
+        "ratio": 0.7528
+    },
+    "422.webp": {
+        "date": "JUN 2025",
+        "location": "Bucks Lake Wilderness, California, USA",
+        "number": "422",
+        "ratio": 0.7528
+    },
+    "423.webp": {
+        "date": "JUL 2025",
+        "location": "Marble Mountain Wilderness, California, USA",
+        "number": "423",
+        "ratio": 0.7528
+    },
+    "424.webp": {
+        "date": "JUL 2025",
+        "location": "Shasta-Trinity National Forest, California, USA",
+        "number": "424",
+        "ratio": 0.7528
+    },
+    "425.webp": {
+        "date": "JUN 2025",
+        "location": "Plumas National Forest, California, USA",
+        "number": "425",
+        "ratio": 0.7528
+    },
+    "426.webp": {
+        "date": "AUG 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "426",
+        "ratio": 0.7528
+    },
+    "427.webp": {
+        "date": "JUL 2025",
+        "location": "Castle Crags State Park, California, USA",
+        "number": "427",
+        "ratio": 0.7528
+    },
+    "428.webp": {
+        "date": "JUN 2025",
+        "location": "Bucks Lake Wilderness, California, USA",
+        "number": "428",
+        "ratio": 0.7528
+    },
+    "429.webp": {
+        "date": "JUL 2025",
+        "location": "Shasta-Trinity National Forest, California, USA",
+        "number": "429",
+        "ratio": 0.7528
+    },
+    "430.webp": {
+        "date": "JUN 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "430",
+        "ratio": 0.7528
+    },
+    "431.webp": {
+        "date": "JUL 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "431",
+        "ratio": 0.7528
+    },
+    "432.webp": {
+        "date": "JUL 2025",
+        "location": "Klamath National Forest, Oregon, USA",
+        "number": "432",
+        "ratio": 0.7528
+    },
+    "433.webp": {
+        "date": "AUG 2025",
+        "location": "Mount Adams Wilderness, Washington, USA",
+        "number": "433",
+        "ratio": 0.7528
+    },
+    "434.webp": {
+        "date": "JUL 2025",
+        "location": "Umpqua National Forest, Oregon, USA",
+        "number": "434",
+        "ratio": 0.7528
+    },
+    "435.webp": {
+        "date": "JUL 2025",
+        "location": "Deschutes National Forest, Oregon, USA",
+        "number": "435",
+        "ratio": 0.7528
+    },
+    "436.webp": {
+        "date": "JUL 2025",
+        "location": "Mount Hood National Forest, Oregon, USA",
+        "number": "436",
+        "ratio": 0.7528
+    },
+    "437.webp": {
+        "date": "SEP 2025",
+        "location": "Ulvik, Unknown, Norge",
+        "number": "437",
+        "ratio": 0.7528
+    },
+    "438.webp": {
+        "date": "JUL 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "438",
+        "ratio": 0.7528
+    },
+    "439.webp": {
+        "date": "JUL 2025",
+        "location": "Deschutes National Forest, Oregon, USA",
+        "number": "439",
+        "ratio": 0.7528
+    },
+    "440.webp": {
+        "date": "AUG 2025",
+        "location": "Gifford Pinchot National Forest, Washington, USA",
+        "number": "440",
+        "ratio": 0.7528
+    },
+    "441.webp": {
+        "date": "JUL 2025",
+        "location": "Willamette National Forest, Oregon, USA",
+        "number": "441",
+        "ratio": 0.7528
+    },
+    "442.webp": {
+        "date": "JUL 2025",
+        "location": "Willamette National Forest, Oregon, USA",
+        "number": "442",
+        "ratio": 0.7528
+    },
+    "443.webp": {
+        "date": "AUG 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "443",
+        "ratio": 0.7528
+    },
+    "444.webp": {
+        "date": "SEP 2025",
+        "location": "Haukanes, Unknown, Norge",
+        "number": "444",
+        "ratio": 0.7528
+    },
+    "445.webp": {
+        "date": "NOV 2025",
+        "location": "Aurajokiranta, Varsinais-Suomi, Suomi / Finland",
+        "number": "445",
+        "ratio": 1.3284
+    },
+    "446.webp": {
+        "date": "AUG 2025",
+        "location": "Mount Rainier National Park, Washington, USA",
+        "number": "446",
+        "ratio": 0.7528
+    },
+    "447.webp": {
+        "date": "JUL 2025",
+        "location": "Rogue River-Siskiyou National Forest, Oregon, USA",
+        "number": "447",
+        "ratio": 0.7528
+    },
+    "448.webp": {
+        "date": "SEP 2025",
+        "location": "Finse, Unknown, Norge",
+        "number": "448",
+        "ratio": 0.7528
+    },
+    "449.webp": {
+        "date": "AUG 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "449",
+        "ratio": 0.7528
+    },
+    "450.webp": {
+        "date": "SEP 2025",
+        "location": "Voss, Unknown, Norge",
+        "number": "450",
+        "ratio": 0.7528
+    },
+    "451.webp": {
+        "date": "AUG 2025",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "451",
+        "ratio": 0.7528
+    },
+    "452.webp": {
+        "date": "JUL 2025",
+        "location": "Deschutes National Forest, Oregon, USA",
+        "number": "452",
+        "ratio": 0.7528
+    },
+    "453.webp": {
+        "date": "AUG 2025",
+        "location": "Mount Rainier National Park, Washington, USA",
+        "number": "453",
+        "ratio": 0.7528
+    },
+    "454.webp": {
+        "date": "JUL 2025",
+        "location": "Deschutes National Forest, Oregon, USA",
+        "number": "454",
+        "ratio": 0.7528
+    },
+    "455.webp": {
+        "date": "JUL 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "455",
+        "ratio": 0.7528
+    },
+    "456.webp": {
+        "date": "AUG 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "456",
+        "ratio": 0.7528
+    },
+    "457.webp": {
+        "date": "SEP 2025",
+        "location": "V\u00e5ge, Unknown, Norge",
+        "number": "457",
+        "ratio": 0.7528
+    },
+    "458.webp": {
+        "date": "AUG 2025",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "458",
+        "ratio": 0.7528
+    },
+    "459.webp": {
+        "date": "JUL 2025",
+        "location": "Mount Hood National Forest, Oregon, USA",
+        "number": "459",
+        "ratio": 0.7528
+    },
+    "460.webp": {
+        "date": "AUG 2025",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "460",
+        "ratio": 1.3284
+    },
+    "461.webp": {
+        "date": "AUG 2025",
+        "location": "Mount Baker-Snoqualmie National Forest, Washington, USA",
+        "number": "461",
+        "ratio": 0.7528
+    },
+    "462.webp": {
+        "date": "JUL 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "462",
+        "ratio": 0.7528
+    },
+    "463.webp": {
+        "date": "JUL 2025",
+        "location": "Willamette National Forest, Oregon, USA",
+        "number": "463",
+        "ratio": 0.7528
+    },
+    "464.webp": {
+        "date": "NOV 2025",
+        "location": "Turku, Varsinais-Suomi, Suomi / Finland",
+        "number": "464",
+        "ratio": 1.3284
+    },
+    "465.webp": {
+        "date": "SEP 2025",
+        "location": "Kvinnherad, Unknown, Norge",
+        "number": "465",
+        "ratio": 0.7528
+    },
+    "466.webp": {
+        "date": "APR 2019",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "466",
+        "ratio": 0.75
+    },
+    "467.webp": {
+        "date": "SEP 2025",
+        "location": "Voss, Unknown, Norge",
+        "number": "467",
+        "ratio": 1.3284
+    },
+    "468.webp": {
+        "date": "SEP 2025",
+        "location": "Vossavangen, Unknown, Norge",
+        "number": "468",
+        "ratio": 0.7528
+    },
+    "469.webp": {
+        "date": "SEP 2025",
+        "location": "Oslo, Unknown, Norge",
+        "number": "469",
+        "ratio": 1.3284
+    },
+    "470.webp": {
+        "date": "OCT 2025",
+        "location": "Riverside County, California, USA",
+        "number": "470",
+        "ratio": 0.7528
+    },
+    "471.webp": {
+        "date": "DEC 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "471",
+        "ratio": 1.7781
+    },
+    "472.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "472",
+        "ratio": 0.75
+    },
+    "473.webp": {
+        "date": "MAR 2019",
+        "location": "Eldorado National Forest, California, USA",
+        "number": "473",
+        "ratio": 0.75
+    },
+    "474.webp": {
+        "date": "APR 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "474",
+        "ratio": 0.5624
+    },
+    "475.webp": {
+        "date": "SEP 2025",
+        "location": "Haukanes, Unknown, Norge",
+        "number": "475",
+        "ratio": 0.7528
+    },
+    "476.webp": {
+        "date": "NOV 2025",
+        "location": "Helsinki, Uusimaa, Suomi / Finland",
+        "number": "476",
+        "ratio": 0.7528
+    },
+    "477.webp": {
+        "date": "SEP 2025",
+        "location": "G\u00e5savika, Unknown, Norge",
+        "number": "477",
+        "ratio": 0.7528
+    },
+    "478.webp": {
+        "date": "MAY 2019",
+        "location": "Pictured Rocks National Lakeshore, Michigan, USA",
+        "number": "478",
+        "ratio": 0.75
+    },
+    "479.webp": {
+        "date": "SEP 2025",
+        "location": "I 70;US 50, Utah, USA",
+        "number": "479",
+        "ratio": 0.7528
+    },
+    "480.webp": {
+        "date": "DEC 2016",
+        "location": "UNKNOWN LOCATION",
+        "number": "480",
+        "ratio": 0.5624
+    },
+    "481.webp": {
+        "date": "SEP 2025",
+        "location": "Oslo, Unknown, Norge",
+        "number": "481",
+        "ratio": 1.3284
+    },
+    "482.webp": {
+        "date": "SEP 2025",
+        "location": "Voss, Unknown, Norge",
+        "number": "482",
+        "ratio": 0.7528
+    },
+    "483.webp": {
+        "date": "AUG 2018",
+        "location": "UNKNOWN LOCATION",
+        "number": "483",
+        "ratio": 0.5656
+    },
+    "484.webp": {
+        "date": "SEP 2025",
+        "location": "Ullensvang, Unknown, Norge",
+        "number": "484",
+        "ratio": 0.7528
+    },
+    "485.webp": {
+        "date": "OCT 2025",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "485",
+        "ratio": 1.3284
+    },
+    "486.webp": {
+        "date": "AUG 2025",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "486",
+        "ratio": 0.7528
+    },
+    "487.webp": {
+        "date": "NOV 2025",
+        "location": "Turku, Varsinais-Suomi, Suomi / Finland",
+        "number": "487",
+        "ratio": 0.7528
+    },
+    "488.webp": {
+        "date": "SEP 2025",
+        "location": "V\u00e5ge, Unknown, Norge",
+        "number": "488",
+        "ratio": 1.3284
+    },
+    "489.webp": {
+        "date": "SEP 2025",
+        "location": "Vossavangen, Unknown, Norge",
+        "number": "489",
+        "ratio": 0.7528
+    },
+    "490.webp": {
+        "date": "MAY 2019",
+        "location": "Hartwick Pines State Park, Michigan, USA",
+        "number": "490",
+        "ratio": 0.75
+    },
+    "491.webp": {
+        "date": "AUG 2025",
+        "location": "North Cascades National Park Complex, Washington, USA",
+        "number": "491",
+        "ratio": 0.7528
+    },
+    "492.webp": {
+        "date": "SEP 2025",
+        "location": "Voss, Unknown, Norge",
+        "number": "492",
+        "ratio": 0.7528
+    },
+    "493.webp": {
+        "date": "APR 2017",
+        "location": "Los Angeles, California, USA",
+        "number": "493",
+        "ratio": 0.2664
+    },
+    "494.webp": {
+        "date": "OCT 2025",
+        "location": "Huntington Beach, California, USA",
+        "number": "494",
+        "ratio": 0.7528
+    },
+    "495.webp": {
+        "date": "AUG 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "495",
+        "ratio": 0.7528
+    },
+    "496.webp": {
+        "date": "SEP 2025",
+        "location": "Ulvik, Unknown, Norge",
+        "number": "496",
+        "ratio": 0.7528
+    },
+    "497.webp": {
+        "date": "SEP 2015",
+        "location": "UNKNOWN LOCATION",
+        "number": "497",
+        "ratio": 1.7781
+    },
+    "498.webp": {
+        "date": "SEP 2025",
+        "location": "Vossavangen, Unknown, Norge",
+        "number": "498",
+        "ratio": 0.7528
+    },
+    "499.webp": {
+        "date": "SEP 2025",
+        "location": "Ullensvang, Unknown, Norge",
+        "number": "499",
+        "ratio": 0.7528
+    },
+    "500.webp": {
+        "date": "APR 2021",
+        "location": "Indiana Dunes National Park, Indiana, USA",
+        "number": "500",
+        "ratio": 0.75
+    },
+    "501.webp": {
+        "date": "JAN 2020",
+        "location": "Dawes Point Reserve, New South Wales, Australia",
+        "number": "501",
+        "ratio": 0.75
+    },
+    "502.webp": {
+        "date": "JUL 2021",
+        "location": "UNKNOWN LOCATION",
+        "number": "502",
+        "ratio": 0.75
+    },
+    "503.webp": {
+        "date": "MAY 2019",
+        "location": "Hartwick Pines State Park, Michigan, USA",
+        "number": "503",
+        "ratio": 0.75
+    },
+    "504.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "504",
+        "ratio": 0.75
+    },
+    "505.webp": {
+        "date": "NOV 2019",
+        "location": "Stadium Mall, Indiana, USA",
+        "number": "505",
+        "ratio": 0.75
+    },
+    "506.webp": {
+        "date": "NOV 2018",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "506",
+        "ratio": 0.75
+    },
+    "507.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "507",
+        "ratio": 0.75
+    },
+    "508.webp": {
+        "date": "MAR 2019",
+        "location": "Millennium Park, Illinois, USA",
+        "number": "508",
+        "ratio": 0.75
+    },
+    "509.webp": {
+        "date": "AUG 2018",
+        "location": "UNKNOWN LOCATION",
+        "number": "509",
+        "ratio": 0.5656
+    },
+    "510.webp": {
+        "date": "MAY 2019",
+        "location": "West Lafayette, Indiana, USA",
+        "number": "510",
+        "ratio": 0.75
+    },
+    "511.webp": {
+        "date": "AUG 2025",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "511",
+        "ratio": 0.7528
+    },
+    "512.webp": {
+        "date": "MAY 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "512",
+        "ratio": 0.7528
+    },
+    "513.webp": {
+        "date": "JAN 2020",
+        "location": "Sydney, New South Wales, Australia",
+        "number": "513",
+        "ratio": 0.75
+    },
+    "514.webp": {
+        "date": "JUL 2025",
+        "location": "Willamette National Forest, Oregon, USA",
+        "number": "514",
+        "ratio": 0.7528
+    },
+    "515.webp": {
+        "date": "NOV 2023",
+        "location": "Pasadena, California, USA",
+        "number": "515",
+        "ratio": 0.7528
+    },
+    "516.webp": {
+        "date": "JAN 2022",
+        "location": "Waimea Canyon State Park, Hawaii, USA",
+        "number": "516",
+        "ratio": 0.75
+    },
+    "517.webp": {
+        "date": "MAR 2024",
+        "location": "UNKNOWN LOCATION",
+        "number": "517",
+        "ratio": 1.3284
+    },
+    "518.webp": {
+        "date": "FEB 2023",
+        "location": "Topanga State Park, California, USA",
+        "number": "518",
+        "ratio": 0.5625
+    },
+    "519.webp": {
+        "date": "AUG 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "519",
+        "ratio": 0.7528
+    },
+    "520.webp": {
+        "date": "JUN 2022",
+        "location": "Washington County, Utah, USA",
+        "number": "520",
+        "ratio": 0.75
+    },
+    "521.webp": {
+        "date": "JUL 2025",
+        "location": "Lassen National Forest, California, USA",
+        "number": "521",
+        "ratio": 1.3284
+    },
+    "522.webp": {
+        "date": "OCT 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "522",
+        "ratio": 0.7528
+    },
+    "523.webp": {
+        "date": "JUL 2025",
+        "location": "Mount Hood National Forest, Oregon, USA",
+        "number": "523",
+        "ratio": 0.7528
+    },
+    "524.webp": {
+        "date": "OCT 2023",
+        "location": "Mount San Jacinto State Wilderness, California, USA",
+        "number": "524",
+        "ratio": 0.7528
+    },
+    "525.webp": {
+        "date": "JUL 2023",
+        "location": "Lassen Volcanic National Park, California, USA",
+        "number": "525",
+        "ratio": 0.7528
+    },
+    "526.webp": {
+        "date": "MAR 2023",
+        "location": "Santa Rosa and San Jacinto Mountains National Monument, California, USA",
+        "number": "526",
+        "ratio": 0.7528
+    },
+    "527.webp": {
+        "date": "JUN 2022",
+        "location": "Mohave County, Arizona, USA",
+        "number": "527",
+        "ratio": 0.75
+    },
+    "528.webp": {
+        "date": "MAR 2023",
+        "location": "Joshua Tree National Park, California, USA",
+        "number": "528",
+        "ratio": 0.7528
+    },
+    "529.webp": {
+        "date": "JAN 2024",
+        "location": "Pasadena, California, USA",
+        "number": "529",
+        "ratio": 0.7528
+    },
+    "530.webp": {
+        "date": "NOV 2024",
+        "location": "Saguaro National Park, Arizona, USA",
+        "number": "530",
+        "ratio": 0.7528
+    },
+    "531.webp": {
+        "date": "MAR 2024",
+        "location": "Los Padres National Forest, California, USA",
+        "number": "531",
+        "ratio": 0.7528
+    },
+    "532.webp": {
+        "date": "JUN 2024",
+        "location": "Bryce Canyon National Park, Utah, USA",
+        "number": "532",
+        "ratio": 1.3284
+    },
+    "533.webp": {
+        "date": "JUL 2023",
+        "location": "Mount Rainier National Park, Washington, USA",
+        "number": "533",
+        "ratio": 0.7528
+    },
+    "534.webp": {
+        "date": "JUL 2024",
+        "location": "Channel Islands National Park, California, USA",
+        "number": "534",
+        "ratio": 0.7528
+    },
+    "535.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "535",
+        "ratio": 0.7528
+    },
+    "536.webp": {
+        "date": "JUN 2024",
+        "location": "Lair Port, California, USA",
+        "number": "536",
+        "ratio": 0.5625
+    },
+    "537.webp": {
+        "date": "JUL 2024",
+        "location": "Channel Islands National Park, California, USA",
+        "number": "537",
+        "ratio": 0.7528
+    },
+    "538.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "538",
+        "ratio": 0.7528
+    },
+    "539.webp": {
+        "date": "JUL 2024",
+        "location": "The Nature Conservancy, California, USA",
+        "number": "539",
+        "ratio": 0.7528
+    },
+    "540.webp": {
+        "date": "OCT 2023",
+        "location": "Los Angeles, California, USA",
+        "number": "540",
+        "ratio": 0.7528
+    },
+    "541.webp": {
+        "date": "JUL 2023",
+        "location": "Mount Rainier National Park, Washington, USA",
+        "number": "541",
+        "ratio": 0.7528
+    },
+    "542.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "542",
+        "ratio": 0.7528
+    },
+    "543.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "543",
+        "ratio": 0.7528
+    },
+    "544.webp": {
+        "date": "FEB 2020",
+        "location": "UNKNOWN LOCATION",
+        "number": "544",
+        "ratio": 0.75
+    },
+    "545.webp": {
+        "date": "MAY 2025",
+        "location": "Sand to Snow National Monument, California, USA",
+        "number": "545",
+        "ratio": 0.7528
+    },
+    "546.webp": {
+        "date": "JUL 2025",
+        "location": "Shasta-Trinity National Forest, California, USA",
+        "number": "546",
+        "ratio": 0.7528
+    },
+    "547.webp": {
+        "date": "JAN 2025",
+        "location": "Ba\u00f1os de Agua Santa, Tungurahua, Ecuador",
+        "number": "547",
+        "ratio": 0.7528
+    },
+    "548.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "548",
+        "ratio": 0.7528
+    },
+    "549.webp": {
+        "date": "JUN 2024",
+        "location": "Grand Canyon National Park, Arizona, USA",
+        "number": "549",
+        "ratio": 0.7528
+    },
+    "550.webp": {
+        "date": "AUG 2022",
+        "location": "Denali National Park, Alaska, USA",
+        "number": "550",
+        "ratio": 0.75
+    },
+    "551.webp": {
+        "date": "JUN 2024",
+        "location": "Bryce Canyon National Park, Utah, USA",
+        "number": "551",
+        "ratio": 0.7528
+    },
+    "552.webp": {
+        "date": "FEB 2020",
+        "location": "Kean Point Scenic Reserve, Canterbury, New Zealand / Aotearoa",
+        "number": "552",
+        "ratio": 0.75
+    },
+    "553.webp": {
+        "date": "AUG 2025",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "553",
+        "ratio": 0.7528
+    },
+    "554.webp": {
+        "date": "JAN 2024",
+        "location": "California, California, USA",
+        "number": "554",
+        "ratio": 0.7528
+    },
+    "555.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "555",
+        "ratio": 0.7528
+    },
+    "556.webp": {
+        "date": "JUL 2025",
+        "location": "Shasta-Trinity National Forest, California, USA",
+        "number": "556",
+        "ratio": 0.7528
+    },
+    "557.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "557",
+        "ratio": 0.7528
+    },
+    "558.webp": {
+        "date": "NOV 2024",
+        "location": "Alamo, Nevada, USA",
+        "number": "558",
+        "ratio": 0.7528
+    },
+    "559.webp": {
+        "date": "AUG 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "559",
+        "ratio": 0.7528
+    },
+    "560.webp": {
+        "date": "JUL 2025",
+        "location": "Rogue River-Siskiyou National Forest, Oregon, USA",
+        "number": "560",
+        "ratio": 0.7528
+    },
+    "561.webp": {
+        "date": "AUG 2025",
+        "location": "Okanogan-Wenatchee National Forest, Washington, USA",
+        "number": "561",
+        "ratio": 0.7528
+    },
+    "562.webp": {
+        "date": "JUN 2025",
+        "location": "Sequoia National Park, California, USA",
+        "number": "562",
+        "ratio": 0.7528
+    },
+    "563.webp": {
+        "date": "JAN 2022",
+        "location": "UNKNOWN LOCATION",
+        "number": "563",
+        "ratio": 0.75
+    },
+    "564.webp": {
+        "date": "JUL 2024",
+        "location": "Channel Islands National Marine Sanctuary, California, USA",
+        "number": "564",
+        "ratio": 0.7528
+    },
+    "565.webp": {
+        "date": "JUL 2024",
+        "location": "Channel Islands National Park, California, USA",
+        "number": "565",
+        "ratio": 0.7528
+    },
+    "566.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "566",
+        "ratio": 0.7528
+    },
+    "567.webp": {
+        "date": "SEP 2023",
+        "location": "San Jacinto Wilderness, California, USA",
+        "number": "567",
+        "ratio": 0.7528
+    },
+    "568.webp": {
+        "date": "JUN 2025",
+        "location": "UNKNOWN LOCATION",
+        "number": "568",
+        "ratio": 0.7528
+    },
+    "569.webp": {
+        "date": "DEC 2023",
+        "location": "Colorado, Colorado, USA",
+        "number": "569",
+        "ratio": 0.5625
+    },
+    "570.webp": {
+        "date": "JAN 2024",
+        "location": "Death Valley National Park, California, USA",
+        "number": "570",
+        "ratio": 0.7528
+    },
+    "571.webp": {
+        "date": "JUN 2025",
+        "location": "Yosemite National Park, California, USA",
+        "number": "571",
+        "ratio": 0.7528
+    },
+    "572.webp": {
+        "date": "MAR 2024",
+        "location": "Julia Pfeiffer Burns State Park, California, USA",
+        "number": "572",
+        "ratio": 0.7528
+    },
+    "573.webp": {
+        "date": "DEC 2024",
+        "location": "Valley of Fire State Park, Nevada, USA",
+        "number": "573",
+        "ratio": 0.7528
+    },
+    "574.webp": {
+        "date": "NOV 2024",
+        "location": "White Pine County, Nevada, USA",
+        "number": "574",
+        "ratio": 0.7528
+    },
+    "575.webp": {
+        "date": "NOV 2024",
+        "location": "Saguaro National Park, Arizona, USA",
+        "number": "575",
+        "ratio": 0.7528
+    },
+    "576.webp": {
+        "date": "APR 2024",
+        "location": "Los Angeles, California, USA",
+        "number": "576",
+        "ratio": 0.7528
+    },
+    "577.webp": {
+        "date": "JAN 2025",
+        "location": "Reserva Geobot\u00e1nica Pululahua, Unknown, Ecuador",
+        "number": "577",
+        "ratio": 0.7528
+    },
+    "578.webp": {
+        "date": "AUG 2023",
+        "location": "Manhattan State Beach, California, USA",
+        "number": "578",
+        "ratio": 0.7528
+    },
+    "579.webp": {
+        "date": "FEB 2024",
+        "location": "Topanga State Park, California, USA",
+        "number": "579",
+        "ratio": 0.7528
+    },
+    "580.webp": {
+        "date": "JUL 2023",
+        "location": "Olympic National Park, Washington, USA",
+        "number": "580",
+        "ratio": 0.7528
+    },
+    "581.webp": {
+        "date": "JAN 2022",
+        "location": "Kahaluu-Keauhou, Hawaii, USA",
+        "number": "581",
+        "ratio": 0.75
+    },
+    "582.webp": {
+        "date": "JAN 2025",
+        "location": "Quito, Unknown, Ecuador",
+        "number": "582",
+        "ratio": 0.7528
+    },
+    "583.webp": {
+        "date": "MAY 2023",
+        "location": "San Gabriel Mountains National Monument, California, USA",
+        "number": "583",
+        "ratio": 0.7528
+    },
+    "584.webp": {
+        "date": "JAN 2024",
+        "location": "Pasadena, California, USA",
+        "number": "584",
+        "ratio": 0.5625
+    },
+    "585.webp": {
+        "date": "DEC 2024",
+        "location": "Lake Mead National Recreation Area, Nevada, USA",
+        "number": "585",
+        "ratio": 0.7528
+    },
+    "586.webp": {
+        "date": "JUN 2025",
+        "location": "Lake Tahoe Basin Management Unit, California, USA",
+        "number": "586",
+        "ratio": 0.7528
+    },
+    "587.webp": {
+        "date": "JUN 2025",
+        "location": "Inyo National Forest, California, USA",
+        "number": "587",
+        "ratio": 0.7528
+    },
+    "588.webp": {
+        "date": "JAN 2025",
+        "location": "Parque Nacional Cotopaxi, Unknown, Ecuador",
+        "number": "588",
+        "ratio": 0.7528
+    }
 }
