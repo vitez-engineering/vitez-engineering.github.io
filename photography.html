@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive | Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000; --fg: #fff; --accent: #ff3e00; --gutter: 1.5rem;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: var(--bg); color: var(--fg); 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+            scrollbar-gutter: stable;
+        }
+        
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 1.5rem 2rem;
+            display: flex; justify-content: space-between; z-index: 9999;
+            mix-blend-mode: difference; pointer-events: none;
+        }
+        .nav-link { color: var(--fg); text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 1.2rem; pointer-events: auto; transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem; opacity: 0.7; /* Slight grey/dimmed look */ }
+    
+    .nav-link:hover {
+    opacity: 1; /* Brightens on hover */
+}
+
+/* The "Happiness" Fix: Nudge the HOME arrow up and left */
+.nav-link[href="index.html"] .ui-arrow {
+    transform: translateY(-2px); /* Moves it up to match text baseline */
+    margin-right: 2px; /* Pulls it tighter to the word HOME */
+}
+
+/* Unified Arrow Styling */
+/* Unified Arrow Styling */
+.ui-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem; /* Keeps it bold */
+    line-height: 1;
+    height: 1.2rem; /* Forces a consistent bounding box */
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+header { padding: 10rem 2rem 0 2rem; }
+        h1 { font-size: clamp(3rem, 12vw, 9rem); font-weight: 900; line-height: 0.8; letter-spacing: -0.05em; }
+
+        .gallery-wrapper {
+            display: flex;
+            padding: 4rem var(--gutter) 10rem var(--gutter);
+            gap: var(--gutter);
+            align-items: flex-start;
+        }
+
+        .column { flex: 1; display: flex; flex-direction: column; gap: var(--gutter); }
+
+        .photo-item {
+            width: 100%;
+            background: #0a0a0a;
+            position: relative;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        .photo-item img {
+            width: 100%; height: auto; display: block;
+            opacity: 0; filter: grayscale(100%);
+            transform: scale(1);
+            transition: opacity 0.8s ease-out, filter 0.4s ease, transform 0.5s ease;
+        }
+        
+        .photo-item img.loaded { opacity: 1; }
+        .photo-item:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+        .photo-info {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            padding: 1.5rem; font-size: 0.7rem; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            color: #fff; background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            z-index: 2; opacity: 0; transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none; font-family: 'Inter', sans-serif;
+        }
+        .photo-item:hover .photo-info { opacity: 1; transform: translateY(0); }
+        
+        #progress { position: fixed; bottom: 0; height: 2px; background: var(--accent); width: 0%; z-index: 10000; transition: width 0.3s ease-out; /* Makes the movement feel fluid */ }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95); display: flex;
+            align-items: center; justify-content: center;
+            z-index: 20000; opacity: 0; pointer-events: none;
+            transition: opacity 0.4s ease; cursor: zoom-out;
+        }
+        .lightbox.active { opacity: 1; pointer-events: auto; }
+        .lightbox img {
+            max-width: 90%; max-height: 90vh;
+            transform: scale(0.95); transition: transform 0.4s ease;
+        }
+        .lightbox.active img { transform: scale(1); }
+
+        @media (max-width: 800px) {
+            .gallery-wrapper { gap: 1rem; padding: 2rem 1rem; }
+            #col-2 { display: none; }
+        }
+        @media (max-width: 500px) {
+            #col-1 { display: none; }
+        }
+        
+        .nav-link[href="index.html"]:hover {
+    color: #ccc; /* A specific light grey instead of pure white */
+        }
+#scroll-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Space between SCROLL and the arrow */
+    font-size: 1.2rem; /* Matches the nav-link */
+}
+
+
+/* Specifically for the scroll arrow flip */
+#scroll-wrapper.is-reversed #scroll-arrow {
+    transform: rotate(180deg);
+}
+
+
+    </style>
+</head>
+<body>
+
+<div id="progress"></div>
+<nav>
+    <a href="index.html" class="nav-link">
+        <span class="ui-arrow"></span>HOME
+    </a>
+    <div id="scroll-wrapper" class="nav-link" style="cursor: pointer; pointer-events: auto;">
+        SCROLL <span id="scroll-arrow" class="ui-arrow">↓</span>
+    </div>
+</nav>
+
+<header><h1>VITEZ PHOTOGRAPHY</h1></header>
+
+<main class="gallery-wrapper" id="gallery-root">
+    <div class="column" id="col-0"></div>
+    <div class="column" id="col-1"></div>
+    <div class="column" id="col-2"></div>
+</main>
+
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="Full view">
+</div>
+
+<script>
+    async function initGallery() {
+        const response = await fetch('dimensions.json');
+        const dims = await response.json();
+        
+        let photoFilenames = Object.keys(dims); 
+        photoFilenames.sort(() => Math.random() - 0.5);
+
+        const columns = [
+            document.getElementById('col-0'), 
+            document.getElementById('col-1'), 
+            document.getElementById('col-2')
+        ];
+
+        let columnHeights = [0, 0, 0];
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.decode()
+                            .then(() => img.classList.add('loaded'))
+                            .catch(() => img.classList.add('loaded'));
+                        obs.unobserve(img);
+                    }
+                }
+            });
+        }, { rootMargin: '1500px 0px', threshold: 0.01 });
+
+        photoFilenames.forEach((filename, index) => {
+            const ratio = dims[filename] || 0.75;
+            
+            // 1. Create Element
+            const item = document.createElement('div');
+            item.className = 'photo-item';
+            item.style.aspectRatio = ratio;
+
+            const isInitial = index < 6;
+            const archiveNumber = String(index + 1).padStart(3, '0');
+
+            item.innerHTML = `
+                <img ${isInitial ? `src="images/${filename}"` : `data-src="images/${filename}"`} 
+                     class="${isInitial ? 'loaded' : ''}"
+                     decoding="async"
+                     alt="Photo">
+                <div class="photo-info">№ ${archiveNumber} // ${filename.split('.')[0]}</div>
+            `;
+
+            // 2. Add Event Listener (Now 'item' exists!)
+            item.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = `images/${filename}`;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // 3. Append to shortest column
+            const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+            columns[shortestColumnIndex].appendChild(item);
+            columnHeights[shortestColumnIndex] += (1 / ratio);
+
+            // 4. Observe
+            if (!isInitial) {
+                const targetImg = item.querySelector('img');
+                observer.observe(targetImg);
+            }
+        });
+    }
+
+    // Lightbox close logic
+    const lightbox = document.getElementById('lightbox');
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        setTimeout(() => { document.getElementById('lightbox-img').src = ""; }, 400);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+const scrollWrapper = document.getElementById('scroll-wrapper');
+const X_PAGES_THRESHOLD = 3; 
+
+scrollWrapper.addEventListener('click', () => {
+    const currentScroll = window.scrollY;
+    const threshold = window.innerHeight * X_PAGES_THRESHOLD;
+
+    if (currentScroll < threshold) {
+        window.scrollBy({
+            top: window.innerHeight * 0.8, 
+            behavior: 'smooth'
+        });
+    } else {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+});
+
+window.addEventListener('scroll', () => {
+    const winScroll = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = Math.min((winScroll / height) * 100, 100);
+    
+    // Update the red progress bar at the bottom
+    document.getElementById("progress").style.width = scrolled + "%";
+
+    const threshold = window.innerHeight * X_PAGES_THRESHOLD;
+    
+    // Flip arrow span by adding class to the wrapper
+    if (winScroll > threshold) {
+        scrollWrapper.classList.add('is-reversed');
+    } else {
+        scrollWrapper.classList.remove('is-reversed');
+    }
+}, { passive: true });
+
+    initGallery();
+</script>
+</body>
+</html>
