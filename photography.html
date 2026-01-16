@@ -26,27 +26,24 @@
         .nav-link { color: var(--fg); text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 1.2rem; pointer-events: auto; transition: opacity 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 0.6rem; opacity: 0.7; /* Slight grey/dimmed look */ }
+    gap: 0.6rem; opacity: 0.7; }
     
     .nav-link:hover {
-    opacity: 1; /* Brightens on hover */
+    opacity: 1;
 }
 
-/* The "Happiness" Fix: Nudge the HOME arrow up and left */
 .nav-link[href="index.html"] .ui-arrow {
-    transform: translateY(-2px); /* Moves it up to match text baseline */
-    margin-right: 2px; /* Pulls it tighter to the word HOME */
+    transform: translateY(-2px);
+    margin-right: 2px;
 }
 
-/* Unified Arrow Styling */
-/* Unified Arrow Styling */
 .ui-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem; /* Keeps it bold */
+    font-size: 1.6rem;
     line-height: 1;
-    height: 1.2rem; /* Forces a consistent bounding box */
+    height: 1.2rem;
     transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -64,10 +61,11 @@ header { padding: 10rem 2rem 0 2rem; }
 
         .photo-item {
             width: 100%;
-            background: #0a0a0a;
+            background: #1a1a1a;
             position: relative;
             overflow: hidden;
             cursor: zoom-in;
+            border: 1px solid #2a2a2a;
         }
 
         .photo-item img {
@@ -88,27 +86,42 @@ header { padding: 10rem 2rem 0 2rem; }
             z-index: 2; opacity: 0; transform: translateY(10px);
             transition: opacity 0.3s ease, transform 0.3s ease;
             pointer-events: none; font-family: 'Inter', sans-serif;
-            
-            /* ADD THESE THREE LINES TO YOUR EXISTING BLOCK: */
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            gap: 2rem;
         }
         
-        .photo-meta {
-    /* YOUR EXISTING STYLES: */
-
-
-    /* ADD THESE TO PREVENT TEXT OVERLAP: */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; 
-    max-width: 75%;
-}
+        .photo-id {
+            flex-shrink: 0;
+        }
+        
+        .photo-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.2rem;
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .photo-location {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            text-align: right;
+        }
+        
+        .photo-date {
+            flex-shrink: 0;
+            opacity: 0.7;
+            font-size: 0.85em;
+        }
         
         .photo-item:hover .photo-info { opacity: 1; transform: translateY(0); }
         
-        #progress { position: fixed; bottom: 0; height: 2px; background: var(--accent); width: 0%; z-index: 10000; transition: width 0.3s ease-out; /* Makes the movement feel fluid */ }
+        #progress { position: fixed; bottom: 0; height: 2px; background: var(--accent); width: 0%; z-index: 10000; transition: width 0.3s ease-out; }
 
         /* Lightbox */
         .lightbox {
@@ -166,6 +179,12 @@ header { padding: 10rem 2rem 0 2rem; }
         opacity: 0;
         transform: translateY(15px);
         transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+        font-size: 0.75rem;
+        padding: 1rem;
+    }
+    
+    .photo-date {
+        font-size: 0.7rem;
     }
 
     /* 2. When the JS adds 'is-focused', reveal the info and color */
@@ -175,10 +194,10 @@ header { padding: 10rem 2rem 0 2rem; }
     }
     
     header {
-        padding: 8rem 1.5rem 0 1.5rem; /* Slightly less top padding on mobile */
+        padding: 8rem 1.5rem 0 1.5rem;
     }
     h1 {
-        line-height: 1.0; /* Mobile screens often need a bit more breathing room */
+        line-height: 1.0;
     }
 
     .photo-item.is-focused img {
@@ -196,17 +215,15 @@ header { padding: 10rem 2rem 0 2rem; }
         }
         
         .nav-link[href="index.html"]:hover {
-    color: #ccc; /* A specific light grey instead of pure white */
+    color: #ccc;
         }
 #scroll-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.8rem; /* Space between SCROLL and the arrow */
-    font-size: 1.2rem; /* Matches the nav-link */
+    gap: 0.8rem;
+    font-size: 1.2rem;
 }
 
-
-/* Specifically for the scroll arrow flip */
 #scroll-wrapper.is-reversed #scroll-arrow {
     transform: rotate(180deg);
 }
@@ -258,7 +275,7 @@ header { padding: 10rem 2rem 0 2rem; }
             }
         });
     }, {
-        rootMargin: "-40% 0% -40% 0%", // Detects items in the middle 40% of the screen
+        rootMargin: "-40% 0% -40% 0%",
         threshold: 0.1
     });
 
@@ -271,25 +288,22 @@ header { padding: 10rem 2rem 0 2rem; }
         let photoFilenames = Object.keys(dims); 
         photoFilenames.sort(() => Math.random() - 0.5);
 
-// FIX: Only grab columns that are NOT hidden by CSS
-    const allColumns = [
-        document.getElementById('col-0'), 
-        document.getElementById('col-1'), 
-        document.getElementById('col-2')
-    ];
-    
-    // Filter to only include columns that have a width (are visible)
-    const columns = allColumns.filter(col => getComputedStyle(col).display !== 'none');
-    let columnHeights = new Array(columns.length).fill(0);
+        const allColumns = [
+            document.getElementById('col-0'), 
+            document.getElementById('col-1'), 
+            document.getElementById('col-2')
+        ];
+        
+        const columns = allColumns.filter(col => getComputedStyle(col).display !== 'none');
+        let columnHeights = new Array(columns.length).fill(0);
+        
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     if (img.dataset.src) {
+                        img.onload = () => img.classList.add('loaded');
                         img.src = img.dataset.src;
-                        img.decode()
-                            .then(() => img.classList.add('loaded'))
-                            .catch(() => img.classList.add('loaded'));
                         obs.unobserve(img);
                     }
                 }
@@ -297,27 +311,17 @@ header { padding: 10rem 2rem 0 2rem; }
         }, { rootMargin: '1500px 0px', threshold: 0.01 });
 
        photoFilenames.forEach((filename, index) => {
-            // 1. Get the data object for this specific file
             const photoData = dims[filename];
-            
-            // 2. Extract the numbers/text correctly
-            // We use photoData.ratio because the ratio is inside the object now
             const ratio = photoData.ratio || 1; 
             const location = photoData.location || "UNKNOWN";
             const date = photoData.date || "----";
-            
-            // 3. Use the specific number from your JSON
             const archiveNumber = photoData.number || String(index + 1).padStart(3, '0');
 
-            // 4. Create the item
             const item = document.createElement('div');
             item.className = 'photo-item';
-            
-            // CSS aspect-ratio is Width / Height. 
-            // Since Python gave us Height / Width, we use 1 / ratio.
             item.style.aspectRatio = 1 / ratio;
 
-            const isInitial = index < 6;
+            const isInitial = index < 12;
 
             item.innerHTML = `
                 <img ${isInitial ? `src="images/${filename}"` : `data-src="images/${filename}"`} 
@@ -326,51 +330,48 @@ header { padding: 10rem 2rem 0 2rem; }
                      alt="Photo">
                 <div class="photo-info">
                     <span class="photo-id">№ ${archiveNumber}</span>
-                    <span class="photo-meta">${location} — ${date}</span>
+                    <div class="photo-details">
+                        <span class="photo-location">${location}</span>
+                        <span class="photo-date">${date}</span>
+                    </div>
                 </div>
             `;
 
-            // 5. Lightbox Click Event
-  item.addEventListener('click', () => {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    
-    // Fill in the Lightbox Data
-    document.getElementById('lb-number').textContent = `№ ${archiveNumber}`;
-    document.getElementById('lb-meta').textContent = `${location} — ${date}`;
-    
-    lightboxImg.src = `images/${filename}`;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
+            item.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                
+                document.getElementById('lb-number').textContent = `№ ${archiveNumber}`;
+                document.getElementById('lb-meta').textContent = `${location} — ${date}`;
+                
+                lightboxImg.src = `images/${filename}`;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
 
-    // Update the URL hash for sharing (e.g., vitez.photography/#image1.jpg)
-    window.location.hash = filename;
-});
+                window.location.hash = filename;
+            });
             
-            // 6. Append to the shortest column
-            // We add the 'ratio' (Height) to the column height tracker
             const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
             columns[shortestColumnIndex].appendChild(item);
             columnHeights[shortestColumnIndex] += ratio; 
           
-            // 7. Observe for mobile reveal and lazy loading
             mobileObserver.observe(item);
             if (!isInitial) {
                 const targetImg = item.querySelector('img');
                 observer.observe(targetImg);
             }
-            
-            // 8. AFTER the loop finishes, check if we need to open a shared photo
-    const hash = decodeURIComponent(window.location.hash.substring(1));
-    if (hash) {
-        // Look for the image that matches the filename in the URL
-        const targetImg = document.querySelector(`img[src*="${hash}"], img[data-src*="${hash}"]`);
-        if (targetImg) {
-            // Small delay to ensure the browser is ready
-            setTimeout(() => targetImg.parentElement.click(), 100);
-            }}
-            
         });
+        
+        // Check if we need to open a shared photo from URL hash
+        setTimeout(() => {
+            const hash = decodeURIComponent(window.location.hash.substring(1));
+            if (hash) {
+                const targetImg = document.querySelector(`img[src*="${hash}"], img[data-src*="${hash}"]`);
+                if (targetImg) {
+                    targetImg.parentElement.click();
+                }
+            }
+        }, 100);
     }
 
     // Lightbox close logic
@@ -378,6 +379,7 @@ header { padding: 10rem 2rem 0 2rem; }
     lightbox.addEventListener('click', () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
+        history.replaceState(null, null, " ");
         setTimeout(() => { document.getElementById('lightbox-img').src = ""; }, 400);
     });
 
@@ -413,12 +415,10 @@ window.addEventListener('scroll', () => {
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = Math.min((winScroll / height) * 100, 100);
     
-    // Update the red progress bar at the bottom
     document.getElementById("progress").style.width = scrolled + "%";
 
     const threshold = window.innerHeight * X_PAGES_THRESHOLD;
     
-    // Flip arrow span by adding class to the wrapper
     if (winScroll > threshold) {
         scrollWrapper.classList.add('is-reversed');
     } else {
@@ -426,11 +426,9 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-// Automatically refresh the layout if the user rotates their phone
 let lastWidth = window.innerWidth;
 window.addEventListener('resize', () => {
     if (window.innerWidth !== lastWidth) {
-        // Only reload if the width actually changed (prevents mobile menu glitches)
         location.reload(); 
     }
 });
@@ -439,11 +437,9 @@ document.getElementById('lb-share-btn').addEventListener('click', (e) => {
     e.stopPropagation();
     const shareUrl = window.location.href;
     
-    // Attempt to use the modern clipboard API
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(shareUrl).then(confirmCopy);
     } else {
-        // Fallback for non-HTTPS or local file testing
         const textArea = document.createElement("textarea");
         textArea.value = shareUrl;
         document.body.appendChild(textArea);
@@ -468,40 +464,15 @@ function confirmCopy() {
     }, 2000);
 }
 
-// Clear Hash when closing lightbox
-lightbox.addEventListener('click', () => {
-    // ... your existing close logic ...
-    history.pushState("", document.title, window.location.pathname + window.location.search);
-});
-
-// Deep Linking: Auto-open photo if the URL has a hash
-window.addEventListener('load', () => {
-    const hash = window.location.hash.substring(1);
-    if (hash) {
-        // Find the photo item with this filename and click it
-        const target = document.querySelector(`img[src*="${hash}"], img[data-src*="${hash}"]`);
-        if (target) target.parentElement.click();
-    }
-});
-
 window.addEventListener('hashchange', () => {
     const hash = decodeURIComponent(window.location.hash.substring(1));
     if (hash) {
         const targetImg = document.querySelector(`img[src*="${hash}"], img[data-src*="${hash}"]`);
         if (targetImg) targetImg.parentElement.click();
     } else {
-        // If hash is cleared, close the lightbox
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
-});
-
-lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
-    // This removes the #filename from the URL without reloading the page
-    history.replaceState(null, null, " "); 
-    setTimeout(() => { document.getElementById('lightbox-img').src = ""; }, 400);
 });
 
     initGallery();
