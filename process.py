@@ -7,7 +7,7 @@ from geopy.geocoders import Nominatim
 import requests
     
 # --- SETTINGS ---
-SOURCE_DIR = "/home/cvitez/Downloads/art-webp/artistic-1-001 (1)/artistic"
+SOURCE_DIR = "/home/cvitez/Downloads/art-webp/Photos-1-001/"
 OUTPUT_DIR = os.path.join(SOURCE_DIR, "web_assets") # Best to put renamed files in a subfolder
 QUALITY = 85
 MAX_SIZE = (2500, 2500) 
@@ -441,14 +441,19 @@ def get_gps_data(exif):
     return None, None
 
 def process():
-    dimensions_data = {}
     source_files = [f for f in os.listdir(SOURCE_DIR) if f.lower().endswith((".png", ".jpg", ".jpeg"))]
     source_files.sort(key=lambda x: os.path.getmtime(os.path.join(SOURCE_DIR, x)), reverse=True)
 
     print(f"Deep-scanning {len(source_files)} images...")
+    
+    with open("dimensions.json", "r") as f:
+        dimensions_data = json.load(f)
+        prev_max =int(max(dimensions_data).split(".")[0])
+
+        print(f"Appending to json starting with {1 + prev_max}.webp")
 
     for index, filename in enumerate(source_files):
-        archive_no = str(index + 1).zfill(3)
+        archive_no = str(index + 1 + prev_max).zfill(3)
         webp_name = f"{archive_no}.webp"
         
         file_path = os.path.join(SOURCE_DIR, filename)

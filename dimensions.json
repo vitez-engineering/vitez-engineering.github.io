@@ -2581,7 +2581,7 @@
     },
     "431.webp": {
         "date": "JUL 2025",
-        "location": "Cascade–Siskiyou National Monument, Oregon, USA",
+        "location": "Cascade-Siskiyou National Monument, Oregon, USA",
         "number": "431",
         "ratio": 0.7528
     },
@@ -3525,6 +3525,24 @@
         "date": "JAN 2025",
         "location": "Parque Nacional Cotopaxi, Cotopaxi, Ecuador",
         "number": "588",
+        "ratio": 0.7528
+    },
+    "589.webp": {
+        "date": "JAN 2026",
+        "location": "Pacifica, California, United States",
+        "number": "589",
+        "ratio": 0.7528
+    },
+    "590.webp": {
+        "date": "JAN 2026",
+        "location": "San Jose, California, United States",
+        "number": "590",
+        "ratio": 0.7528
+    },
+    "591.webp": {
+        "date": "JAN 2026",
+        "location": "San Francisco, California, United States",
+        "number": "591",
         "ratio": 0.7528
     }
 }
