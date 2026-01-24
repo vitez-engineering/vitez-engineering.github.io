@@ -1,86 +1,28 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Secular+One&display=swap" rel="stylesheet">
-  <title>Vitez Engineering</title>
-  <link rel="shortcut icon" type="image/x-icon" href="logo small square.png" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="/style.css">
+<script src="/assets.js" defer></script>
 </head>
 
-<body class="body">
-  <div class="sidebar">
-    <a href="index.html">home</a>
-    <a href="about.html">about</a>
-    <a href="book.html">book</a>
-    <a href="blog.html">blog</a>
-    <a href="photography.html">photography</a>
-    <a href="contact.html">contact</a>
+<body>
 
-  </div>
-  <div class="title"><a href="index.html"><img src="logo blue.png" /></a></div>
-  <div class="title">Vitez Engineering</div>
-  <div class="grid-mono">
-    <div class="grid-item-title">GNC Flight Software and Analysis
-      <div class="grid-item-tagline">We test and develop, so you can fly</div>
-      <div class="grid-item">
+  <div class="background"></div>
+  
+    <!-- Navigation Bar-->
+    <main-nav></main-nav>
 
-        Vitez Engineering provides flight
-        software that simply works right away, with all the GNC capabilities to fly your mission. Our algorithms are rigorously developed, tested, and tested again
-        to ensure your mission is a success. Controller gains can be automatically tuned to your exact satellite 
-        parameters to ensure a robust, accurate, and swift control response. Don't have a satellite yet? 
-        You can use our simulation suite to run trade studies on components and optimize your satellite from day zero.
-      <div class="centered-img">
-        <img src="attitude gif 3.gif" />
-        </div>
-
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="logo-container">
+        <img src="logo blue.png" alt="Vitez Engineering" />
       </div>
-    </div>
+      <h1 class="hero-title">
+        <span class="word">VITEZ</span><br>
+        <span class="word">ENGINEERING</span>
+      </h1>
+      <p class="hero-subtitle">Advanced Guidance Navigation and Controls</p>
+    </section>
 
-    <div class="grid-item-title">
-
-      <img src="speed.png" />High Fidelity, Fast Simulation
-      <div class="grid-item-tagline">We take care of the nitty-gritty details so that you don't have to</div>
-
-      <div class="grid-item">
-
-        Our simulations offer ultra high fidelity models of the entire space domain.
-        Accurate simulation is an integral part of mission success, which is why our simulation suite is rigorously tested to the same standard as our 
-        flight software.
-        
-        <br><br>
-        Our simulation and flight algorithms are written in Julia to enable blazing-fast performance. From monte carlos to trade studies, you can simulate thousands of flights over the entire lifetime of your satellite in record time.
-      </div>
-    </div>
-
-    <div class="grid-item-title">
-      <img src="savings.png" />Free
-      <div class="grid-item-tagline">Satellites shouldn't be expensive</div>
-
-      <div class="grid-item">Our suite of algorithms and simulations are 100% free to use.
-        With access to ultra high fidelity satellite simulations from day zero, we make component sizing and selection a piece of cake.
-
-      </div>
-    </div>
-
-
-
-    <div class="grid-item-title">
-      <img src="dice.png" />Low risk
-      <div class="grid-item-tagline">Mission critical means mission critical</div>
-
-      <div class="grid-item">Our algorithms are designed to be
-        flown on many satellites across the industry, meaning your software has flight heritage before you even launch. With a complete package of flight
-        algorithms and simulations on demand, your GNC software can be developed in minutes, not years.   
-      </div>
-    </div>
-
-
-  </div>
 </body>
-
 </html>

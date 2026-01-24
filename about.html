@@ -1,55 +1,68 @@
-<html>
+<html lang="en">
 
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Secular+One&display=swap" rel="stylesheet">
- <title>Vitez Engineering</title>
-  <link rel="shortcut icon" type="image/x-icon" href="logo small square.png" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="/style.css">
+    <script src="/assets.js" defer></script>
   
 </head>
 
 <body class="body">
-  <div class="sidebar">
-    <a href="index.html">home</a>
-    <a href="about.html">about</a>
-    <a href="book.html">book</a>
-    <a href="blog.html">blog</a>
-    <a href="photography.html">photography</a>
-    <a href="contact.html">contact</a>
+  
+    <div class="background"></div>
+    <main-nav></main-nav>
 
-  </div>
-  <div class="title"><a href="index.html"><img src="logo blue.png" /></a></div>
-  <div class="title">Vitez Engineering</div>
-  <div class="grid-mono">
-
-    <div class="grid-item-title">About Us<div class="grid-item">
-        Vitez Engineering was founded to reduce cost and risk associated with developing and flying GNC algorithms. We are 
-        working toward a future where GNC flight software is free, low risk, and plug and play by developing GNC 
-        algorithms and models that are highly extensible to any form factor of satellite. From GEO sat 
-        to nanosat, our tools simply works out of the box to meet ADCS and GNC system performance requirements, 
-        and can even help to define your requirements with our ultra high fidelity simulation.
+    <section class="hero">
+      <div class="logo-container">
+        <img src="logo blue.png" alt="Vitez Engineering" />
       </div>
-    </div>
+      <h1 class="hero-title">
+        <span class="word">ABOUT</span><br>
+      </h1>
+    </section>
 
 
-    <div class="grid-item-title">Our Founder
-      <div class="grid-item">
-        Cory Vitez graduated from Purdue University in Aeronautical and Astronautical Engineering. 
-        He has experience from across the aerospace industry in both Vehicle Software Engineering and Guidance, Navigation, and Control Engineering. 
-        His years of experience include time at NASA, Firefly Aerospace, Numerica Corporation, Slingshot Aerospace, and ABL Space Systems. In his free time, Cory enjoys hiking and writing poetry.
-        <div class="centered-img">
-        <img src="cory fountain.jpeg" />
+     <!-- Main Content -->
+    <main class="content">
+
+       <section class="section">
+        <div class="card">
+          <h2 class="card-title">MISSION</h2>
+          <p class="card-tagline">orbital precision, orbital speed</p>
+              <div class="card-content">
+
+        Vitez Engineering was founded to reduce cost and risk associated with developing and flying GNC algorithms. We are
+        working toward a future where GNC flight software and simulation is plug and play by developing GNC
+        algorithms and models that are highly extensible to any form factor of satellite or vehicle. From GEO sat
+        to nanosat, our tools simply works out of the box to meet ADCS and GNC system performance requirements.
+          </div>
+              <div class="card-content">
+                        Vitez Engineering provides flight software that simply works right away, with all the GNC capabilities to fly your mission. With access to ultra high fidelity satellite simulations from day zero, we make component sizing and selection a piece of cake.
+                        Our simulations offer ultra high fidelity models of the entire space domain. Accurate simulation is an integral part of mission success, which is why our simulation suite is rigorously tested to the same standard as our flight software.
+
+          </div>
+
         </div>
+      </section>
 
-    </div>
-  </div>
-  </div>
+
+      <section class="section">
+        <div class="card">
+          <h2 class="card-title">LEADERSHIP</h2>
+          <div class="card-content">
+        Cory Vitez graduated from Purdue University in Aeronautical and Astronautical Engineering, where he won the Outstanding Aerospace Engineer Award.
+        He has experience from across the aerospace industry in Guidance, Navigation, and Control Engineering. He has worked cradle-to-grave on engineering rockets, satellites, and re-entry vehicles.
+        His years of experience include time at NASA, Firefly Aerospace, ABL Space Systems, and Varda Space Industries. In his free time, Cory enjoys hiking, biking, photography, and writing poetry.
+          </div>
+          <div class="card-image">
+             <img src="/cory fountain.jpeg" />
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+
 </body>
 
 </html>

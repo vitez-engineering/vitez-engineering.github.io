@@ -1,34 +1,25 @@
-<html>
+<html lang="en">
 
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Secular+One&display=swap" rel="stylesheet">
- <title>Vitez Engineering</title>
-  <link rel="shortcut icon" type="image/x-icon" href="../logo small square.png" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="../style.css">
-
+    <link rel="stylesheet" href="/style.css">
+    <script src="/assets.js" defer></script>
   
 </head>
 
 <body class="body">
-  <div class="sidebar">
-    <a href="../index.html">home</a>
-    <a href="../about.html">about</a>
-    <a href="../book.html">book</a>
-    <a href="../blog.html">blog</a>
-    <a href="../photography.html">photography</a>
-    <a href="../contact.html">contact</a>
 
-  </div>
-  <div class="title"><a href="../index.html"><img src="../logo blue.png" /></a></div>
-  <div class="title"><a href="../blog.html">Vitez Engineering Blog</a></div>
-  <div class="grid-mono">
+  <div class="background"></div>
+  <main-nav></main-nav>
 
-    <div class="grid-item-title">Large Language Models in Serious Engineering Applications<div class="grid-item">
+    <main class="content">
+  <section class="section">
+    <div class="card">
+        <h2 class="card-title">Large Language Models in Serious Engineering Applications</h2>
+            <p class="card-tagline">
+                The widespread use of large language models such as chatGPT is changing the world. But they won't change engineering quite yet
+            </p>
+        <div class="card-content">
+
       The use of chatGPT in serious engineering applications is a serious concern for me. While I do regularly use chatGPT and find it an extremely useful tool, I have also seen regular abuse of it. ChatGPT fundamentally changes the access of information by dramatically lowering the barriers to find relevant information. However much like reading a news article on something you are intimately familiar with, using chatGPT on the topic you are an expert in shows how little information can be conveyed correctly with just a paragraph to explain all nuance.<br><br>
 
       This past week I saw an engineer ask chatGPT to calculate the sun vector from Earth. Unshockingly, chatGPT gave a reasonable response. However, this response had a bug which the engineer, unfamiliar with astrodynamics, didn’t catch. Most people, including the engineer in question, know that chatGPT can be wrong, yet ChatGPT is still correct enough to gain our trust. This is the “danger-zone” where things are reasonable but to a keen eye clearly not correct. ChatGPT is correct often enough to let our guard down but incorrect enough to be bitten.<br><br>
@@ -39,16 +30,10 @@
       
       </div>
     </div>
+  </section>
+  </main>
 
-    <!--
-    <div class="grid-item-title">Under Construction
-      <div class="grid-item">
-        Stand by for some great content.
-    </div>
-      -->
 
-  </div>
-  </div>
 </body>
 
 </html>

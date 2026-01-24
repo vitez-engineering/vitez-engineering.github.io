@@ -1,58 +1,33 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Secular+One&display=swap" rel="stylesheet">
-<title>Vitez Engineering</title>
-  <link rel="shortcut icon" type="image/x-icon" href="logo small square.png" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="style.css">
-
-
+    <link rel="stylesheet" href="/style.css">
+    <script src="/assets.js" defer></script>
 </head>
+<body>
+    <div class="background"></div>
+    
+    <div class="wrapper">
+        <main-nav></main-nav>
 
-<body class="body">
-  <div class="sidebar">
-    <a href="index.html">home</a>
-    <a href="about.html">about</a>
-    <a href="book.html">book</a>
-    <a href="blog.html">blog</a>
-    <a href="photography.html">photography</a>
-    <a href="contact.html">contact</a>
+        <main class="content">
+            <section class="section">
+                <div class="card" style="text-align: center;">
+                    <h2 class="card-title">INQUIRES</h2>
+                    <p class="card-tagline">Advanced Guidance, Navigation, & Control Services</p>
+                    
+                    <div class="card-content">
+                        For professional inquiries, project collaborations, or technical consultations, please reach out via the link below.
+                    </div>
 
-  </div>
-  <div class="title"><a href="index.html"><img src="logo blue.png" /></a></div>
-  <div class="title">Vitez Engineering</div>
-  <div class="grid-mono">
-
-    <div class="blur-outline-for-form">
-      Contact Us
-      <form action="https://forms.un-static.com/forms/2b29911bd1024e58ff4979aa4beb3db9e758e3ca" method="post">
-
-        <div class="grid-of-form-items">
-
-          <label for="Name">Name:</label>
-          <input name="Name" type="text" required>
-
-          <label for="Message">Message:</label>
-          <textarea id="text" name="text" rows="12"></textarea>
-          
-
-          <label for="email">Email:</label>
-          <input name="email" type="email" required>
-        </div>
-        <button class="button is-link" type="submit">submit</button>
-      </form>
-
-
-
+                    <div class="card-image">
+                        <a href="#" class="contact-button">
+                            contact
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-
-
-  </div>
 </body>
-
 </html>
