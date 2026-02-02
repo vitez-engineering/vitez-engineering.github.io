@@ -27,6 +27,7 @@ const headContent = `
 document.head.insertAdjacentHTML('beforeend', headContent);
 
 const blogPosts = [
+    { url: "/blog-post/decisions.html", title: "Engineering an Optimal Life" },
     { url: "/blog-post/re.html", title: "On the Responsible Engineer Model" },
     { url: "/blog-post/torture.html", title: "Torturing Terrorist" },
     { url: "/blog-post/bike-commuting.html", title: "Bike Commuting: You don't have a good excuse" },
@@ -159,7 +160,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const getDynamicMargin = () => {
     const vh = window.innerHeight;
     const fivePercent = vh * 0.05;
-    const thirtyPixels = 100;
+    const thirtyPixels = 50;
     
     // "Which happens first" when scrolling up means the smaller pixel value
     const marginPx = Math.min(fivePercent, thirtyPixels);
@@ -168,7 +169,7 @@ const getDynamicMargin = () => {
 };
 
 const observerOptions = {
-    threshold: 0.05,
+    threshold: 0.0,
     rootMargin: getDynamicMargin()
 };
     const observer = new IntersectionObserver((entries) => {
@@ -215,7 +216,7 @@ const observerOptions = {
       });
     }, {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: getDynamicMargin()
     });
 
     // Wait a moment for DOM to fully load, then observe images

@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/assets.js" defer></script>
+  
+</head>
+
+<body class="body">
+
+  <div class="background"></div>
+  <main-nav></main-nav>
+
+    <main class="content">
+  <section class="section">
+    <div class="card">
+        <h2 class="card-title">Engineering an Optimal Life</h2>
+            <p class="card-tagline">
+                Solve for x
+            </p>
+        <div class="card-content">
+
+Engineering is generally considered a hard science, but underneath the rigor and math it is also an artform. In its broadest sense, engineering is problem solving and there are many approaches to solve problems. I wanted to detail my approach to engineering, and applicability to more general problem solving. Mastering this artform may be no different from mastering life.<br><br>
+
+I like to think of problems through the lens of constraint-based optimization. All problems, technical or non-technical, have constraints on resources be it time, money, size, weight, energy, etc. Thus, there lies a meta-optimization problem of how to effectively allocate finite resources to solve problems. The problem initially given is not necessarily the problem one should solve. Before asking “What bike should I buy?” one should ask “What should I do with my bonus?”and  “Do I need a bike?”.  Question if there even is a problem to solve, and know that optimizing has its own cost. Visiting 5 bike stores to find the best price on a new bike wastes time if ultimately a new camera to kickstart a photography hobby brings more satisfaction.<br><br>
+
+This leads directly into the next important point, which is to know what one is optimizing for. What is the goal here? In the engineering context, this is generally easier than in life. One might want to select controller gains that give the best controller pointing, or want the lowest mass/cost spacecraft system given constraints. Life is much more fuzzy. Generally people seek “happiness” for themselves and their loved ones, but this is fundamentally much harder to measure than pointing error in the context of a simulation. One technique here in engineering is the “cost function”. Cost functions are a derived pseudometric which collapses many variables or goals into a single quantitative cost. Which bike to buy could be divided into categories such as “singletrack performance”, “max speed”, “comfort” etc where the strengths of each bike is compared and weighted by the desirability of a given feature. While how one weights different parts of a cost function is ultimately more art than science, it gives a target to shoot for.<br><br>
+
+Know thy problem. In order to get a solution, let alone an optimal one, it really helps to understand the problem as well as one can. Firstly, knowing constraints either implicit or explicit is crucial. These greatly narrow down the solution space of answers, i.e. the number of viable solutions. There is no utility in examining solutions outside of the viable solution space (assuming the problem is both the right problem and properly defined).  It is also very useful to know the sensitivities of the problem. The majority of time should be spent on variables that impact the outcome the most. It doesn’t make sense to look at the paint color of all the available bikes if that isn’t important to you. Cost functions are a very useful tool to observe changes in cost from a change of inputs.<br><br>
+
+Even with a well defined cost function and many constraints, the solution space can still be quite large, especially for broadly defined problems like “what should I do with my life?”. This is where it helps to solve a simpler version of said problem. This has many benefits, namely giving intuition of the “full” version of the problem, enables parallel work amongst a team (“you choose lunch for today, i’ll choose what hike to do after”), and is generally much easier to know where to get started given the solution space is much smaller. In an engineering context, simplification involves linearizations, making appropriate assumptions, only examining a subset of variables, and limiting the range of input and output variables. A code-based model is another favorite engineering technique of mine, allowing the system to be simulated and metrics to be directly optimized. Solving the full fidelity problem then amounts to increasing the fidelity of the model. While code-based models are less applicable outside of a more technical context, the idea of solving a much easier problem still helps give insight into the broader problem at play.<br><br>
+
+Solving problems is hard, let alone solving problems optimally. In everyday life the goals of our optimizations are often fuzzy and ill-defined, making optimal problem solving either very hard or impossible. Overoptimization also poses a problem if more resources are spent making a decision than is worth it from a less than optimal solution. The saving grace here is we don’t need to live optimal lives to be fulfilled. We can still be happy even if we make frivolous purchases from time to time. And we can still be healthy even if we don’t always eat the “optimal” diet. Even if one can’t engineer an optimal life, engineering a better life is still, well, better.
+
+
+      </div>
+    </div>
+  </section>
+  </main>
+
+
+</body>
+
+</html>
+
+
