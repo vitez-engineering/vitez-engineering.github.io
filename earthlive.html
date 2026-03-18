@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarthLive | Real-Time Ground Truth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --text: #ffffff;
+            --accent: #3b82f6;
+            --muted: #a0a0a0;
+            --border: #1a1a1a;
+            --card-bg: #080808;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Animations --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 6%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; cursor: pointer; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { 
+            color: var(--muted); 
+            text-decoration: none; 
+            font-size: 0.7rem; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
+
+        /* --- View Management --- */
+        .view { display: none; padding-top: 60px; }
+        .view.active { display: block; }
+
+        /* --- Hero --- */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 8%;
+        }
+
+        .hero h1 { font-size: clamp(2.2rem, 10vw, 5rem); font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 1.5rem; }
+        .hero p { font-size: clamp(1rem, 4vw, 1.25rem); color: var(--muted); max-width: 700px; margin-bottom: 2.5rem; }
+
+        .btn {
+            background: var(--text); color: var(--bg); padding: 0.9rem 2.2rem;
+            border-radius: 4px; text-decoration: none; font-weight: 700; transition: 0.2s;
+            cursor: pointer; border: none; font-size: 0.9rem;
+        }
+        .btn:hover { background: var(--accent); color: white; }
+
+        /* --- Applications Stack --- */
+        .stack { padding: 40px 6% 100px; }
+        .stack-header { margin-bottom: 60px; text-align: left; }
+        .stack-header h2 { font-size: clamp(1.8rem, 6vw, 2.8rem); font-weight: 800; margin-bottom: 1rem; }
+
+/* Ghost Button (Transparent/Outline) */
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+        .app-item {
+            margin-bottom: 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .img-container {
+            width: 100%;
+            height: clamp(250px, 50vh, 500px);
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .app-img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); }
+
+        .app-text h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent); }
+        .app-text p { font-size: 1.1rem; color: var(--muted); max-width: 850px; }
+
+        /* --- Demo Section (De-emphasized) --- */
+        .demo-placeholder {
+            padding: 100px 8%;
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 40px 6%;
+        }
+
+        /* --- Footer --- */
+        footer { padding: 100px 8%; border-top: 1px solid var(--border); text-align: center; }
+        .footer-label { font-size: 0.75rem; text-transform: uppercase; color: var(--muted); letter-spacing: 2px; margin-bottom: 1.5rem; }
+        #email-display { font-size: clamp(1.2rem, 5vw, 2rem); font-weight: 800; color: white; text-decoration: none; word-break: break-all; }
+        #email-display:hover { color: var(--accent); }
+        
+        
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" onclick="toggleView('home')">EARTHLIVE</div>
+        <div class="nav-links">
+            <a onclick="toggleView('home', 'apps')">Applications</a>
+            <a onclick="toggleView('demo')">Demo</a>
+            <a onclick="scrollToFooter()">Inquiries</a>
+        </div>
+    </nav>
+
+    <main id="home-view" class="view active">
+        <section class="hero reveal">
+            <h1>Dynamic ground truth.<br>Live from space.</h1>
+            <p>Moving Earth observation from static imagery to live video telemetry. Sub-meter resolution video streamed from space to a world in motion.</p>
+            <button class="btn" onclick="toggleView('home', 'apps')">Explore Applications</button>
+        </section>
+
+        <section id="apps" class="stack">
+            <div class="stack-header reveal">
+                <h2>Planetary Situational Awareness</h2>
+                <p style="color: var(--muted);">Real-time visibility for the world's most critical operations.</p>
+            </div>
+            <div class="app-item reveal">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1472&auto=format&fit=crop" class="app-img" alt="AI Foundation Models">
+                </div>
+                <div class="app-text">
+                    <h3>Foundation Models for Physical AI</h3>
+                    <p>Current computer vision models are bottlenecked by static, two-dimensional training data. EarthLive’s continuous video telemetry provides a high-temporal-resolution pipeline of planetary movement. By streaming the real-time flow of traffic, maritime logistics, and natural phenomena, we enable developers to train next-generation spatial AI that understands physics, causality, and complex temporal dynamics at a global scale. We aren't just observing the earth; we are building the training set to model it.</p>
+                </div>
+            </div>
+
+            <div class="app-item reveal">
+                <div class="img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Elkbath.PNG" class="app-img" alt="Wildfire">
+                </div>
+                <div class="app-text">
+                    <h3>Disaster Response & Recovery</h3>
+                    <p>Static satellite photos are historical data. EarthLive provides live video of advancing wildfire fronts, active flood crests, and post-seismic damage. We enable emergency coordinators to route life-saving resources based on what is happening <i>now</i>, not what happened six hours ago.</p>
+                </div>
+            </div>
+
+            <div class="app-item reveal">
+                <div class="img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Marine_Corps_Cyberspace_Warfare_Group_Ribbon_Cutting_Ceremony_for_New_War_Room_%288950449%29.jpg/1280px-Marine_Corps_Cyberspace_Warfare_Group_Ribbon_Cutting_Ceremony_for_New_War_Room_%288950449%29.jpg" class="app-img" alt="Defense">
+                </div>
+                <div class="app-text">
+                    <h3>Tactical Intelligence & Defense</h3>
+                    <p>Eliminate the tasking latency of traditional orbital assets. EarthLive provides a continuous stream of tactical intelligence, allowing for the real-time tracking of high-value assets across contested or remote environments without the need for vulnerable ground-based sensors or high-altitude drones.</p>
+                </div>
+            </div>
+
+            <div class="app-item reveal">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1523848309072-c199db53f137?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="app-img" alt="Industrial">
+                </div>
+                <div class="app-text">
+                    <h3>Commodity & Economic Alpha</h3>
+                    <p>Measure the heartbeat of the physical economy. Track heavy machinery activity at mines, loading rates at bulk terminals, cars in front of buisnesses, and vehicle throughput at logistics hubs. By capturing real-time comercial and industrial telemetry at planetary scale, EarthLive provides institutional investors with data before it hits the news cycle.</p>
+                </div>
+            </div>
+
+            <div class="app-item reveal">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1600&q=80" class="app-img" alt="Urban Planning">
+                </div>
+                <div class="app-text">
+                    <h3>Infrastructure & Urban Flow</h3>
+                    <p>Monitor the progress of mega-projects and the efficiency of urban transit systems. High-refresh video allows for the analysis of traffic bottlenecks and construction milestones across entire metropolitan areas simultaneously, providing civil engineers and developers with unprecedented data density.</p>
+                </div>
+            </div>
+            
+                        <div class="app-item reveal">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1613690399151-65ea69478674?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="app-img" alt="Shipping">
+                </div>
+                <div class="app-text">
+                    <h3>Maritime Domain Awareness</h3>
+                    <p>Detect "dark ships" and monitor global chokepoints with persistent optical tracking. Our sub-meter resolution allows for the identification of vessel classes and the monitoring of ship-to-ship transfers in international waters, providing a continuous audit trail for global security and sanctions enforcement.</p>
+                </div>
+            </div>
+
+
+            <div class="app-item reveal">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1593069567131-53a0614dde1d?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="app-img" alt="Environmental">
+                </div>
+                <div class="app-text">
+                    <h3>Environmental Enforcement</h3>
+                    <p>Illegal logging, unauthorized mining, and oil spills often occur in the blind spots of traditional monitoring. EarthLive provides a persistent eye in the sky, ensuring that environmental violations are documented in high-definition as they occur, providing undeniable evidence for legal and regulatory action.</p>
+                </div>
+            </div>
+        </section>
+
+
+<section style="text-align: center; padding: 120px 8%; border-top: 1px solid var(--border); background: linear-gradient(to bottom, #000, #050505);">
+    <div class="reveal">
+        <h2 style="font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 1rem; letter-spacing: -1.5px;">The future of Earth observation is live.</h2>
+        <p style="color: var(--muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Explore the Terminal Alpha prototype or reach out for pre-seed technical briefings.</p>
+    </div>
+    
+    <div class="reveal" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; transition-delay: 0.2s;">
+        <button class="btn" onclick="toggleView('demo')">Launch Demo</button>
+        <button class="btn btn-ghost" onclick="handleContactClick()">Get in Touch</button>
+    </div>
+</section>
+
+
+    </main>
+
+    <main id="demo-view" class="view">
+        <div class="demo-placeholder reveal">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Terminal Alpha</h2>
+            <p style="color: var(--muted); margin-bottom: 2rem;">The EarthLive interactive telemetry terminal is currently under construction for early-access partners.</p>
+            <button class="btn" onclick="toggleView('home')">Return to Mission</button>
+        </div>
+    </main>
+
+
+
+    <footer id="contact">
+        <p class="footer-label">Pre-seed Inquiries</p>
+        <div id="email-mount">
+            </div>
+        <p style="margin-top: 6rem; font-size: 0.65rem; color: #333; letter-spacing: 2px;">&copy; 2026 EARTHLIVE AEROSPACE. DYNAMIC GROUND TRUTH.</p>
+    </footer>
+
+
+<script>
+    // 1. Initialize the Animation Observer ONCE
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    // Initial observation call
+    function observeElements() {
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    // 2. Precise Scroll Function (Solves the "Cut off" text)
+    function scrollToSection(id) {
+        const element = document.getElementById(id);
+        if (!element) return;
+
+        const navHeight = 80; // Adjusted for your nav height
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navHeight;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+function toggleView(viewId, anchor = null) {
+    const target = document.getElementById(viewId + '-view');
+    const currentView = document.querySelector('.view.active');
+
+    // 1. If we are switching to a NEW view (e.g., Home to Demo)
+    if (currentView && currentView.id !== viewId + '-view') {
+        document.querySelectorAll('.view').forEach(v => {
+            v.classList.remove('active');
+            v.querySelectorAll('.reveal').forEach(el => el.classList.remove('active'));
+        });
+        if (target) target.classList.add('active');
+    }
+
+    // 2. Trigger animations and scrolling
+    setTimeout(() => {
+        if (target) {
+            const revealElements = target.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+            
+            if (anchor) {
+                scrollToSection(anchor);
+            } else if (currentView && currentView.id !== viewId + '-view') {
+                window.scrollTo({ top: 0, behavior: 'instant' });
+            }
+        }
+    }, 50);
+}
+    // 4. Contact/Footer Helper
+    function scrollToFooter() {
+        const homeView = document.getElementById('home-view');
+        if (!homeView.classList.contains('active')) {
+            toggleView('home');
+            setTimeout(() => {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            }, 250);
+        } else {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+function handleContactClick() {
+    // 1. Rebuild the email string from your hidden codes
+    const email = codes.map(c => String.fromCharCode(c)).join('');
+    
+    // 2. Launch the user's email client immediately
+    // This opens the "New Message" window without moving the webpage
+    window.location.href = `mailto:${email}?subject=EarthLive%20Inquiry`;
+}
+
+    // 6. Email Obfuscation
+    const codes = [99, 111, 114, 121, 64, 118, 105, 116, 101, 122, 101, 110, 103, 105, 110, 101, 101, 114, 105, 110, 103, 46, 99, 111, 109];   
+
+ 
+    window.addEventListener('load', () => {
+        // Populate email
+        const email = codes.map(c => String.fromCharCode(c)).join('');
+        const mount = document.getElementById('email-mount');
+        if (mount) {
+            mount.innerHTML = `<a href="mailto:${email}" id="email-display">${email}</a>`;
+        }
+        // Start observing animations
+        observeElements();
+    });
+</script>
+</body>
+</html>
