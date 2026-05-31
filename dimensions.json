@@ -3544,5 +3544,71 @@
         "location": "San Francisco, California, United States",
         "number": "591",
         "ratio": 0.7528
+    },
+    "592.webp": {
+        "date": "MAY 2026",
+        "location": "Chicago, Illinois, United States",
+        "number": "592",
+        "ratio": 0.7528
+    },
+    "593.webp": {
+        "date": "MAY 2026",
+        "location": "Malibu, California, United States",
+        "number": "593",
+        "ratio": 1.7778
+    },
+    "594.webp": {
+        "date": "APR 2026",
+        "location": "Ourika, Marrakech-Safi, Morocco",
+        "number": "594",
+        "ratio": 0.7528
+    },
+    "595.webp": {
+        "date": "MAY 2026",
+        "location": "Cabrillo Highway, California, United States",
+        "number": "595",
+        "ratio": 0.7528
+    },
+    "596.webp": {
+        "date": "MAY 2026",
+        "location": "Cabrillo Highway, California, United States",
+        "number": "596",
+        "ratio": 0.7528
+    },
+    "597.webp": {
+        "date": "MAR 2026",
+        "location": "San Mateo County, California, United States",
+        "number": "597",
+        "ratio": 0.7528
+    },
+    "598.webp": {
+        "date": "JUN 2026",
+        "location": "Los Gatos, California, United States",
+        "number": "598",
+        "ratio": 1.3284
+    },
+    "599.webp": {
+        "date": "FEB 2026",
+        "location": "San Jose, California, United States",
+        "number": "599",
+        "ratio": 0.7528
+    },
+    "600.webp": {
+        "date": "MAR 2026",
+        "location": "San Mateo County, California, United States",
+        "number": "600",
+        "ratio": 0.7528
+    },
+    "601.webp": {
+        "date": "JAN 2026",
+        "location": "San Jose, California, United States",
+        "number": "601",
+        "ratio": 0.7528
+    },
+    "602.webp": {
+        "date": "APR 2026",
+        "location": "Asni, Marrakech-Safi, Morocco",
+        "number": "602",
+        "ratio": 0.7528
     }
 }

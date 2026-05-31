@@ -7,7 +7,7 @@ from geopy.geocoders import Nominatim
 import requests
     
 # --- SETTINGS ---
-SOURCE_DIR = "/home/cvitez/Downloads/art-webp/Photos-1-001/"
+SOURCE_DIR = "/home/cvitez/Downloads/art-webp/Photos-3-001/"
 OUTPUT_DIR = os.path.join(SOURCE_DIR, "web_assets") # Best to put renamed files in a subfolder
 QUALITY = 85
 MAX_SIZE = (2500, 2500) 
