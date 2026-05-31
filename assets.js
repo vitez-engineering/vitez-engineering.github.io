@@ -27,6 +27,7 @@ const headContent = `
 document.head.insertAdjacentHTML('beforeend', headContent);
 
 const blogPosts = [
+    { url: "/blog-post/pigs-are-dogs.html", title: "Pigs Are Dogs" },
     { url: "/blog-post/the-higher-standard.html", title: "The Higher Standard" },
     { url: "/blog-post/decisions.html", title: "Engineering an Optimal Life" },
     { url: "/blog-post/re.html", title: "On the Responsible Engineer Model" },
