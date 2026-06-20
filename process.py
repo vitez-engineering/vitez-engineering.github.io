@@ -7,7 +7,7 @@ from geopy.geocoders import Nominatim
 import requests
     
 # --- SETTINGS ---
-SOURCE_DIR = "/home/cvitez/Downloads/art-webp/Photos-3-001/"
+SOURCE_DIR = "/home/cvitez/Downloads/art-webp/"
 OUTPUT_DIR = os.path.join(SOURCE_DIR, "web_assets") # Best to put renamed files in a subfolder
 QUALITY = 85
 MAX_SIZE = (2500, 2500) 
@@ -30,7 +30,7 @@ def get_decimal_from_dms(dms, ref):
 
 
 # Use a very specific user agent to avoid being lumped in with generic traffic
-YOUR_EMAIL = "corythedog007@gmail.com" 
+YOUR_EMAIL = "" 
 
 geolocator = Nominatim(
     user_agent="Vitez_Photography_Archive_Script_v26",
