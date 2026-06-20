@@ -692,36 +692,60 @@ header { padding: 2.5rem 2rem 0 2rem; }
     let programmaticHashChangeCount = 0; // counts pending self-triggered hash changes, to avoid re-triggering on rapid swipes
     let lastSwipeHintTime = 0; // timestamp of last swipe-hint play, to throttle re-showing it
     const SWIPE_HINT_COOLDOWN_MS = 30000;
-    let pendingSwipeTimeout = null; // tracks delayed nav after a swipe, so it can be cancelled if the lightbox closes/reopens first
 
     const MONTH_ORDER = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 
+    // Concurrency-limited image loading queue, so a fast scroll doesn't fire
+    // dozens of simultaneous requests that drown out what's actually visible.
+    const MAX_CONCURRENT_LOADS = 4;
+    let activeLoads = 0;
+    const loadQueue = []; // array of {img, priority} - lower priority = closer to viewport
+
+    function enqueueImageLoad(img, priority) {
+        // Avoid duplicate entries if re-queued
+        const existing = loadQueue.find(q => q.img === img);
+        if (existing) {
+            existing.priority = priority;
+        } else {
+            loadQueue.push({ img, priority });
+        }
+        processLoadQueue();
+    }
+
+    function processLoadQueue() {
+        if (activeLoads >= MAX_CONCURRENT_LOADS || loadQueue.length === 0) return;
+        loadQueue.sort((a, b) => a.priority - b.priority);
+        const next = loadQueue.shift();
+        const img = next.img;
+        if (!img.dataset.src) { processLoadQueue(); return; } // already loaded/cancelled
+
+        activeLoads++;
+        const src = img.dataset.src;
+        delete img.dataset.src;
+        img.onload = img.onerror = () => {
+            img.classList.add('loaded');
+            activeLoads--;
+            processLoadQueue();
+        };
+        img.src = src;
+        processLoadQueue(); // try to fill remaining concurrency slots
+    }
+
     const lazyObserver = new IntersectionObserver((entries, obs) => {
         const viewportCenter = window.innerHeight / 2;
-
-        // Sort so images closest to the visible viewport load first,
-        // rather than whichever happened to be first in DOM order
-        const toLoad = entries
-            .filter(entry => entry.isIntersecting && entry.target.dataset.src)
-            .sort((a, b) => {
-                const distA = Math.abs(a.boundingClientRect.top + a.boundingClientRect.height / 2 - viewportCenter);
-                const distB = Math.abs(b.boundingClientRect.top + b.boundingClientRect.height / 2 - viewportCenter);
-                return distA - distB;
-            });
-
-        toLoad.forEach(entry => {
+        entries.forEach(entry => {
             const img = entry.target;
-            img.onload = () => img.classList.add('loaded');
-            img.src = img.dataset.src;
-            obs.unobserve(img);
+            if (entry.isIntersecting && img.dataset.src) {
+                const priority = Math.abs(entry.boundingClientRect.top + entry.boundingClientRect.height / 2 - viewportCenter);
+                enqueueImageLoad(img, priority);
+                obs.unobserve(img);
+            }
         });
-    }, { rootMargin: '1500px 0px 200px 0px', threshold: 0.01 });
+    }, { rootMargin: '1200px 0px 100px 0px', threshold: 0.01 });
 
-    function openLightbox(photos, index, isFreshOpen = true) {
+    function openLightbox(photos, index, isFreshOpen = true, skipTrackReset = false) {
         const photoData = photos[index];
         if (!photoData) return;
-
-        if (pendingSwipeTimeout) { clearTimeout(pendingSwipeTimeout); pendingSwipeTimeout = null; }
 
         currentGalleryPhotos = photos;
         currentLightboxIndex = index;
@@ -736,10 +760,19 @@ header { padding: 2.5rem 2rem 0 2rem; }
         document.getElementById('lb-number').textContent = `№ ${archiveNumber}`;
         document.getElementById('lb-meta').textContent = `${location} — ${date}`;
 
-        // Reset any drag state on the track
-        track.style.transition = 'none';
-        track.style.transform = '';
-        requestAnimationFrame(() => { track.style.transition = ''; });
+        if (!skipTrackReset) {
+            // Reset any drag state on the track
+            track.style.transition = 'none';
+            track.style.transform = '';
+            requestAnimationFrame(() => { track.style.transition = ''; });
+        } else {
+            // Swipe-driven navigation: the track is already mid/end of its slide-out
+            // animation (e.g. at -200vw). Let it finish animating home to -100vw
+            // on its own via the transition already in flight, rather than snapping it.
+            requestAnimationFrame(() => {
+                track.style.transform = 'translateX(-100vw)';
+            });
+        }
 
         lightboxImg.style.transition = '';
         lightboxImg.style.transform = '';
@@ -796,9 +829,9 @@ header { padding: 2.5rem 2rem 0 2rem; }
         nextBtn.disabled = currentLightboxIndex >= currentGalleryPhotos.length - 1;
     }
 
-    function showLightboxAt(newIndex) {
+    function showLightboxAt(newIndex, skipTrackReset = false) {
         if (newIndex < 0 || newIndex >= currentGalleryPhotos.length) return;
-        openLightbox(currentGalleryPhotos, newIndex, false);
+        openLightbox(currentGalleryPhotos, newIndex, false, skipTrackReset);
     }
 
     function renderGallery(photos) {
@@ -1242,7 +1275,6 @@ header { padding: 2.5rem 2rem 0 2rem; }
     lightbox.addEventListener('click', (e) => {
         if (e.target.closest('.lb-nav-btn')) return; // don't close when clicking prev/next
         if (e.target.closest('.lightbox-ui')) return; // don't close when clicking the info bar / share button
-        if (pendingSwipeTimeout) { clearTimeout(pendingSwipeTimeout); pendingSwipeTimeout = null; }
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
         history.replaceState(null, null, " ");
@@ -1260,7 +1292,6 @@ header { padding: 2.5rem 2rem 0 2rem; }
 
     document.addEventListener('keydown', (e) => {
         if (e.key === "Escape" && lightbox.classList.contains('active')) {
-            if (pendingSwipeTimeout) { clearTimeout(pendingSwipeTimeout); pendingSwipeTimeout = null; }
             lightbox.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
@@ -1281,13 +1312,27 @@ header { padding: 2.5rem 2rem 0 2rem; }
         let dx = 0, dy = 0;
         let dragging = false;
         const SWIPE_THRESHOLD = 60;
+        let pendingCompletion = null; // { newIndex, onDone } if a slide-out is still animating
+
+        function finishPendingSwipeInstantly() {
+            if (!pendingCompletion) return;
+            const { newIndex, onDone } = pendingCompletion;
+            track.removeEventListener('transitionend', onDone);
+            pendingCompletion = null;
+            track.style.transition = 'none';
+            showLightboxAt(newIndex, true);
+            track.style.transform = 'translateX(-100vw)';
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => { track.style.transition = ''; });
+            });
+        }
 
         lightbox.addEventListener('touchstart', (e) => {
             if (e.target.closest('.lb-nav-btn') || e.target.closest('#lb-share-btn')) return;
-            if (pendingSwipeTimeout) {
-                clearTimeout(pendingSwipeTimeout);
-                pendingSwipeTimeout = null;
-            }
+            // If a previous swipe's slide-out animation hasn't finished, apply it
+            // immediately so the track's baseline is correctly -100vw before this
+            // new drag's math (which assumes that baseline) begins.
+            finishPendingSwipeInstantly();
             startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
             dx = 0; dy = 0;
@@ -1322,18 +1367,9 @@ header { padding: 2.5rem 2rem 0 2rem; }
             const atLast = currentLightboxIndex >= currentGalleryPhotos.length - 1;
 
             if (horizontal && dx < -SWIPE_THRESHOLD && !atLast) {
-                // Slide fully to next, then swap to it as the new "current"
-                track.style.transform = 'translateX(-200vw)';
-                pendingSwipeTimeout = setTimeout(() => {
-                    pendingSwipeTimeout = null;
-                    showLightboxAt(currentLightboxIndex + 1);
-                }, 300);
+                completeSwipe('translateX(-200vw)', currentLightboxIndex + 1);
             } else if (horizontal && dx > SWIPE_THRESHOLD && !atFirst) {
-                track.style.transform = 'translateX(0)';
-                pendingSwipeTimeout = setTimeout(() => {
-                    pendingSwipeTimeout = null;
-                    showLightboxAt(currentLightboxIndex - 1);
-                }, 300);
+                completeSwipe('translateX(0)', currentLightboxIndex - 1);
             } else if (!horizontal && dy > SWIPE_THRESHOLD) {
                 // swipe down to dismiss
                 lightbox.classList.remove('active');
@@ -1347,6 +1383,26 @@ header { padding: 2.5rem 2rem 0 2rem; }
             }
             dx = 0; dy = 0;
         });
+
+        // Let the slide-out animation play fully (the destination slide already
+        // shows the correct photo, so nothing changes visually during this).
+        // Only once it's finished do we update state and re-center the track
+        // instantly with no transition — an invisible swap, no second animation.
+        function completeSwipe(targetTransform, newIndex) {
+            track.style.transform = targetTransform;
+
+            const onDone = () => {
+                pendingCompletion = null;
+                track.style.transition = 'none';
+                showLightboxAt(newIndex, true);
+                track.style.transform = 'translateX(-100vw)';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => { track.style.transition = ''; });
+                });
+            };
+            pendingCompletion = { newIndex, onDone };
+            track.addEventListener('transitionend', onDone, { once: true });
+        }
     }
     initLightboxSwipe();
 
