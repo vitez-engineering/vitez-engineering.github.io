@@ -661,9 +661,9 @@ header { padding: 2.5rem 2rem 0 2rem; }
         </div>
     </div>
     <div id="lb-track">
-        <div class="lb-slide" id="lb-slide-prev"><img alt="Previous photo"></div>
-        <div class="lb-slide" id="lb-slide-current"><img id="lightbox-img" src="" alt="Full view"></div>
-        <div class="lb-slide" id="lb-slide-next"><img alt="Next photo"></div>
+        <div class="lb-slide" id="lb-slide-prev"><img alt="Previous photo" decoding="async"></div>
+        <div class="lb-slide" id="lb-slide-current"><img id="lightbox-img" src="" alt="Full view" decoding="async"></div>
+        <div class="lb-slide" id="lb-slide-next"><img alt="Next photo" decoding="async"></div>
     </div>
 </div>
 
@@ -697,47 +697,75 @@ header { padding: 2.5rem 2rem 0 2rem; }
 
     // Concurrency-limited image loading queue, so a fast scroll doesn't fire
     // dozens of simultaneous requests that drown out what's actually visible.
-    const MAX_CONCURRENT_LOADS = 4;
+    const MAX_CONCURRENT_LOADS = 6;
     let activeLoads = 0;
-    const loadQueue = []; // array of {img, priority} - lower priority = closer to viewport
+    const loadQueue = []; // array of <img> elements waiting to load
 
-    function enqueueImageLoad(img, priority) {
-        // Avoid duplicate entries if re-queued
-        const existing = loadQueue.find(q => q.img === img);
-        if (existing) {
-            existing.priority = priority;
-        } else {
-            loadQueue.push({ img, priority });
+    function enqueueImageLoad(img) {
+        if (!loadQueue.includes(img)) {
+            loadQueue.push(img);
         }
         processLoadQueue();
     }
 
-    function processLoadQueue() {
-        if (activeLoads >= MAX_CONCURRENT_LOADS || loadQueue.length === 0) return;
-        loadQueue.sort((a, b) => a.priority - b.priority);
-        const next = loadQueue.shift();
-        const img = next.img;
-        if (!img.dataset.src) { processLoadQueue(); return; } // already loaded/cancelled
+    function getLivePriority(img) {
+        // Recomputed fresh every time we pick the next image, so a stale
+        // distance captured minutes ago never blocks what's actually nearby now.
+        const rect = img.getBoundingClientRect();
+        const viewportCenter = window.innerHeight / 2;
+        return Math.abs(rect.top + rect.height / 2 - viewportCenter);
+    }
 
-        activeLoads++;
-        const src = img.dataset.src;
-        delete img.dataset.src;
-        img.onload = img.onerror = () => {
-            img.classList.add('loaded');
-            activeLoads--;
-            processLoadQueue();
-        };
-        img.src = src;
-        processLoadQueue(); // try to fill remaining concurrency slots
+    function processLoadQueue() {
+        while (activeLoads < MAX_CONCURRENT_LOADS && loadQueue.length > 0) {
+            // Pick whichever queued image is currently closest to the viewport,
+            // recalculated live rather than trusting a priority captured earlier.
+            let bestIndex = 0;
+            let bestPriority = Infinity;
+            for (let i = 0; i < loadQueue.length; i++) {
+                const p = getLivePriority(loadQueue[i]);
+                if (p < bestPriority) { bestPriority = p; bestIndex = i; }
+            }
+            const img = loadQueue.splice(bestIndex, 1)[0];
+            const src = img.dataset.src || img.dataset.retrySrc;
+            if (!src) continue; // already loaded/cancelled, skip
+
+            activeLoads++;
+            delete img.dataset.src;
+            img.onload = () => {
+                delete img.dataset.retrySrc;
+                img.classList.add('loaded');
+                activeLoads--;
+                processLoadQueue();
+            };
+            img.onerror = () => {
+                activeLoads--;
+                const retryCount = (parseInt(img.dataset.retryCount, 10) || 0) + 1;
+                if (retryCount <= 3) {
+                    // Keep the src around so it can be re-queued and retried,
+                    // rather than silently giving up and leaving a blank tile.
+                    img.dataset.retryCount = retryCount;
+                    img.dataset.retrySrc = src;
+                    setTimeout(() => {
+                        loadQueue.push(img);
+                        processLoadQueue();
+                    }, 400 * retryCount);
+                } else {
+                    // Stop retrying after 3 failures, but don't mark as loaded —
+                    // leave it visibly unloaded rather than lying about its state.
+                    delete img.dataset.retrySrc;
+                    processLoadQueue();
+                }
+            };
+            img.src = src;
+        }
     }
 
     const lazyObserver = new IntersectionObserver((entries, obs) => {
-        const viewportCenter = window.innerHeight / 2;
         entries.forEach(entry => {
             const img = entry.target;
             if (entry.isIntersecting && img.dataset.src) {
-                const priority = Math.abs(entry.boundingClientRect.top + entry.boundingClientRect.height / 2 - viewportCenter);
-                enqueueImageLoad(img, priority);
+                enqueueImageLoad(img);
                 obs.unobserve(img);
             }
         });
@@ -818,6 +846,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
             if (preloadedImages.has(src)) return;
             preloadedImages.add(src);
             const img = new Image();
+            img.fetchPriority = (i === index - 1 || i === index + 1) ? 'high' : 'low';
             img.src = src;
         });
     }
@@ -841,6 +870,14 @@ header { padding: 2.5rem 2rem 0 2rem; }
             document.getElementById('col-2')
         ];
 
+        // Stop watching/queuing anything from the previous render before wiping
+        // the DOM — otherwise detached nodes linger in the observer and queue,
+        // and their now-meaningless bounding rects (all zeros) can wrongly
+        // steal load priority from images that are actually visible now.
+        lazyObserver.disconnect();
+        mobileObserver.disconnect();
+        loadQueue.length = 0;
+
         // Clear columns
         allColumns.forEach(col => col.innerHTML = '');
 
@@ -857,7 +894,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
             const isInitial = index < 12;
 
             item.innerHTML = `
-                <img ${isInitial ? `src="images/${filename}"` : `data-src="images/${filename}"`} 
+                <img ${isInitial ? `src="images/${filename}" fetchpriority="high"` : `data-src="images/${filename}" fetchpriority="low"`} 
                      class="${isInitial ? 'loaded' : ''}"
                      decoding="async"
                      alt="Photo">
@@ -1426,6 +1463,7 @@ scrollWrapper.addEventListener('click', () => {
     }
 });
 
+let scrollQueueCheckScheduled = false;
 window.addEventListener('scroll', () => {
     const winScroll = window.scrollY;
     const height = document.documentElement.scrollHeight - window.innerHeight;
@@ -1439,6 +1477,17 @@ window.addEventListener('scroll', () => {
         scrollWrapper.classList.add('is-reversed');
     } else {
         scrollWrapper.classList.remove('is-reversed');
+    }
+
+    // Re-evaluate the image load queue as the user keeps scrolling, so images
+    // already waiting in the queue get reprioritized toward the new scroll
+    // position instead of being stuck behind stale entries from moments ago.
+    if (!scrollQueueCheckScheduled) {
+        scrollQueueCheckScheduled = true;
+        requestAnimationFrame(() => {
+            scrollQueueCheckScheduled = false;
+            if (typeof processLoadQueue === 'function') processLoadQueue();
+        });
     }
 }, { passive: true });
 
