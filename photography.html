@@ -158,7 +158,8 @@ header { padding: 2.5rem 2rem 0 2rem; }
         .lb-slide img {
             max-width: 90%; max-height: 90vh;
             object-fit: contain;
-            transform: scale(0.95); transition: transform 0.4s ease;
+            transform: scale(0.95);
+            transition: transform 0.4s ease, width 0.25s ease, height 0.25s ease;
         }
         .lightbox.active .lb-slide img { transform: scale(1); }
 
@@ -795,6 +796,24 @@ header { padding: 2.5rem 2rem 0 2rem; }
         });
     }, { rootMargin: '2000px 0px 150px 0px', threshold: 0.01 });
 
+    // Computes the correct display size from an image's REAL pixel dimensions —
+    // shrink to fit within 90vw/90vh if needed, but never force an upscale
+    // beyond native resolution (forcing every photo to fill 90% of the
+    // viewport made already-correctly-sized photos look artificially huge).
+    function sizeLightboxSlideImage(imgEl, naturalWidth, naturalHeight) {
+        const maxW = window.innerWidth * 0.9;
+        const maxH = window.innerHeight * 0.9;
+        let w = naturalWidth;
+        let h = naturalHeight;
+        if (w > maxW || h > maxH) {
+            const scale = Math.min(maxW / w, maxH / h);
+            w *= scale;
+            h *= scale;
+        }
+        imgEl.style.width = `${w}px`;
+        imgEl.style.height = `${h}px`;
+    }
+
     // Shows the lightbox's current-slide image instantly using the already-loaded
     // grid thumbnail, then swaps to the full-resolution version once it's ready.
     // If the user navigates away before the full-res finishes, the late-arriving
@@ -802,6 +821,11 @@ header { padding: 2.5rem 2rem 0 2rem; }
     function showImageWithUpgrade(imgEl, filename) {
         const fullSrc = `images/${filename}`;
         imgEl.dataset.expectedFilename = filename;
+
+        // Clear any size locked in by a previous, different photo before
+        // either branch below runs.
+        imgEl.style.width = '';
+        imgEl.style.height = '';
 
         if (fullyLoadedFullRes.has(fullSrc)) {
             // Already confirmed loaded (e.g. via neighbor preloading) — no
@@ -812,40 +836,36 @@ header { padding: 2.5rem 2rem 0 2rem; }
 
         // Instant placeholder: this is almost always already in the browser
         // cache, since it's the same file the grid thumbnail just displayed.
-        imgEl.src = getThumbSrc(filename);
+        // Sized at its own natural resolution — no forced upscaling — so it
+        // never looks artificially larger than it actually is.
+        const thumbSrc = getThumbSrc(filename);
+        imgEl.src = thumbSrc;
 
         const upgrade = new Image();
-        upgrade.onload = () => {
+        upgrade.src = fullSrc;
+
+        const applyUpgrade = () => {
             fullyLoadedFullRes.add(fullSrc);
             // Only apply if this element is still meant to be showing this photo
-            if (imgEl.dataset.expectedFilename === filename) {
-                imgEl.src = fullSrc;
-            }
+            if (imgEl.dataset.expectedFilename !== filename) return;
+            // Pre-size to the real full-res dimensions and swap together —
+            // the CSS width/height transition animates the grow smoothly
+            // rather than popping, and decode() below means the new image
+            // is already fully decoded, so the swap itself paints instantly
+            // with no flash.
+            sizeLightboxSlideImage(imgEl, upgrade.naturalWidth, upgrade.naturalHeight);
+            imgEl.src = fullSrc;
         };
-        // If the full-res upgrade fails, just leave the thumbnail showing
-        // rather than breaking the view.
-        upgrade.src = fullSrc;
-    }
 
-    // The lightbox img only had max-width/max-height as CEILINGS, so a
-    // lower-res thumbnail placeholder (capped around 1000px wide) would
-    // display at its native size on a large desktop screen instead of
-    // scaling up to fill the lightbox — making it look oddly small until
-    // the full-res image swapped in. Sizing explicitly from the photo's
-    // known aspect ratio (independent of whichever resolution is currently
-    // loaded) fixes that and guarantees zero layout shift during the swap.
-    function sizeLightboxSlideImage(imgEl, ratio) {
-        const aspectRatio = 1 / (ratio || 1); // convert stored h/w ratio to w/h
-        const maxW = window.innerWidth * 0.9;
-        const maxH = window.innerHeight * 0.9;
-        let w = maxW;
-        let h = w / aspectRatio;
-        if (h > maxH) {
-            h = maxH;
-            w = h * aspectRatio;
+        // decode() ensures the image is fully decoded into a paintable bitmap
+        // before we swap it in, avoiding the brief flash/flicker that can
+        // happen when a large image is assigned to a visible <img> and has
+        // to decode for the first time right as it's being displayed.
+        if (upgrade.decode) {
+            upgrade.decode().then(applyUpgrade).catch(applyUpgrade);
+        } else {
+            upgrade.onload = applyUpgrade;
         }
-        imgEl.style.width = `${w}px`;
-        imgEl.style.height = `${h}px`;
     }
 
     function openLightbox(photos, index, isFreshOpen = true, skipTrackReset = false) {
@@ -882,14 +902,15 @@ header { padding: 2.5rem 2rem 0 2rem; }
         lightboxImg.style.transition = '';
         lightboxImg.style.transform = '';
         lightboxImg.classList.remove('swipe-hint');
-        sizeLightboxSlideImage(lightboxImg, photoData.ratio);
         showImageWithUpgrade(lightboxImg, filename);
 
-        // Populate adjacent slides for the mobile carousel
+        // Populate adjacent slides for the mobile carousel. These are
+        // off-screen until swiped to, so no upgrade-flicker concern here —
+        // just load the full-res directly and let it size at native resolution.
         const prevPhoto = photos[index - 1];
         const nextPhoto = photos[index + 1];
-        if (prevPhoto) sizeLightboxSlideImage(prevImg, prevPhoto.ratio);
-        if (nextPhoto) sizeLightboxSlideImage(nextImg, nextPhoto.ratio);
+        prevImg.style.width = ''; prevImg.style.height = '';
+        nextImg.style.width = ''; nextImg.style.height = '';
         prevImg.src = prevPhoto ? `images/${prevPhoto.filename}` : '';
         nextImg.src = nextPhoto ? `images/${nextPhoto.filename}` : '';
 
