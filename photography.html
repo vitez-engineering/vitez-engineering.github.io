@@ -695,6 +695,21 @@ header { padding: 2.5rem 2rem 0 2rem; }
 
     const MONTH_ORDER = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 
+    // Grid uses smaller thumbnail copies (images/thumbs/) since tiles are never
+    // rendered anywhere near full photo resolution on screen. The lightbox
+    // shows the full-resolution original, but starts from the thumbnail
+    // (already loaded from the grid) for an instant initial display, then
+    // upgrades to full-res in the background once it's ready.
+    function getThumbSrc(filename) {
+        const thumbFilename = filename.replace(/\.[^.]+$/, '.webp');
+        return `images/thumbs/${thumbFilename}`;
+    }
+
+    // Tracks full-res URLs we've confirmed have actually finished loading
+    // (not just "a request was started") — so we know when it's safe to skip
+    // the thumbnail placeholder entirely and go straight to full-res.
+    const fullyLoadedFullRes = new Set();
+
     // Concurrency-limited image loading queue, so a fast scroll doesn't fire
     // dozens of simultaneous requests that drown out what's actually visible.
     const MAX_CONCURRENT_LOADS = 16;
@@ -779,6 +794,38 @@ header { padding: 2.5rem 2rem 0 2rem; }
         });
     }, { rootMargin: '2000px 0px 150px 0px', threshold: 0.01 });
 
+    // Shows the lightbox's current-slide image instantly using the already-loaded
+    // grid thumbnail, then swaps to the full-resolution version once it's ready.
+    // If the user navigates away before the full-res finishes, the late-arriving
+    // load is safely discarded instead of overwriting whatever is now showing.
+    function showImageWithUpgrade(imgEl, filename) {
+        const fullSrc = `images/${filename}`;
+        imgEl.dataset.expectedFilename = filename;
+
+        if (fullyLoadedFullRes.has(fullSrc)) {
+            // Already confirmed loaded (e.g. via neighbor preloading) — no
+            // need for a thumbnail placeholder, go straight to full-res.
+            imgEl.src = fullSrc;
+            return;
+        }
+
+        // Instant placeholder: this is almost always already in the browser
+        // cache, since it's the same file the grid thumbnail just displayed.
+        imgEl.src = getThumbSrc(filename);
+
+        const upgrade = new Image();
+        upgrade.onload = () => {
+            fullyLoadedFullRes.add(fullSrc);
+            // Only apply if this element is still meant to be showing this photo
+            if (imgEl.dataset.expectedFilename === filename) {
+                imgEl.src = fullSrc;
+            }
+        };
+        // If the full-res upgrade fails, just leave the thumbnail showing
+        // rather than breaking the view.
+        upgrade.src = fullSrc;
+    }
+
     function openLightbox(photos, index, isFreshOpen = true, skipTrackReset = false) {
         const photoData = photos[index];
         if (!photoData) return;
@@ -813,7 +860,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
         lightboxImg.style.transition = '';
         lightboxImg.style.transform = '';
         lightboxImg.classList.remove('swipe-hint');
-        lightboxImg.src = `images/${filename}`;
+        showImageWithUpgrade(lightboxImg, filename);
 
         // Populate adjacent slides for the mobile carousel
         const prevPhoto = photos[index - 1];
@@ -855,6 +902,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
             preloadedImages.add(src);
             const img = new Image();
             img.fetchPriority = (i === index - 1 || i === index + 1) ? 'high' : 'low';
+            img.onload = () => { fullyLoadedFullRes.add(src); };
             img.src = src;
         });
     }
@@ -894,12 +942,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
 
         photos.forEach((photoData, index) => {
             const { filename, ratio, location, date, archiveNumber } = photoData;
-
-            // Grid uses a smaller thumbnail copy (images/thumbs/) since tiles are
-            // never rendered anywhere near full photo resolution on screen.
-            // The lightbox still loads the full-resolution original.
-            const thumbFilename = filename.replace(/\.[^.]+$/, '.webp');
-            const thumbSrc = `images/thumbs/${thumbFilename}`;
+            const thumbSrc = getThumbSrc(filename);
 
             const item = document.createElement('div');
             item.className = 'photo-item';
