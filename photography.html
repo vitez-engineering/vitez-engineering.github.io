@@ -741,7 +741,15 @@ header { padding: 2.5rem 2rem 0 2rem; }
             img.onerror = () => {
                 activeLoads--;
                 const retryCount = (parseInt(img.dataset.retryCount, 10) || 0) + 1;
-                if (retryCount <= 3) {
+                const fallback = img.dataset.fallback;
+
+                if (fallback && src !== fallback) {
+                    // Thumbnail likely doesn't exist yet — fall back to the
+                    // full-resolution original rather than retrying a 404.
+                    img.dataset.retrySrc = fallback;
+                    loadQueue.push(img);
+                    processLoadQueue();
+                } else if (retryCount <= 3) {
                     // Keep the src around so it can be re-queued and retried,
                     // rather than silently giving up and leaving a blank tile.
                     img.dataset.retryCount = retryCount;
@@ -887,6 +895,12 @@ header { padding: 2.5rem 2rem 0 2rem; }
         photos.forEach((photoData, index) => {
             const { filename, ratio, location, date, archiveNumber } = photoData;
 
+            // Grid uses a smaller thumbnail copy (images/thumbs/) since tiles are
+            // never rendered anywhere near full photo resolution on screen.
+            // The lightbox still loads the full-resolution original.
+            const thumbFilename = filename.replace(/\.[^.]+$/, '.webp');
+            const thumbSrc = `images/thumbs/${thumbFilename}`;
+
             const item = document.createElement('div');
             item.className = 'photo-item';
             item.style.aspectRatio = 1 / ratio;
@@ -894,7 +908,8 @@ header { padding: 2.5rem 2rem 0 2rem; }
             const isInitial = index < 12;
 
             item.innerHTML = `
-                <img ${isInitial ? `src="images/${filename}" fetchpriority="high"` : `data-src="images/${filename}" fetchpriority="low"`} 
+                <img ${isInitial ? `src="${thumbSrc}" fetchpriority="high"` : `data-src="${thumbSrc}" fetchpriority="low"`} 
+                     data-fallback="images/${filename}"
                      class="${isInitial ? 'loaded' : ''}"
                      decoding="async"
                      alt="Photo">
@@ -1299,7 +1314,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
         setTimeout(() => {
             const hash = decodeURIComponent(window.location.hash.substring(1));
             if (hash) {
-                const targetImg = document.querySelector(`#gallery-root img[src*="${hash}"], #gallery-root img[data-src*="${hash}"]`);
+                const targetImg = document.querySelector(`#gallery-root img[data-fallback*="${hash}"], #gallery-root img[src*="${hash}"], #gallery-root img[data-src*="${hash}"]`);
                 if (targetImg) {
                     targetImg.parentElement.click();
                 }
@@ -1537,7 +1552,7 @@ window.addEventListener('hashchange', () => {
     }
     const hash = decodeURIComponent(window.location.hash.substring(1));
     if (hash) {
-        const targetImg = document.querySelector(`#gallery-root img[src*="${hash}"], #gallery-root img[data-src*="${hash}"]`);
+        const targetImg = document.querySelector(`#gallery-root img[data-fallback*="${hash}"], #gallery-root img[src*="${hash}"], #gallery-root img[data-src*="${hash}"]`);
         if (targetImg) targetImg.parentElement.click();
     } else {
         lightbox.classList.remove('active');
