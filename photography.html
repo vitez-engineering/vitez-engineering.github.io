@@ -157,6 +157,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
         }
         .lb-slide img {
             max-width: 90%; max-height: 90vh;
+            object-fit: contain;
             transform: scale(0.95); transition: transform 0.4s ease;
         }
         .lightbox.active .lb-slide img { transform: scale(1); }
@@ -826,6 +827,27 @@ header { padding: 2.5rem 2rem 0 2rem; }
         upgrade.src = fullSrc;
     }
 
+    // The lightbox img only had max-width/max-height as CEILINGS, so a
+    // lower-res thumbnail placeholder (capped around 1000px wide) would
+    // display at its native size on a large desktop screen instead of
+    // scaling up to fill the lightbox — making it look oddly small until
+    // the full-res image swapped in. Sizing explicitly from the photo's
+    // known aspect ratio (independent of whichever resolution is currently
+    // loaded) fixes that and guarantees zero layout shift during the swap.
+    function sizeLightboxSlideImage(imgEl, ratio) {
+        const aspectRatio = 1 / (ratio || 1); // convert stored h/w ratio to w/h
+        const maxW = window.innerWidth * 0.9;
+        const maxH = window.innerHeight * 0.9;
+        let w = maxW;
+        let h = w / aspectRatio;
+        if (h > maxH) {
+            h = maxH;
+            w = h * aspectRatio;
+        }
+        imgEl.style.width = `${w}px`;
+        imgEl.style.height = `${h}px`;
+    }
+
     function openLightbox(photos, index, isFreshOpen = true, skipTrackReset = false) {
         const photoData = photos[index];
         if (!photoData) return;
@@ -860,11 +882,14 @@ header { padding: 2.5rem 2rem 0 2rem; }
         lightboxImg.style.transition = '';
         lightboxImg.style.transform = '';
         lightboxImg.classList.remove('swipe-hint');
+        sizeLightboxSlideImage(lightboxImg, photoData.ratio);
         showImageWithUpgrade(lightboxImg, filename);
 
         // Populate adjacent slides for the mobile carousel
         const prevPhoto = photos[index - 1];
         const nextPhoto = photos[index + 1];
+        if (prevPhoto) sizeLightboxSlideImage(prevImg, prevPhoto.ratio);
+        if (nextPhoto) sizeLightboxSlideImage(nextImg, nextPhoto.ratio);
         prevImg.src = prevPhoto ? `images/${prevPhoto.filename}` : '';
         nextImg.src = nextPhoto ? `images/${nextPhoto.filename}` : '';
 
