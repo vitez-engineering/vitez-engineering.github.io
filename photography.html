@@ -814,30 +814,53 @@ header { padding: 2.5rem 2rem 0 2rem; }
         imgEl.style.height = `${h}px`;
     }
 
+    // Estimates the eventual display size from the photo's known aspect ratio,
+    // assuming it'll need to be capped to fit (true for the vast majority of
+    // photos, which are far higher resolution than the viewport). Used only
+    // for the placeholder phase, before we know the real pixel dimensions.
+    function estimateLightboxSlideSize(imgEl, ratio) {
+        const aspectRatio = 1 / (ratio || 1); // convert stored h/w ratio to w/h
+        const maxW = window.innerWidth * 0.9;
+        const maxH = window.innerHeight * 0.9;
+        let w = maxW;
+        let h = w / aspectRatio;
+        if (h > maxH) {
+            h = maxH;
+            w = h * aspectRatio;
+        }
+        imgEl.style.width = `${w}px`;
+        imgEl.style.height = `${h}px`;
+    }
+
     // Shows the lightbox's current-slide image instantly using the already-loaded
     // grid thumbnail, then swaps to the full-resolution version once it's ready.
     // If the user navigates away before the full-res finishes, the late-arriving
     // load is safely discarded instead of overwriting whatever is now showing.
-    function showImageWithUpgrade(imgEl, filename) {
+    function showImageWithUpgrade(imgEl, filename, ratio) {
         const fullSrc = `images/${filename}`;
         imgEl.dataset.expectedFilename = filename;
 
-        // Clear any size locked in by a previous, different photo before
-        // either branch below runs.
-        imgEl.style.width = '';
-        imgEl.style.height = '';
+        // Estimate immediately from the known ratio so there's never a
+        // moment showing a stale size left over from a previous photo.
+        estimateLightboxSlideSize(imgEl, ratio);
 
         if (fullyLoadedFullRes.has(fullSrc)) {
             // Already confirmed loaded (e.g. via neighbor preloading) — no
             // need for a thumbnail placeholder, go straight to full-res.
+            // Still correct to real dimensions in case the estimate was off.
+            const cached = new Image();
+            cached.onload = () => sizeLightboxSlideImage(imgEl, cached.naturalWidth, cached.naturalHeight);
+            cached.src = fullSrc;
             imgEl.src = fullSrc;
             return;
         }
 
         // Instant placeholder: this is almost always already in the browser
         // cache, since it's the same file the grid thumbnail just displayed.
-        // Sized at its own natural resolution — no forced upscaling — so it
-        // never looks artificially larger than it actually is.
+        // Already pre-sized to an estimate of the final size above, so it
+        // appears at roughly the right size immediately rather than popping
+        // in small — then gets corrected to the exact true size below once
+        // the full-res image actually loads.
         const thumbSrc = getThumbSrc(filename);
         imgEl.src = thumbSrc;
 
@@ -848,11 +871,11 @@ header { padding: 2.5rem 2rem 0 2rem; }
             fullyLoadedFullRes.add(fullSrc);
             // Only apply if this element is still meant to be showing this photo
             if (imgEl.dataset.expectedFilename !== filename) return;
-            // Pre-size to the real full-res dimensions and swap together —
-            // the CSS width/height transition animates the grow smoothly
-            // rather than popping, and decode() below means the new image
-            // is already fully decoded, so the swap itself paints instantly
-            // with no flash.
+            // Correct to the real full-res dimensions and swap together — if
+            // the initial estimate was close, this is invisible; if the photo
+            // turned out smaller than estimated, it gently settles down to
+            // its true size via the CSS width/height transition rather than
+            // staying artificially large.
             sizeLightboxSlideImage(imgEl, upgrade.naturalWidth, upgrade.naturalHeight);
             imgEl.src = fullSrc;
         };
@@ -902,7 +925,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
         lightboxImg.style.transition = '';
         lightboxImg.style.transform = '';
         lightboxImg.classList.remove('swipe-hint');
-        showImageWithUpgrade(lightboxImg, filename);
+        showImageWithUpgrade(lightboxImg, filename, photoData.ratio);
 
         // Populate adjacent slides for the mobile carousel. These are
         // off-screen until swiped to, so no upgrade-flicker concern here —
