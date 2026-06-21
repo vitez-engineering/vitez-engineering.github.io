@@ -697,7 +697,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
 
     // Concurrency-limited image loading queue, so a fast scroll doesn't fire
     // dozens of simultaneous requests that drown out what's actually visible.
-    const MAX_CONCURRENT_LOADS = 6;
+    const MAX_CONCURRENT_LOADS = 16;
     let activeLoads = 0;
     const loadQueue = []; // array of <img> elements waiting to load
 
@@ -769,7 +769,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
                 obs.unobserve(img);
             }
         });
-    }, { rootMargin: '1200px 0px 100px 0px', threshold: 0.01 });
+    }, { rootMargin: '2000px 0px 150px 0px', threshold: 0.01 });
 
     function openLightbox(photos, index, isFreshOpen = true, skipTrackReset = false) {
         const photoData = photos[index];
