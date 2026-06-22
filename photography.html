@@ -148,6 +148,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
             top: 0;
             left: 0;
             height: 100%;
+            will-change: transform;
         }
         .lb-slide {
             display: flex;
@@ -159,7 +160,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
             max-width: 90%; max-height: 90vh;
             object-fit: contain;
             transform: scale(0.95);
-            transition: transform 0.4s ease, width 0.25s ease, height 0.25s ease;
+            transition: transform 0.4s ease;
         }
         .lightbox.active .lb-slide img { transform: scale(1); }
 
@@ -707,10 +708,11 @@ header { padding: 2.5rem 2rem 0 2rem; }
         return `images/thumbs/${thumbFilename}`;
     }
 
-    // Tracks full-res URLs we've confirmed have actually finished loading
-    // (not just "a request was started") — so we know when it's safe to skip
-    // the thumbnail placeholder entirely and go straight to full-res.
-    const fullyLoadedFullRes = new Set();
+    // Tracks full-res URLs we've confirmed have actually finished loading,
+    // along with their real pixel dimensions — so we know when it's safe to
+    // skip the thumbnail placeholder, AND can size correctly immediately
+    // without needing to recreate an Image() just to re-read dimensions.
+    const fullResDimensions = new Map(); // url -> { width, height }
 
     // Concurrency-limited image loading queue, so a fast scroll doesn't fire
     // dozens of simultaneous requests that drown out what's actually visible.
@@ -734,6 +736,12 @@ header { padding: 2.5rem 2rem 0 2rem; }
     }
 
     function processLoadQueue() {
+        // Pause background grid loading while the lightbox is open — keeps
+        // network and main-thread resources free for smooth swipe gestures
+        // and full-res decoding instead of competing with grid thumbnails.
+        const lightboxEl = document.getElementById('lightbox');
+        if (lightboxEl && lightboxEl.classList.contains('active')) return;
+
         while (activeLoads < MAX_CONCURRENT_LOADS && loadQueue.length > 0) {
             // Pick whichever queued image is currently closest to the viewport,
             // recalculated live rather than trusting a priority captured earlier.
@@ -844,13 +852,12 @@ header { padding: 2.5rem 2rem 0 2rem; }
         // moment showing a stale size left over from a previous photo.
         estimateLightboxSlideSize(imgEl, ratio);
 
-        if (fullyLoadedFullRes.has(fullSrc)) {
+        if (fullResDimensions.has(fullSrc)) {
             // Already confirmed loaded (e.g. via neighbor preloading) — no
-            // need for a thumbnail placeholder, go straight to full-res.
-            // Still correct to real dimensions in case the estimate was off.
-            const cached = new Image();
-            cached.onload = () => sizeLightboxSlideImage(imgEl, cached.naturalWidth, cached.naturalHeight);
-            cached.src = fullSrc;
+            // need for a thumbnail placeholder or a redundant Image() just
+            // to re-read dimensions we already have on hand.
+            const { width, height } = fullResDimensions.get(fullSrc);
+            sizeLightboxSlideImage(imgEl, width, height);
             imgEl.src = fullSrc;
             return;
         }
@@ -868,14 +875,13 @@ header { padding: 2.5rem 2rem 0 2rem; }
         upgrade.src = fullSrc;
 
         const applyUpgrade = () => {
-            fullyLoadedFullRes.add(fullSrc);
+            fullResDimensions.set(fullSrc, { width: upgrade.naturalWidth, height: upgrade.naturalHeight });
             // Only apply if this element is still meant to be showing this photo
             if (imgEl.dataset.expectedFilename !== filename) return;
             // Correct to the real full-res dimensions and swap together — if
             // the initial estimate was close, this is invisible; if the photo
             // turned out smaller than estimated, it gently settles down to
-            // its true size via the CSS width/height transition rather than
-            // staying artificially large.
+            // its true size rather than staying artificially large.
             sizeLightboxSlideImage(imgEl, upgrade.naturalWidth, upgrade.naturalHeight);
             imgEl.src = fullSrc;
         };
@@ -971,7 +977,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
             preloadedImages.add(src);
             const img = new Image();
             img.fetchPriority = (i === index - 1 || i === index + 1) ? 'high' : 'low';
-            img.onload = () => { fullyLoadedFullRes.add(src); };
+            img.onload = () => { fullResDimensions.set(src, { width: img.naturalWidth, height: img.naturalHeight }); };
             img.src = src;
         });
     }
@@ -1443,6 +1449,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
         document.body.style.overflow = 'auto';
         history.replaceState(null, null, " ");
         setTimeout(() => { document.getElementById('lightbox-img').src = ""; }, 400);
+        processLoadQueue(); // resume any grid loading that was paused while the lightbox was open
     });
 
     document.getElementById('lb-prev').addEventListener('click', (e) => {
@@ -1458,6 +1465,7 @@ header { padding: 2.5rem 2rem 0 2rem; }
         if (e.key === "Escape" && lightbox.classList.contains('active')) {
             lightbox.classList.remove('active');
             document.body.style.overflow = 'auto';
+            processLoadQueue(); // resume any grid loading that was paused while the lightbox was open
         }
         if (e.key === "Escape" && document.getElementById('filter-sheet').classList.contains('active')) {
             closeFilterSheet();
@@ -1541,12 +1549,13 @@ header { padding: 2.5rem 2rem 0 2rem; }
                 history.replaceState(null, null, " ");
                 setTimeout(() => { img.src = ""; }, 400);
                 track.style.transform = 'translateX(-100vw)';
+                processLoadQueue(); // resume any grid loading that was paused while the lightbox was open
             } else {
                 // snap back to center
                 track.style.transform = 'translateX(-100vw)';
             }
             dx = 0; dy = 0;
-        });
+        }, { passive: true });
 
         // Let the slide-out animation play fully (the destination slide already
         // shows the correct photo, so nothing changes visually during this).
@@ -1669,6 +1678,7 @@ window.addEventListener('hashchange', () => {
     } else {
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
+        processLoadQueue(); // resume any grid loading that was paused while the lightbox was open
     }
 });
 
