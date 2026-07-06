@@ -28,7 +28,6 @@ def get_decimal_from_dms(dms, ref):
         return None
 
 
-
 # Use a very specific user agent to avoid being lumped in with generic traffic
 YOUR_EMAIL = "@gmail.com" 
 
