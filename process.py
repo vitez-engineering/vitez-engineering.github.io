@@ -7,7 +7,7 @@ from geopy.geocoders import Nominatim
 import requests
     
 # --- SETTINGS ---
-SOURCE_DIR = "/home/cvitez/Downloads/art-webp/"
+SOURCE_DIR = "/home/cvitez/Downloads/art-webp/artistic 2-3-001/artistic 2"
 OUTPUT_DIR = os.path.join(SOURCE_DIR, "web_assets") # Best to put renamed files in a subfolder
 QUALITY = 85
 MAX_SIZE = (2500, 2500) 
@@ -30,10 +30,10 @@ def get_decimal_from_dms(dms, ref):
 
 
 # Use a very specific user agent to avoid being lumped in with generic traffic
-YOUR_EMAIL = "" 
+YOUR_EMAIL = "@gmail.com" 
 
 geolocator = Nominatim(
-    user_agent="Vitez_Photography_Archive_Script_v26",
+    user_agent="Vitez_Photography_Archive_Script_v27",
     timeout=10
 )
 
@@ -42,6 +42,99 @@ import requests
 
 
 import requests
+
+# --- OVERPASS CACHE + RATE-LIMIT HANDLING ---
+
+_location_cache = {}
+
+def _cache_key(lat, lon, precision=4):
+    # ~11m precision at 4 decimal places -- good enough to dedupe
+    # multiple shots taken at/near the same spot.
+    return (round(lat, precision), round(lon, precision))
+
+OVERPASS_URLS = [
+    "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+    "https://overpass.private.coffee/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass-api.de/api/interpreter",
+    "https://lz4.overpass-api.de/api/interpreter",
+]
+
+OVERPASS_HEADERS = {
+    'User-Agent': 'Vitez-Photography-Archive/1.0 (contact: @gmail.com)',
+    'Accept': 'application/json',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate',
+}
+
+_last_overpass_call = 0.0
+_MIN_OVERPASS_INTERVAL = 3.0  # secondfs, enforced across ALL calls in the run
+
+def _throttle_overpass():
+    global _last_overpass_call
+    elapsed = time.time() - _last_overpass_call
+    if elapsed < _MIN_OVERPASS_INTERVAL:
+        time.sleep(_MIN_OVERPASS_INTERVAL - elapsed)
+    _last_overpass_call = time.time()
+
+def query_overpass_with_backoff(query, urls=None, max_retries_per_url=2, debug=True):
+    """
+    Runs an Overpass query with real rate-limit handling:
+      - Honors the Retry-After header when a mirror returns 429
+      - Uses exponential backoff between retries on the SAME mirror for 429s
+      - Treats 406 as a bot-gate, not a rate limit: retrying won't help,
+        so it moves on to the next mirror immediately
+      - Enforces a minimum spacing between requests across the whole run
+        (not just within one retry loop), so a burst of photos doesn't
+        add up to more requests/minute than a mirror will tolerate
+    overpass-api.de and its lz4 mirror share infrastructure and, as of 2026,
+    both have started 406-gating requests that look automated (missing
+    browser-like headers, or just bulk/scripted traffic in general --
+    see https://github.com/drolbr/Overpass-API/issues/791). Sending a
+    proper User-Agent/Accept set helps but won't guarantee passage.
+    kumi.systems doesn't appear to run this gate -- it gives real 429s
+    instead, which are worth waiting out -- so it's tried first.
+    """
+    if urls is None:
+        urls = OVERPASS_URLS
+
+    for url in urls:
+        for attempt in range(max_retries_per_url):
+            _throttle_overpass()
+            try:
+                response = requests.post(
+                    url, data={'data': query}, headers=OVERPASS_HEADERS, timeout=30
+                )
+            except requests.exceptions.RequestException as e:
+                if debug:
+                    print(f"Overpass request error ({url}): {e}")
+                break  # give up on this mirror, try next
+
+            if response.status_code == 200:
+                return response
+
+            if response.status_code == 429:
+                retry_after = response.headers.get('Retry-After')
+                wait = int(retry_after) if retry_after else 10 * (2 ** attempt)
+                if debug:
+                    print(f"Overpass 429 from {url} — waiting {wait}s "
+                          f"(attempt {attempt + 1}/{max_retries_per_url})")
+                time.sleep(wait)
+            elif response.status_code == 406:
+                if debug:
+                    print(f"Overpass 406 (bot-gate, not a rate limit) from {url} "
+                          f"— skipping to next mirror")
+                break  # retrying the same mirror won't help
+            else:
+                if debug:
+                    print(f"Overpass returned {response.status_code} from {url}")
+                time.sleep(3)
+                break
+
+    if debug:
+        print("All Overpass mirrors exhausted or rate-limited for this query.")
+    return None
+
 
 def get_location_details(lat, long, debug=True):
     """
@@ -53,11 +146,15 @@ def get_location_details(lat, long, debug=True):
         long: Longitude
         debug: If True, print debug information
     """
-    
-    # Try Overpass API to find protected areas, parks, etc.
-    overpass_urls = ["https://lz4.overpass-api.de/api/interpreter", "https://overpass-api.de/api/interpreter",
-        "https://overpass.kumi.systems/api/interpreter"]
-    
+
+    # --- Cache check: skip both Overpass and Nominatim entirely if we've
+    # already resolved a nearby coordinate ---
+    key = _cache_key(lat, long)
+    if key in _location_cache:
+        if debug:
+            print(f"Cache hit for {key} -> {_location_cache[key]}")
+        return _location_cache[key]
+
     # Query for protected areas within 10km (broader search)
     overpass_query = f"""
     [out:json][timeout:30];
@@ -75,30 +172,18 @@ def get_location_details(lat, long, debug=True):
     );
     out tags;
     """
-    #      way["boundary"="protected_area"](around:100,{lat},{long});
-    #     way["boundary"="national_park"](around:100,{lat},{long});
-    #           way["leisure"="nature_reserve"](around:100,{lat},{long});
-    #      way["leisure"="park"]["name"](around:100,{lat},{long});
-    
+
     protected_area_name = None
-    time.sleep(2)
-    try:
-        for i in range(3):
-            response = requests.post(overpass_urls[i], data={'data': overpass_query}, timeout=30)
-            if response.status_code == 200:
-                break
-            else:
-                time.sleep(2)
-                print(response.status_code)
-                
-        print(response)
-        if response.status_code == 200:
+    response = query_overpass_with_backoff(overpass_query, debug=debug)
+
+    if response is not None:
+        try:
             data = response.json()
             elements = data.get('elements', [])
-            
+
             if debug:
                 print(f"Overpass returned {len(elements)} total elements")
-            
+
             # Prioritize by feature importance
             priority_keywords = [
                 ['national lakeshore', 'national seashore'],
@@ -107,12 +192,12 @@ def get_location_details(lat, long, debug=True):
                 ['state park'],
                 ['state forest', 'state recreation']
             ]
-            
+
             candidates = []
             for element in elements:
                 tags = element.get('tags', {})
                 name = tags.get('name', '')
-                
+
                 if name:
                     # Clean up the name - remove unit designations and extra info
                     clean_name = name
@@ -122,11 +207,11 @@ def get_location_details(lat, long, debug=True):
                     # Remove dash suffixes like "- Shingleton Unit"
                     if ' - ' in clean_name:
                         clean_name = clean_name.split(' - ')[0].strip()
-                    
+
                     # Skip generic names
                     if clean_name.lower() in ['park', 'forest', 'recreation area']:
                         continue
-                    
+
                     # Determine priority level
                     priority = 99
                     name_lower = clean_name.lower()
@@ -134,11 +219,9 @@ def get_location_details(lat, long, debug=True):
                         if any(kw in name_lower for kw in keyword_group):
                             priority = idx
                             break
-                    
+
                     candidates.append((priority, clean_name))
-            
-            #dist = geodesic(photo_coords, (el['lat'], el['lon'])).miles
-            
+
             # Sort by priority and take the best one
             if candidates:
                 candidates.sort(key=lambda x: x[0])
@@ -148,14 +231,10 @@ def get_location_details(lat, long, debug=True):
                     print(f"Selected: {protected_area_name}")
             elif debug:
                 print(f"Overpass returned elements but no valid candidates")
-        elif debug:
-            print(f"Overpass API returned status code: {response.status_code}")
-                
-    except Exception as e:
-        if debug:
-            print(f"Overpass error: {e}")
-        pass  # Fall through to Nominatim
-    
+        except Exception as e:
+            if debug:
+                print(f"Overpass response parse error: {e}")
+
     # Use Nominatim for state/country and fallback place info
     nominatim_url = "https://nominatim.openstreetmap.org/reverse"
     params = {
@@ -186,7 +265,9 @@ def get_location_details(lat, long, debug=True):
         if protected_area_name:
             if debug:
                 print(f"Using Overpass result: {protected_area_name}")
-            return f"{protected_area_name}, {state}, {country}"
+            result = f"{protected_area_name}, {state}, {country}"
+            _location_cache[key] = result
+            return result
         
         if debug:
             print("No Overpass result, using Nominatim fallback")
@@ -200,9 +281,9 @@ def get_location_details(lat, long, debug=True):
         ]
         
         place = None
-        for key in place_keys:
-            if key in address and address[key]:
-                candidate = address[key]
+        for key2 in place_keys:
+            if key2 in address and address[key2]:
+                candidate = address[key2]
                 # Skip if it's a township or county
                 if 'township' not in candidate.lower() and 'county' not in candidate.lower():
                     place = candidate
@@ -212,13 +293,10 @@ def get_location_details(lat, long, debug=True):
         if not place:
             place = address.get('city') or address.get('town') or address.get('village')
         if not place:    
-            for key in place_keys:
-                if key in address and address[key]:
-                    candidate = address[key]
-                    # Skip if it's a township or county
-                    if true:
-                        place = candidate
-                        break
+            for key2 in place_keys:
+                if key2 in address and address[key2]:
+                    place = address[key2]
+                    break
         
         # Last resort: use first part of display_name, but NOT county
         if not place:
@@ -235,9 +313,13 @@ def get_location_details(lat, long, debug=True):
                 else:
                     place = first_part.replace(' County', '').replace(' Township', '')
         
-        return f"{place}, {state}, {country}"
+        result = f"{place}, {state}, {country}"
+        _location_cache[key] = result
+        return result
         
     except Exception as e:
+        # Don't cache errors -- we want to retry a genuinely-failed lookup
+        # next time the same coordinate shows up, rather than locking in "Error: ..."
         return f"Error: {str(e)}"
 
 
@@ -262,9 +344,6 @@ def get_overpass_context(lat, lon):
     Uses Overpass to find the State (admin_level 4) 
     and Country (admin_level 2) containing the coordinates.
     """
-    overpass_url = "https://overpass-api.de/api/interpreter"
-    
-    # This query asks: "What administrative areas contain this point?"
     query = f"""
     [out:json][timeout:15];
     is_in({lat},{lon})->.a;
@@ -274,9 +353,9 @@ def get_overpass_context(lat, lon):
     
     context = {"state": "", "country": ""}
     
-    try:
-        response = requests.post(overpass_url, data={'data': query}, timeout=15)
-        if response.status_code == 200:
+    response = query_overpass_with_backoff(query, max_retries_per_url=2)
+    if response is not None:
+        try:
             elements = response.json().get('elements', [])
             for el in elements:
                 tags = el.get('tags', {})
@@ -284,15 +363,15 @@ def get_overpass_context(lat, lon):
                 level = tags.get('admin_level')
                 
                 if level == "2":
+                    context["state"] = context["state"]  # no-op, kept for clarity
                     context["country"] = name
                 if level == "4":
                     context["state"] = name
-    except Exception as e:
-        print(f"Overpass Context Error: {e}")
+        except Exception as e:
+            print(f"Overpass Context Error: {e}")
         
     return context
 def find_nearest_neighbor_overpass(lat, lon):
-    overpass_url = "https://overpass-api.de/api/interpreter"
     photo_coords = (lat, lon)
     radius = 30000 # 30km (~18 miles)
 
@@ -310,11 +389,11 @@ def find_nearest_neighbor_overpass(lat, lon):
     out body;
     """
     
+    response = query_overpass_with_backoff(query, max_retries_per_url=2)
+    if response is None:
+        return None
+
     try:
-        headers = {'User-Agent': 'Vitez_Photo_Archive_Script'}
-        response = requests.post(overpass_url, data={'data': query}, timeout=20, headers=headers)
-        if response.status_code != 200: return None
-            
         data = response.json()
         elements = data.get('elements', [])
         if not elements: return None
@@ -326,15 +405,15 @@ def find_nearest_neighbor_overpass(lat, lon):
             tags = el.get('tags', {})
             name = tags.get('name:en') or tags.get('name')
             if not name: continue
-            
+
             # --- THE POND SHIELD ---
             # Skip minor water features that clutter the results
             blacklist = ["POND", "RETENTION", "CANAL", "DITCH", "DRAIN", "CREEK"]
             if any(word in name.upper() for word in blacklist):
                 continue
 
+            dist = geodesic(photo_coords, (el['lat'], el['lon'])).miles
 
-            
             # Categorize
             # We only count it as 'Nature' if it's a Park, Forest, or Protected Area
             is_nature = any(t in tags for t in ['leisure', 'boundary', 'natural'])
@@ -355,7 +434,8 @@ def find_nearest_neighbor_overpass(lat, lon):
             city_hits.sort(key=lambda x: x[1])
             return city_hits[0][0]
 
-    except:
+    except Exception as e:
+        print(f"find_nearest_neighbor_overpass error: {e}")
         return None
     return None
 
@@ -381,29 +461,6 @@ def format_location_string(place, addr):
         parts.append(c_name)
     
     return ", ".join(dict.fromkeys(p for p in parts if p))
-
-# ... [Keep your get_decimal_from_dms, get_gps_data, and process() functions as they
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def get_gps_data(exif):
@@ -481,8 +538,12 @@ def process():
                 lat, lon = get_gps_data(exif)
                 
                 if lat and lon:
-                    # Success! We found coordinates. Now get the address.
-                    time.sleep(2.0)
+                    # Success! Check cache / query for the address.
+                    # Only sleep if we're actually about to hit the network
+                    # (cache hits should be instant).
+                    key = _cache_key(lat, lon)
+                    if key not in _location_cache:
+                        time.sleep(2.0)
                     location_str = get_location_details(lat, lon)
                 else:
                     # Diagnostic: Tell us if the file actually has no GPS
